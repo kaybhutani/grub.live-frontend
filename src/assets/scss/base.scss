@@ -4,10 +4,14 @@ body {
   margin: 0;
 }
 
+.logo {
+  width: 6em;
+}
+
+
 nav {
 
   background-color: $yellow-base;
-  width: 100%;
   padding: $s $m;
   .nav-item {
     display: inline-block;
@@ -15,20 +19,35 @@ nav {
   }
   .nav-item-right {
     float: right;
-    margin-right: $l;
   }
 }
 
 
-.logo {
-  width: 6em;
+footer {
+  margin-top: $l;
+  padding: $m $m;
+  background-color: $dark-gray;
+  color: $yellow-base;
+
+  text-align: center;
+
+  .footer-item {
+    display: inline-block;
+    margin: $s;
+  }
+
+  .footer-links {
+    margin-top: $m;
+  }
 }
+
+
 
 @media only screen and (max-width: 400px) {
   .logo { 
     width: 4em;
   }
-  .nav-item-right {
-    margin-right: $s;
+  .nav-item {
+    display: block;
   }
 }
