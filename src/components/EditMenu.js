@@ -34,6 +34,15 @@ const EditMenu = (props) => {
     setRestaurantDetails(temp)
   }
 
+  const addItem = (key) => {
+    const temp = {... restaurantDetails}
+    temp.menu.categories[key].items.push({
+      itemName: "",
+      itemPrice: ""
+    })
+    setRestaurantDetails(temp)
+  }
+
   const addCategory = () => {
 
     const temp = {... restaurantDetails}
@@ -70,8 +79,27 @@ const EditMenu = (props) => {
           <p>Title</p>
           <input className='form-input' onChange={e => updateTitle(e,key)} placeholder='Example: Chinese food'></input>
           <br></br><br></br>
+          <div>
+            {
+              restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
+
+                return (
+                  <div key = {itemKey}>
+                    <div style={{display: "inline-block"}}>
+                      <p>Item Name</p>
+                      <input className='form-input' placeholder='French Fries'></input>
+                    </div>
+                    <div style={{display: "inline-block"}}>
+                      <p>Price</p>
+                      <input className='form-input' placeholder='399'></input>
+                    </div>
+                  </div>
+                )
+              })
+            }
+          </div>
           <div style={{float: "right"}}>
-          <a className='hyperlink'>Add Item <i className='eos-icons'>add_circle_outline</i></a>
+          <a className='hyperlink' onClick={() => addItem(key)}>Add Item <i className='eos-icons'>add_circle_outline</i></a>
         </div>
         </div>)
         
