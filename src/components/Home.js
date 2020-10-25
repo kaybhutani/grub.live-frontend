@@ -13,7 +13,7 @@ const Home = () => {
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing eli test</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing eli test 2 </p>
       </div>
 
       <div>
