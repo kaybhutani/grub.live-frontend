@@ -23,7 +23,15 @@ const PreviewRestaurantMenu = (props) => {
             <div key={key}>
             <h2>{element.title}</h2>
             
-            <br></br><br></br>
+
+            {
+              restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
+                return (<div key={itemKey}>
+                  <p style={{display: "inline-block"}}>{item.itemName}</p>
+                  <p style={{float: "right"}}>{item.itemPrice}</p>
+                </div>)
+              })
+            }
             
           
           </div>)

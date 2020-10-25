@@ -48,8 +48,8 @@ const EditMenu = (props) => {
     itemType == 'name' ? 
     temp.menu.categories[categoryKey].items[itemKey].itemName = e.target.value
     :
-    temp.menu.categories[categoryKey].items[itemKey].price = e.target.value
-    
+    temp.menu.categories[categoryKey].items[itemKey].itemPrice = e.target.value
+    setRestaurantDetails(temp)
   }
 
   const addCategory = () => {
