@@ -13,10 +13,17 @@ const EditMenu = (props) => {
   }
 
   const updateLogo = (e) => {
-    if(e.target.files[0]) {
+    const uploadedFile = e.target.files[0]
+    if(uploadedFile) {
+      if(uploadedFile.size > 2000000) {
+        alert("Please upload an image with size less than 2 mb.")
+        return;
+      }
+
       const temp = {... restaurantDetails}
-      temp.logo =  URL.createObjectURL(e.target.files[0])
+      temp.logo =  URL.createObjectURL(uploadedFile)
       setRestaurantDetails(temp)
+      
     }
     
   }
