@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/grub.live-frontend/static/css/main.cb4d05a4.chunk.css",
+    "main.js": "/grub.live-frontend/static/js/main.6d1dc690.chunk.js",
+    "main.js.map": "/grub.live-frontend/static/js/main.6d1dc690.chunk.js.map",
+    "runtime-main.js": "/grub.live-frontend/static/js/runtime-main.3a623d05.js",
+    "runtime-main.js.map": "/grub.live-frontend/static/js/runtime-main.3a623d05.js.map",
+    "static/js/2.c4c09f34.chunk.js": "/grub.live-frontend/static/js/2.c4c09f34.chunk.js",
+    "static/js/2.c4c09f34.chunk.js.map": "/grub.live-frontend/static/js/2.c4c09f34.chunk.js.map",
+    "index.html": "/grub.live-frontend/index.html",
+    "precache-manifest.64b13a40acc51065441f545cd3feab18.js": "/grub.live-frontend/precache-manifest.64b13a40acc51065441f545cd3feab18.js",
+    "service-worker.js": "/grub.live-frontend/service-worker.js",
+    "static/css/main.cb4d05a4.chunk.css.map": "/grub.live-frontend/static/css/main.cb4d05a4.chunk.css.map",
+    "static/js/2.c4c09f34.chunk.js.LICENSE.txt": "/grub.live-frontend/static/js/2.c4c09f34.chunk.js.LICENSE.txt",
+    "static/media/grub.live-logo-yellow.svg": "/grub.live-frontend/static/media/grub.live-logo-yellow.8cd86dd6.svg",
+    "static/media/grub.live-logo.svg": "/grub.live-frontend/static/media/grub.live-logo.3b6b4ff3.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3a623d05.js",
+    "static/js/2.c4c09f34.chunk.js",
+    "static/css/main.cb4d05a4.chunk.css",
+    "static/js/main.6d1dc690.chunk.js"
+  ]
+}
