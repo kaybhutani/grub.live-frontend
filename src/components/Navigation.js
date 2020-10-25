@@ -15,21 +15,24 @@ const NavLink = (props) => (
 
 const Navigation = () => {
   return (
-    <header className='flex-wrap-sm'>
-      <Link to='/'>
-        <div className='brand'>
+    <div>
+  
+      <nav>
+      <Link to='/' className='nav-item'>
+        <div>
           <img className='logo' src={logo} alt='' />
         </div>
       </Link>
-      <nav className='padding-top-xs'>
-        <NavLink to='/how-it-works'><div className='hyperlink'>How it works?</div></NavLink>
+      <div className='nav-item-right'>
+        <NavLink to='/how-it-works'><div className='hyperlink nav-item'>How it works?</div></NavLink>
         <NavLink to='/create'>
-          <button className='black-yellow'>
+          <button className='black-yellow nav-item'>
             Create Menu
           </button>
         </NavLink>
+      </div>
       </nav>
-    </header>
+    </div>
   )
 }
 

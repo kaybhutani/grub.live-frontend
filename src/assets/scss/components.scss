@@ -1,14 +1,18 @@
 .hyperlink {
   color: $dark-gray;
   text-decoration: none;
+  margin: 0 $s 0 0;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .black-yellow {
   color: $dark-gray;
-  border: 1px solid $dark-gray;
+  border: $xs/2 solid $dark-gray;
   border-radius: $xs;
   font-size: 1em;
-  padding: $xs;
+  padding: $s $m;
   margin: $s;
   background-color: transparent;
 
@@ -17,5 +21,13 @@
     color: $yellow-base;
     background-color: $dark-gray;
     transition-duration: 0.2s;
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+  .black-yellow {
+    margin: $xs;
+    padding: $xs $s;
   }
 }
