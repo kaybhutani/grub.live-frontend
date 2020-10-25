@@ -20,7 +20,7 @@ const Navigation = () => {
       <nav>
       <Link to='/' className='nav-item'>
         <div>
-          <img className='logo' src={logo} alt='' />
+          <img className='logo' src={logo} alt='Grub.live logo'  />
         </div>
       </Link>
       <div className='nav-item-right'>

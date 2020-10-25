@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
         <div>
-          <img src={yellowLogo} className='logo'></img>
+          <img src={yellowLogo} alt='Grub.live logo' className='logo'></img>
           <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
         </div>
         <div className='footer-links'>
