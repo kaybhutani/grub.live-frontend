@@ -37,10 +37,13 @@ footer {
   }
 
   .footer-links {
-    margin-top: $m;
+    margin-top: $xl;
   }
 }
 
+.container {
+  margin: $xxl $m;
+}
 
 
 @media only screen and (max-width: 400px) {

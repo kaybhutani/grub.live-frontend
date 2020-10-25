@@ -7,14 +7,15 @@ const Footer = () => {
     <footer>
         <div>
           <img src={yellowLogo} className='logo'></img>
+          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
         </div>
-        <div classNam='footer-links'>
+        <div className='footer-links'>
           <div className='footer-item hyperlink-invert'>Contact Us</div>
           <div className='footer-item hyperlink-invert'>Feedback</div>
           <div className='footer-item hyperlink-invert'>About Us</div>
         </div>
         <br></br>
-      
+        <br></br>
       <span>Made with ❤ in India</span><br></br>
       <span>© 2020 Grub.live</span>
     </footer>
