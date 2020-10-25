@@ -2,6 +2,7 @@
   color: $dark-gray;
   text-decoration: none;
   margin: 0 $s 0 0;
+  cursor: pointer;
   &:hover {
     text-decoration: underline;
   }
@@ -44,8 +45,12 @@
   padding: $l;
   border-radius: $xs;
   box-shadow: $xxs $xs $m -$xs rgba(0,0,0,0.20);
+  margin-bottom: $l;
 }
 
+.eos-icons {
+  vertical-align: middle;
+}
 
 .edit-menu {
   width: 45%;

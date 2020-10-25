@@ -4,7 +4,7 @@ import PreviewMenu from './PreviewMenu'
 const CreateMenu = () => {
 
   const sampleRestaurantDetails = {
-    restaurantName: "Moti Mahal",
+    restaurantName: "",
     logo: "",
     menu: {
       categories: [ ]

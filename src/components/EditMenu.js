@@ -32,6 +32,20 @@ const EditMenu = (props) => {
         <p>Logo (if any)</p>
         <input type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
       </div>
+      
+      
+      
+      <div>
+        <div style={{float: "right"}}>
+          <a className='hyperlink'>Add Category <i className='eos-icons'>add_circle_outline</i></a>
+        </div>
+          <br></br>
+          <br></br>
+        <div style={{float: "right"}}>
+          <button className='black-yellow'>Generate QR Menu</button>
+        </div>
+      </div>
+
 
     </div>
   )
