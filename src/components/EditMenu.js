@@ -4,6 +4,22 @@ const EditMenu = (props) => {
   
   const restaurantDetails = props.restaurantDetails
   const setRestaurantDetails = props.setRestaurantDetails
+  const fun = (e) => {
+  
+    const temp = {... restaurantDetails}
+    temp.restaurantName =  e.target.value
+    setRestaurantDetails(temp)
+    
+  }
+
+  const updateLogo = (e) => {
+    if(e.target.files[0]) {
+      const temp = {... restaurantDetails}
+      temp.logo =  URL.createObjectURL(e.target.files[0])
+      setRestaurantDetails(temp)
+    }
+    
+  }
 
   return (
     <div className='edit-menu'>
@@ -12,7 +28,9 @@ const EditMenu = (props) => {
       <br></br>
       <div className='shadow-box'>
         <p>Name of Restaurant</p>
-        <input onChange={(e) => setRestaurantDetails(e.target.value)} type='text'></input>
+        <input placeholder='Example: Moti Mahal Deluxe' onChange={ e => fun(e)} defaultValue={restaurantDetails.restaurantName}></input>
+        <p>Logo (if any)</p>
+        <input type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
       </div>
 
     </div>

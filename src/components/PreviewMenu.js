@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PreviewRestaurantMenu from './PreviewRestaurantMenu'
 const PreviewMenu = (props) => {
   
   const restaurantDetails = props.restaurantDetails
@@ -9,6 +9,7 @@ const PreviewMenu = (props) => {
       <h2>Preview Menu <i className='eos-icons'>slideshow</i></h2>
       <p>Once done, create on Generate QR Menu to create your Virtual Menu.</p>
       <br></br>
+      <PreviewRestaurantMenu restaurantDetails={restaurantDetails} />
     </div>
   )
 

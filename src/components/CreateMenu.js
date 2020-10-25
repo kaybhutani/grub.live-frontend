@@ -3,7 +3,14 @@ import EditMenu from './EditMenu'
 import PreviewMenu from './PreviewMenu'
 const CreateMenu = () => {
 
-  const [restaurantDetails, setRestaurantDetails] = useState({});
+  const sampleRestaurantDetails = {
+    restaurantName: "Moti Mahal",
+    logo: "",
+    menu: {
+      categories: [ ]
+    }
+  }
+  const [restaurantDetails, setRestaurantDetails] = useState(sampleRestaurantDetails);
   
   return (
 
