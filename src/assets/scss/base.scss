@@ -23,6 +23,15 @@ nav {
   }
 }
 
+.form-input {
+  
+  border-radius: $xxs;
+  border: 1px solid $light-gray;
+  padding: $s;
+  width: 80%;
+
+}
+
 
 footer {
   margin-top: $l;

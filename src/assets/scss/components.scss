@@ -42,7 +42,7 @@
 
 
 .shadow-box {
-  padding: $l;
+  padding: $l $l $xxl $l;
   border-radius: $xs;
   box-shadow: $xxs $xs $m -$xs rgba(0,0,0,0.20);
   margin-bottom: $l;
@@ -64,7 +64,7 @@
 }
 
 .restaurant-logo {
-  width: 1.5em;
+  width: 1.8em;
   vertical-align: middle;
   margin-right: $s;
  }

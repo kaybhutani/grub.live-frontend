@@ -28,23 +28,55 @@ const EditMenu = (props) => {
     
   }
 
+
+  const addCategory = () => {
+
+    const temp = {... restaurantDetails}
+    temp.menu.categories.push( {
+      title: '',
+      type: 'text',
+      items: [
+
+      ]
+    }) 
+    setRestaurantDetails(temp)
+    console.log(restaurantDetails)
+  }
+
   return (
     <div className='edit-menu'>
       <h2>Edit Menu <i className='eos-icons'>edit</i></h2>
       <p>Please enter the following details to create your Virtual QR Menu.</p>
       <br></br>
+      
+      
       <div className='shadow-box'>
         <p>Name of Restaurant</p>
-        <input placeholder='Example: Moti Mahal Deluxe' onChange={ e => fun(e)} defaultValue={restaurantDetails.restaurantName}></input>
+        <input className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => fun(e)} defaultValue={restaurantDetails.restaurantName}></input>
         <p>Logo (if any)</p>
         <input type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
       </div>
+      
+
+      {restaurantDetails.menu.categories.map((element, key) => {
+         return (
+         
+         <div className='shadow-box' key={key}>
+          <p>Title</p>
+          <input className='form-input' placeholder='Example: Chinese food'></input>
+          <br></br><br></br>
+          <div style={{float: "right"}}>
+          <a className='hyperlink'>Add Item <i className='eos-icons'>add_circle_outline</i></a>
+        </div>
+        </div>)
+        
+      })}
       
       
       
       <div>
         <div style={{float: "right"}}>
-          <a className='hyperlink'>Add Category <i className='eos-icons'>add_circle_outline</i></a>
+          <a onClick={addCategory} className='hyperlink'>Add Category <i className='eos-icons'>add_circle_outline</i></a>
         </div>
           <br></br>
           <br></br>
