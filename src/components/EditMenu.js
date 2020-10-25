@@ -43,6 +43,15 @@ const EditMenu = (props) => {
     setRestaurantDetails(temp)
   }
 
+  const itemOnChange = (itemType, e, categoryKey, itemKey) => {
+    const temp = {... restaurantDetails}
+    itemType == 'name' ? 
+    temp.menu.categories[categoryKey].items[itemKey].itemName = e.target.value
+    :
+    temp.menu.categories[categoryKey].items[itemKey].price = e.target.value
+    
+  }
+
   const addCategory = () => {
 
     const temp = {... restaurantDetails}
@@ -82,16 +91,15 @@ const EditMenu = (props) => {
           <div>
             {
               restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
-
                 return (
                   <div key = {itemKey}>
                     <div style={{display: "inline-block"}}>
                       <p>Item Name</p>
-                      <input className='form-input' placeholder='French Fries'></input>
+                      <input onChange = {(e) => itemOnChange('name', e, key, itemKey)} className='form-input' placeholder='Example: French Fries'></input>
                     </div>
                     <div style={{display: "inline-block"}}>
                       <p>Price</p>
-                      <input className='form-input' placeholder='399'></input>
+                      <input onChange = {(e) => itemOnChange('price', e, key, itemKey)} className='form-input' placeholder='Example: 399'></input>
                     </div>
                   </div>
                 )
