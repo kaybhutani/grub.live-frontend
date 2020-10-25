@@ -7,15 +7,29 @@ const PreviewRestaurantMenu = (props) => {
   return (
     <div className='shadow-box'>
 
-    
-    <h1 style={{textAlign: "center"}}>
-    {restaurantDetails.logo?
-    (<img src={restaurantDetails.logo} alt='' className='restaurant-logo'></img>)
-  :
-  (<i className='eos-icons' style={{color: 'red', fontSize: '1em', margin: '8px'}}>local_dining</i>)}  
-  
-      {restaurantDetails.restaurantName}</h1>
-
+      <div  style={{textAlign: "center"}}>
+          <h1>
+            {restaurantDetails.logo?
+            (<img src={restaurantDetails.logo} alt='' className='restaurant-logo'></img>)
+            :
+            (<i className='eos-icons' style={{color: 'red', fontSize: '1em', margin: '8px'}}>local_dining</i>)}   
+            {restaurantDetails.restaurantName}</h1>
+        </div> 
+    <br></br>
+    <div>
+      {restaurantDetails.menu.categories.map((element, key) => {
+            return (
+            
+            <div key={key}>
+            <h2>{element.title}</h2>
+            
+            <br></br><br></br>
+            
+          
+          </div>)
+          
+        })}  
+    </div>
     </div>
   )
 

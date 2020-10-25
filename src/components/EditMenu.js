@@ -28,6 +28,11 @@ const EditMenu = (props) => {
     
   }
 
+  const updateTitle = (e, key) => {
+    const temp = {... restaurantDetails}
+    temp.menu.categories[key].title = e.target.value
+    setRestaurantDetails(temp)
+  }
 
   const addCategory = () => {
 
@@ -63,7 +68,7 @@ const EditMenu = (props) => {
          
          <div className='shadow-box' key={key}>
           <p>Title</p>
-          <input className='form-input' placeholder='Example: Chinese food'></input>
+          <input className='form-input' onChange={e => updateTitle(e,key)} placeholder='Example: Chinese food'></input>
           <br></br><br></br>
           <div style={{float: "right"}}>
           <a className='hyperlink'>Add Item <i className='eos-icons'>add_circle_outline</i></a>
