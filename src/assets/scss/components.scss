@@ -1,0 +1,21 @@
+.hyperlink {
+  color: $dark-gray;
+  text-decoration: none;
+}
+
+.black-yellow {
+  color: $dark-gray;
+  border: 1px solid $dark-gray;
+  border-radius: $xs;
+  font-size: 1em;
+  padding: $xs;
+  margin: $s;
+  background-color: transparent;
+
+
+  &:hover {
+    color: $yellow-base;
+    background-color: $dark-gray;
+    transition-duration: 0.2s;
+  }
+}
