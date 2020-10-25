@@ -21,6 +21,10 @@
     color: $yellow-base;
     background-color: $dark-gray;
     transition-duration: 0.2s;
+    cursor: pointer;
+  }
+  &:focus {
+      outline: none;
   }
 
 }
