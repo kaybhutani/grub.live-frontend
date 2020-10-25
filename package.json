@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "eos-icons": "^4.10.0",
     "node-sass": "^4.14.1",
     "reach-router": "0.0.0",
     "react": "^17.0.1",
@@ -41,3 +42,7 @@
     "gh-pages": "^3.1.0"
   }
 }
+
+
+
+

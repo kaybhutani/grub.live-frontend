@@ -1,6 +1,9 @@
 import React from 'react'
 import { Router } from '@reach/router'
+
 import './assets/scss/index.scss'
+import '../node_modules/eos-icons/dist/css/eos-icons.css'
+
 import Navigation from './components/Navigation'
 import Home from './components/Home'
 import Footer from './components/Footer'
