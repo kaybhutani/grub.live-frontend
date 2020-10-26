@@ -112,7 +112,7 @@ const EditMenu = (props) => {
                     </div>
                     <div style={{display: "inline-block"}}>
                       <p>Price</p>
-                      <input onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} className='form-input' placeholder='Example: 399'></input>
+                      <input onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} className='form-input' placeholder='Example: Half: $4.99 , Full: $9.99'></input>
                     </div>
                     <i onClick={() => deleteItem(categoryKey, itemKey)} className='eos-icons delete-icon'>delete</i>
                   </div>

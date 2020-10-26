@@ -3,6 +3,7 @@ import { Router } from '@reach/router'
 
 import './assets/scss/index.scss'
 import '../node_modules/eos-icons/dist/css/eos-icons.css'
+// import '.assets/fonts/Lato/Lato-Regular.ttf'
 
 import Navigation from './components/Navigation'
 import Home from './components/Home'
