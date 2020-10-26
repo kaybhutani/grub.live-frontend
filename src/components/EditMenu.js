@@ -34,9 +34,9 @@ const EditMenu = (props) => {
     setRestaurantDetails(temp)
   }
 
-  const addItem = (key) => {
+  const addItem = (categoryKey) => {
     const temp = {...restaurantDetails}
-    temp.menu.categories[key].items.push({
+    temp.menu.categories[categoryKey].items.push({
       itemName: "",
       itemPrice: ""
     })
@@ -69,13 +69,21 @@ const EditMenu = (props) => {
       ]
     }) 
     setRestaurantDetails(temp)
-    console.log(restaurantDetails)
+
   }
 
   const deleteCategory = (categoryKey) => {
     const temp = {...restaurantDetails}
     temp.menu.categories.splice(categoryKey, 1)
     setRestaurantDetails(temp)
+  }
+
+  const handleKeyDown = (e, categoryKey) => {
+    if(e.keyCode == 13) 
+      {
+        addItem(categoryKey)
+        
+      }
   }
 
   return (
@@ -99,7 +107,7 @@ const EditMenu = (props) => {
          <div className='shadow-box' key={categoryKey}>
            <i onClick={() => deleteCategory(categoryKey)} style={{float: 'right'}} className='eos-icons delete-icon'>close</i>
           <p>Title</p>
-          <input className='form-input' onChange={e => updateTitle(e,categoryKey)} placeholder='Example: Chinese food'></input>
+          <input onKeyDown={(e) => handleKeyDown(e, categoryKey)} className='form-input' onChange={e => updateTitle(e,categoryKey)} placeholder='Example: Chinese food'></input>
           <br></br><br></br>
           <div>
             {
@@ -108,11 +116,11 @@ const EditMenu = (props) => {
                   <div key = {itemKey}>
                     <div style={{display: "inline-block"}}>
                       <p>Item Name</p>
-                      <input onChange = {(e) => itemOnChange('name', e, categoryKey, itemKey)} className='form-input' placeholder='Example: French Fries'></input>
+                      <input onChange = {(e) => itemOnChange('name', e, categoryKey, itemKey)} className='form-input' placeholder='Eg: French Fries'></input>
                     </div>
                     <div style={{display: "inline-block"}}>
                       <p>Price</p>
-                      <input onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} className='form-input' placeholder='Example: Half: $4.99 , Full: $9.99'></input>
+                      <input onKeyDown={(e) => handleKeyDown(e, categoryKey)} onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} className='form-input' placeholder='Eg: Half: $4.99 , Full: $9.99'></input>
                     </div>
                     <i onClick={() => deleteItem(categoryKey, itemKey)} className='eos-icons delete-icon'>delete</i>
                   </div>
