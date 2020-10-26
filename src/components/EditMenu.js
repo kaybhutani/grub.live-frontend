@@ -20,10 +20,16 @@ const EditMenu = (props) => {
         return;
       }
 
+      const reader = new FileReader()
+      reader.readAsDataURL(uploadedFile)
+      reader.onloadend = () => {
+
       const temp = {...restaurantDetails}
-      temp.logo =  URL.createObjectURL(uploadedFile)
+      temp.logo =  reader.result
+      console.log(reader.result)
       setRestaurantDetails(temp)
-      
+
+      }
     }
     
   }

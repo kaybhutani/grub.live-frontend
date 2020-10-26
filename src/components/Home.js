@@ -4,10 +4,12 @@ const Home = () => {
 
 
   return (
-    <div className='container'>
+    <div className='container' style={{textAlign: 'center'  }}>
       
-      <div className='header'>
-        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
+      <div className='header' >
+        
+        <h1>Free {'&'} Simple Virtual QR Menu's <br></br> Rejuvenating the dining experience.</h1>
+        
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -17,6 +19,9 @@ const Home = () => {
       </div>
 
       <div>
+        <button className='black-yellow nav-item'>
+          Create Menu 
+        </button>
         <button className='black-yellow nav-item'>
           Scan Menu 
         </button>
