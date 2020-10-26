@@ -6,7 +6,7 @@ const EditMenu = (props) => {
   const setRestaurantDetails = props.setRestaurantDetails
   const fun = (e) => {
   
-    const temp = {... restaurantDetails}
+    const temp = { ...restaurantDetails}
     temp.restaurantName =  e.target.value
     setRestaurantDetails(temp)
     
@@ -20,7 +20,7 @@ const EditMenu = (props) => {
         return;
       }
 
-      const temp = {... restaurantDetails}
+      const temp = {...restaurantDetails}
       temp.logo =  URL.createObjectURL(uploadedFile)
       setRestaurantDetails(temp)
       
@@ -29,13 +29,13 @@ const EditMenu = (props) => {
   }
 
   const updateTitle = (e, key) => {
-    const temp = {... restaurantDetails}
+    const temp = {...restaurantDetails}
     temp.menu.categories[key].title = e.target.value
     setRestaurantDetails(temp)
   }
 
   const addItem = (key) => {
-    const temp = {... restaurantDetails}
+    const temp = {...restaurantDetails}
     temp.menu.categories[key].items.push({
       itemName: "",
       itemPrice: ""
@@ -43,9 +43,15 @@ const EditMenu = (props) => {
     setRestaurantDetails(temp)
   }
 
+  const deleteItem = (categoryKey, itemKey) => {
+    const temp = {...restaurantDetails}
+    temp.menu.categories[categoryKey].items.splice(itemKey, 1)
+    setRestaurantDetails(temp)
+  }
+
   const itemOnChange = (itemType, e, categoryKey, itemKey) => {
-    const temp = {... restaurantDetails}
-    itemType == 'name' ? 
+    const temp = {...restaurantDetails}
+    itemType === 'name' ? 
     temp.menu.categories[categoryKey].items[itemKey].itemName = e.target.value
     :
     temp.menu.categories[categoryKey].items[itemKey].itemPrice = e.target.value
@@ -54,7 +60,7 @@ const EditMenu = (props) => {
 
   const addCategory = () => {
 
-    const temp = {... restaurantDetails}
+    const temp = {...restaurantDetails}
     temp.menu.categories.push( {
       title: '',
       type: 'text',
@@ -64,6 +70,12 @@ const EditMenu = (props) => {
     }) 
     setRestaurantDetails(temp)
     console.log(restaurantDetails)
+  }
+
+  const deleteCategory = (categoryKey) => {
+    const temp = {...restaurantDetails}
+    temp.menu.categories.splice(categoryKey, 1)
+    setRestaurantDetails(temp)
   }
 
   return (
@@ -81,35 +93,40 @@ const EditMenu = (props) => {
       </div>
       
 
-      {restaurantDetails.menu.categories.map((element, key) => {
+      {restaurantDetails.menu.categories.map((element, categoryKey) => {
          return (
          
-         <div className='shadow-box' key={key}>
+         <div className='shadow-box' key={categoryKey}>
+           <i onClick={() => deleteCategory(categoryKey)} style={{float: 'right'}} className='eos-icons delete-icon'>close</i>
           <p>Title</p>
-          <input className='form-input' onChange={e => updateTitle(e,key)} placeholder='Example: Chinese food'></input>
+          <input className='form-input' onChange={e => updateTitle(e,categoryKey)} placeholder='Example: Chinese food'></input>
           <br></br><br></br>
           <div>
             {
-              restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
+              restaurantDetails.menu.categories[categoryKey].items.map((item, itemKey) => {
                 return (
                   <div key = {itemKey}>
                     <div style={{display: "inline-block"}}>
                       <p>Item Name</p>
-                      <input onChange = {(e) => itemOnChange('name', e, key, itemKey)} className='form-input' placeholder='Example: French Fries'></input>
+                      <input onChange = {(e) => itemOnChange('name', e, categoryKey, itemKey)} className='form-input' placeholder='Example: French Fries'></input>
                     </div>
                     <div style={{display: "inline-block"}}>
                       <p>Price</p>
-                      <input onChange = {(e) => itemOnChange('price', e, key, itemKey)} className='form-input' placeholder='Example: 399'></input>
+                      <input onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} className='form-input' placeholder='Example: 399'></input>
                     </div>
+                    <i onClick={() => deleteItem(categoryKey, itemKey)} className='eos-icons delete-icon'>delete</i>
                   </div>
                 )
               })
             }
           </div>
           <div style={{float: "right"}}>
-          <a className='hyperlink' onClick={() => addItem(key)}>Add Item <i className='eos-icons'>add_circle_outline</i></a>
+          <a className='hyperlink' onClick={() => addItem(categoryKey)}>Add Item <i className='eos-icons'>add_circle_outline</i></a>
+          </div>
+
+
         </div>
-        </div>)
+        )
         
       })}
       

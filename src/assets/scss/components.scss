@@ -53,13 +53,13 @@
 }
 
 .edit-menu {
-  width: 45%;
+  width: 47%;
   display: inline-block;
 }
 
 
 .preview-menu {
-  width: 45%;
+  width: 47%;
   float: right;
 }
 
@@ -69,6 +69,13 @@
   margin-right: $s;
  }
 
+ .delete-icon {
+   color: $light-gray;
+   cursor: pointer;
+   &:hover {
+     color: red;
+   }
+ }
 
 @media only screen and (max-width: 400px) {
   .black-yellow {
