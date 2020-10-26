@@ -79,11 +79,16 @@ const EditMenu = (props) => {
   }
 
   const handleKeyDown = (e, categoryKey) => {
-    if(e.keyCode == 13) 
+    if(e.keyCode === 13) 
       {
         addItem(categoryKey)
         
       }
+  }
+
+  const submitMenu = e => {
+    
+    console.log("ok")
   }
 
   return (
@@ -92,10 +97,10 @@ const EditMenu = (props) => {
       <p>Please enter the following details to create your Virtual QR Menu.</p>
       <br></br>
       
-      
+      <form>
       <div className='shadow-box'>
         <p>Name of Restaurant</p>
-        <input className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => fun(e)} defaultValue={restaurantDetails.restaurantName}></input>
+        <input required={true} className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => fun(e)} defaultValue={restaurantDetails.restaurantName}></input>
         <p>Logo (if any)</p>
         <input type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
       </div>
@@ -107,7 +112,7 @@ const EditMenu = (props) => {
          <div className='shadow-box' key={categoryKey}>
            <i onClick={() => deleteCategory(categoryKey)} style={{float: 'right'}} className='eos-icons delete-icon'>close</i>
           <p>Title</p>
-          <input onKeyDown={(e) => handleKeyDown(e, categoryKey)} className='form-input' onChange={e => updateTitle(e,categoryKey)} placeholder='Example: Chinese food'></input>
+          <input required={true} onKeyDown={(e) => handleKeyDown(e, categoryKey)} className='form-input' onChange={e => updateTitle(e,categoryKey)} placeholder='Example: Chinese food'></input>
           <br></br><br></br>
           <div>
             {
@@ -116,11 +121,11 @@ const EditMenu = (props) => {
                   <div key = {itemKey}>
                     <div style={{display: "inline-block"}}>
                       <p>Item Name</p>
-                      <input onChange = {(e) => itemOnChange('name', e, categoryKey, itemKey)} className='form-input' placeholder='Eg: French Fries'></input>
+                      <input required={true} onChange = {(e) => itemOnChange('name', e, categoryKey, itemKey)} className='form-input' placeholder='Eg: French Fries'></input>
                     </div>
                     <div style={{display: "inline-block"}}>
                       <p>Price</p>
-                      <input onKeyDown={(e) => handleKeyDown(e, categoryKey)} onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} className='form-input' placeholder='Eg: Half: $4.99 , Full: $9.99'></input>
+                      <input required={true} onKeyDown={(e) => handleKeyDown(e, categoryKey)} onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} className='form-input' placeholder='Eg: Half: $4.99 , Full: $9.99'></input>
                     </div>
                     <i onClick={() => deleteItem(categoryKey, itemKey)} className='eos-icons delete-icon'>delete</i>
                   </div>
@@ -147,10 +152,11 @@ const EditMenu = (props) => {
           <br></br>
           <br></br>
         <div style={{float: "right"}}>
-          <button className='black-yellow'>Generate QR Menu</button>
+          <button type='submit' onClick={(e) => submitMenu(e)} className='black-yellow'>Generate QR Menu</button>
         </div>
       </div>
 
+      </form>
 
     </div>
   )

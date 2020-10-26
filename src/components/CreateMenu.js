@@ -14,7 +14,7 @@ const CreateMenu = () => {
   
   return (
 
-    <div class='container'>
+    <div className='container'>
 
       <EditMenu restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails}/>
       <PreviewMenu restaurantDetails={restaurantDetails} />
