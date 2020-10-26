@@ -140,7 +140,7 @@ const EditMenu = (props) => {
             }
           </div>
           <div style={{float: "right"}}>
-          <a className='hyperlink' onClick={() => addItem(categoryKey)}>Add Item <i className='eos-icons'>add_circle_outline</i></a>
+            <button type='button' className='hyperlink btn-link' onClick={() => addItem(categoryKey)}>Add Item <i className='eos-icons'>add_circle_outline</i> </button>
           </div>
 
 
@@ -153,7 +153,7 @@ const EditMenu = (props) => {
       
       <div>
         <div style={{float: "right"}}>
-          <a onClick={addCategory} className='hyperlink'>Add Category <i className='eos-icons'>add_circle_outline</i></a>
+          <button type='button' className='hyperlink btn-link' onClick={() => addCategory()}>Add Category <i className='eos-icons'>add_circle_outline</i> </button>
         </div>
           <br></br>
           <br></br>
