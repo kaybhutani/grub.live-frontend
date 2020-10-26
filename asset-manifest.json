@@ -1,29 +1,30 @@
 {
   "files": {
-    "main.css": "/kbhutani0001.github.io/grub.live-frontend/static/css/main.18872702.chunk.css",
-    "main.js": "/kbhutani0001.github.io/grub.live-frontend/static/js/main.a445ebec.chunk.js",
-    "main.js.map": "/kbhutani0001.github.io/grub.live-frontend/static/js/main.a445ebec.chunk.js.map",
-    "runtime-main.js": "/kbhutani0001.github.io/grub.live-frontend/static/js/runtime-main.f5c6e2ea.js",
-    "runtime-main.js.map": "/kbhutani0001.github.io/grub.live-frontend/static/js/runtime-main.f5c6e2ea.js.map",
-    "static/css/2.e6622b89.chunk.css": "/kbhutani0001.github.io/grub.live-frontend/static/css/2.e6622b89.chunk.css",
-    "static/js/2.dc8cc709.chunk.js": "/kbhutani0001.github.io/grub.live-frontend/static/js/2.dc8cc709.chunk.js",
-    "static/js/2.dc8cc709.chunk.js.map": "/kbhutani0001.github.io/grub.live-frontend/static/js/2.dc8cc709.chunk.js.map",
-    "index.html": "/kbhutani0001.github.io/grub.live-frontend/index.html",
-    "precache-manifest.14a941ed859a3cde044d670cc23c25e8.js": "/kbhutani0001.github.io/grub.live-frontend/precache-manifest.14a941ed859a3cde044d670cc23c25e8.js",
-    "service-worker.js": "/kbhutani0001.github.io/grub.live-frontend/service-worker.js",
-    "static/css/2.e6622b89.chunk.css.map": "/kbhutani0001.github.io/grub.live-frontend/static/css/2.e6622b89.chunk.css.map",
-    "static/css/main.18872702.chunk.css.map": "/kbhutani0001.github.io/grub.live-frontend/static/css/main.18872702.chunk.css.map",
-    "static/js/2.dc8cc709.chunk.js.LICENSE.txt": "/kbhutani0001.github.io/grub.live-frontend/static/js/2.dc8cc709.chunk.js.LICENSE.txt",
-    "static/media/index.scss": "/kbhutani0001.github.io/grub.live-frontend/static/media/Lato-Regular.2d36b1a9.ttf",
-    "static/media/eos-icons.css": "/kbhutani0001.github.io/grub.live-frontend/static/media/eos-icons.d2873f13.woff2",
-    "static/media/grub.live-logo-yellow.svg": "/kbhutani0001.github.io/grub.live-frontend/static/media/grub.live-logo-yellow.8cd86dd6.svg",
-    "static/media/grub.live-logo.svg": "/kbhutani0001.github.io/grub.live-frontend/static/media/grub.live-logo.3b6b4ff3.svg"
+    "main.css": "/kbhutani0001.github.io/static/css/main.270b9936.chunk.css",
+    "main.js": "/kbhutani0001.github.io/static/js/main.eec7cf59.chunk.js",
+    "main.js.map": "/kbhutani0001.github.io/static/js/main.eec7cf59.chunk.js.map",
+    "runtime-main.js": "/kbhutani0001.github.io/static/js/runtime-main.864f9a4c.js",
+    "runtime-main.js.map": "/kbhutani0001.github.io/static/js/runtime-main.864f9a4c.js.map",
+    "static/css/2.5e5324bf.chunk.css": "/kbhutani0001.github.io/static/css/2.5e5324bf.chunk.css",
+    "static/js/2.8619ccde.chunk.js": "/kbhutani0001.github.io/static/js/2.8619ccde.chunk.js",
+    "static/js/2.8619ccde.chunk.js.map": "/kbhutani0001.github.io/static/js/2.8619ccde.chunk.js.map",
+    "index.html": "/kbhutani0001.github.io/index.html",
+    "precache-manifest.fcb36f08c7d13fd4addb3db51b6207f2.js": "/kbhutani0001.github.io/precache-manifest.fcb36f08c7d13fd4addb3db51b6207f2.js",
+    "service-worker.js": "/kbhutani0001.github.io/service-worker.js",
+    "static/css/2.5e5324bf.chunk.css.map": "/kbhutani0001.github.io/static/css/2.5e5324bf.chunk.css.map",
+    "static/css/main.270b9936.chunk.css.map": "/kbhutani0001.github.io/static/css/main.270b9936.chunk.css.map",
+    "static/js/2.8619ccde.chunk.js.LICENSE.txt": "/kbhutani0001.github.io/static/js/2.8619ccde.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/kbhutani0001.github.io/static/media/Lato-Regular.2d36b1a9.ttf",
+    "static/media/eos-icons.css": "/kbhutani0001.github.io/static/media/eos-icons.d2873f13.woff2",
+    "static/media/grub.live-logo-yellow.svg": "/kbhutani0001.github.io/static/media/grub.live-logo-yellow.8cd86dd6.svg",
+    "static/media/grub.live-logo.svg": "/kbhutani0001.github.io/static/media/grub.live-logo.3b6b4ff3.svg",
+    "static/media/mobile-qr-menu.svg": "/kbhutani0001.github.io/static/media/mobile-qr-menu.a579f5a1.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f5c6e2ea.js",
-    "static/css/2.e6622b89.chunk.css",
-    "static/js/2.dc8cc709.chunk.js",
-    "static/css/main.18872702.chunk.css",
-    "static/js/main.a445ebec.chunk.js"
+    "static/js/runtime-main.864f9a4c.js",
+    "static/css/2.5e5324bf.chunk.css",
+    "static/js/2.8619ccde.chunk.js",
+    "static/css/main.270b9936.chunk.css",
+    "static/js/main.eec7cf59.chunk.js"
   ]
 }
