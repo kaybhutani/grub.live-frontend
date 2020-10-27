@@ -19,8 +19,8 @@ function App() {
           <Router  primary={false}>
             <Home path='/' />
             <CreateMenu path='/create' />
+            <Home path='*' />
           </Router>
-          
         </div>
         <Footer />
       </div>
