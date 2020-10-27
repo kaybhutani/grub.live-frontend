@@ -148,9 +148,7 @@ const EditMenu = (props) => {
         )
         
       })}
-      
-      
-      
+            
       <div>
         <div style={{float: "right"}}>
           <button type='button' className='hyperlink btn-link' onClick={() => addCategory()}>Add Category <i className='eos-icons'>add_circle_outline</i> </button>
@@ -158,7 +156,7 @@ const EditMenu = (props) => {
           <br></br>
           <br></br>
         <div style={{float: "right"}}>
-          <button type='submit' onClick={(e) => submitMenu(e)} className='black-yellow'>Generate QR Menu</button>
+          <button type='button' onClick={(e) => submitMenu(e)} className='black-yellow'>Generate QR Menu</button>
         </div>
       </div>
 

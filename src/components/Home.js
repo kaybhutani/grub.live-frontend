@@ -18,7 +18,7 @@ const Home = () => {
     },
     {
       name: `Super Quick and Simple`,
-      description: `It is super quic for people to scan the QR and get the menu on all of their phones. Your menu will never fall short now :D`
+      description: `It is super quick for people to scan the QR and get the menu on all of their phones. Your menu will never fall short now :D`
     },
     {
       name: `Always Updated`,
@@ -53,9 +53,10 @@ const Home = () => {
               return (
                 <div className='feature' key={key}>
                   <button onClick={() => openFeature(key)} className='btn-link'><h3>{feature.name}<i className='eos-icons'>{(featureOpen[0] && featureOpen[1]===key)?(`keyboard_arrow_down`):(`keyboard_arrow_right`) }</i> </h3> </button>
-                  {(featureOpen[0] && featureOpen[1]===key)? (
+                  {/* {(featureOpen[0] && featureOpen[1]===key)? (
                     <p className='fadein'>{feature.description}</p>
-                  ): (<p className='fadeout'>{feature.description}</p>)}
+                  ): (<p className='fadeout'>{feature.description}</p>)} */}
+                  <p className={`fade${(featureOpen[0] && featureOpen[1]===key) ? "in" : "out"}`}>{feature.description}</p>
                   
                 </div>
               )

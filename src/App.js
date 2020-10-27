@@ -16,7 +16,7 @@ function App() {
     <div className='App'>
         <Navigation />
         <div>
-          <Router primary={false}>
+          <Router  primary={false}>
             <Home path='/' />
             <CreateMenu path='/create' />
           </Router>
