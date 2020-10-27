@@ -74,11 +74,11 @@ const Home = () => {
           </Link>
           <br></br>
           <NavLink to='/create'>
-            <button className='black-yellow nav-item'>
+            <button className='black-yellow'>
               Create Menu 
             </button>
           </NavLink>
-          <button className='black-yellow nav-item'>
+          <button className='black-yellow'>
             Scan Menu 
           </button>
       </div>
