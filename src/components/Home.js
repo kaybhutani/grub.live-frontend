@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import mobileQrMenu from '../assets/images//mobile-qr-menu.svg'
+import NavLink from './NavLink'
+import { Link } from '@reach/router'  
+
 const Home = () => {
 
-  const [featureOpen, setFeatureOpen] = useState([false, -1])
+  const [featureOpen, setFeatureOpen] = useState([true, 0])
 
   const features = [
     {
@@ -58,18 +61,26 @@ const Home = () => {
               )
             })
           }
+
+          
           
         </div>
         <div className='intro-img'>
           <img  src={mobileQrMenu} alt=''></img>
         </div>
         <div>
-        <button className='black-yellow nav-item'>
-          Create Menu 
-        </button>
-        <button className='black-yellow nav-item'>
-          Scan Menu 
-        </button>
+          <Link to='/how-it-works'>
+            <button className='btn-link learn-more'>Learn more <i className='eos-icons'>keyboard_arrow_right</i></button>
+          </Link>
+          <br></br>
+          <NavLink to='/create'>
+            <button className='black-yellow nav-item'>
+              Create Menu 
+            </button>
+          </NavLink>
+          <button className='black-yellow nav-item'>
+            Scan Menu 
+          </button>
       </div>
       </div>
 

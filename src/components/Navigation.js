@@ -1,17 +1,8 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import logo from '../assets/images/grub.live-logo.svg'
+import NavLink from './NavLink'
 
-const NavLink = (props) => (
-  <Link
-    {...props}
-    getProps={({ isCurrent }) => {
-      return {
-        className: isCurrent ? 'active' : ''
-      }
-    }}
-  />
-)
 
 const Navigation = () => {
   

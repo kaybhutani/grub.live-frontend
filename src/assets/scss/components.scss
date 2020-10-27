@@ -88,10 +88,12 @@
     }
     
   }
-
+  .learn-more {
+    margin: $l 0 $m 0;
+  }
   .intro-img {
     width: 30%;
-    margin: $l 0;
+    margin: $l 0 0 0;
     display: inline-block; 
     vertical-align: top;
     max-width: 300px;
