@@ -7,10 +7,11 @@ const Footer = () => {
     <footer>
         <div>
           <img src={yellowLogo} alt='Grub.live logo' className='logo'></img>
-          <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+          <div>Rejuvenating the dining experience.</div>
         </div>
         <div className='footer-links'>
           <div className='footer-item hyperlink-invert'>Contact Us</div>
+          <div className='footer-item hyperlink-invert'>How it works</div>
           <div className='footer-item hyperlink-invert'>Feedback</div>
           <div className='footer-item hyperlink-invert'>About Us</div>
         </div>

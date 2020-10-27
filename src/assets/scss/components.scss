@@ -22,7 +22,7 @@
   background: none;
   border: none;
   font-size: 1em;
-
+  cursor: pointer;
   &:focus {
     outline: none;
   }
@@ -50,6 +50,56 @@
 
 }
 
+.fadein, .fadeout {
+  opacity: 0;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+  transition-duration: 0.5s;
+}
+.fadeout {
+  display: none;
+}
+.fadein {
+  opacity: 1;
+}
+
+.header {
+  margin: 0 $xxxl;
+  .header-features {
+    display: inline-block;
+    margin: 0 0;
+    width: 50%;
+    .feature {
+      h3 {
+        margin: $m 0;
+      }
+
+      i {
+        vertical-align: middle;
+        margin-left: $s;
+        color: $yellow-base;
+      }
+      p {
+        margin: $s 0 $s $m;
+        max-width: 400px;
+      }
+    }
+    
+  }
+
+  .intro-img {
+    width: 30%;
+    margin: $l 0;
+    display: inline-block; 
+    vertical-align: top;
+    max-width: 300px;
+    img {
+      width: 180%;
+    }
+  }
+}
 
 .shadow-box {
   padding: $l $l $xxl $l;
@@ -87,6 +137,21 @@
    }
  }
 
+
+@media only screen and (max-width: 700px) {
+  
+  .header {
+    .header-features {
+      display: block;
+      width: 100%;
+    }
+    .intro-img {
+      width: 100%;
+      margin: $l 0;
+    }
+  }
+
+}
 @media only screen and (max-width: 400px) {
   .black-yellow {
     margin: $xs;
