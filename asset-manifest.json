@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.9604d693.chunk.css",
-    "main.js": "/static/js/main.63adb449.chunk.js",
-    "main.js.map": "/static/js/main.63adb449.chunk.js.map",
+    "main.css": "/static/css/main.bee8e26f.chunk.css",
+    "main.js": "/static/js/main.7dff347e.chunk.js",
+    "main.js.map": "/static/js/main.7dff347e.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.92ee656d.js",
     "runtime-main.js.map": "/static/js/runtime-main.92ee656d.js.map",
     "static/css/2.82eb3584.chunk.css": "/static/css/2.82eb3584.chunk.css",
-    "static/js/2.4e959936.chunk.js": "/static/js/2.4e959936.chunk.js",
-    "static/js/2.4e959936.chunk.js.map": "/static/js/2.4e959936.chunk.js.map",
+    "static/js/2.2b3e48eb.chunk.js": "/static/js/2.2b3e48eb.chunk.js",
+    "static/js/2.2b3e48eb.chunk.js.map": "/static/js/2.2b3e48eb.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1ab643f7849c4181dc3bf5aa91c33fc3.js": "/precache-manifest.1ab643f7849c4181dc3bf5aa91c33fc3.js",
+    "precache-manifest.0a66064cfde9d42882909db47e2dcf2e.js": "/precache-manifest.0a66064cfde9d42882909db47e2dcf2e.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.82eb3584.chunk.css.map": "/static/css/2.82eb3584.chunk.css.map",
-    "static/css/main.9604d693.chunk.css.map": "/static/css/main.9604d693.chunk.css.map",
-    "static/js/2.4e959936.chunk.js.LICENSE.txt": "/static/js/2.4e959936.chunk.js.LICENSE.txt",
+    "static/css/main.bee8e26f.chunk.css.map": "/static/css/main.bee8e26f.chunk.css.map",
+    "static/js/2.2b3e48eb.chunk.js.LICENSE.txt": "/static/js/2.2b3e48eb.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/Lato-Regular.2d36b1a9.ttf",
     "static/media/Step1.png": "/static/media/Step1.1db91c17.png",
     "static/media/Step2.png": "/static/media/Step2.721d4588.png",
@@ -23,13 +23,14 @@
     "static/media/eos-icons.css": "/static/media/eos-icons.d2873f13.woff2",
     "static/media/grub.live-logo-yellow.svg": "/static/media/grub.live-logo-yellow.8cd86dd6.svg",
     "static/media/grub.live-logo.svg": "/static/media/grub.live-logo.3b6b4ff3.svg",
-    "static/media/mobile-qr-menu.svg": "/static/media/mobile-qr-menu.a848aa64.svg"
+    "static/media/mobile-qr-menu.svg": "/static/media/mobile-qr-menu.a848aa64.svg",
+    "static/media/three_dots_loading.svg": "/static/media/three_dots_loading.4d1c15f3.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.92ee656d.js",
     "static/css/2.82eb3584.chunk.css",
-    "static/js/2.4e959936.chunk.js",
-    "static/css/main.9604d693.chunk.css",
-    "static/js/main.63adb449.chunk.js"
+    "static/js/2.2b3e48eb.chunk.js",
+    "static/css/main.bee8e26f.chunk.css",
+    "static/js/main.7dff347e.chunk.js"
   ]
 }
