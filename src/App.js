@@ -9,7 +9,7 @@ import Navigation from './components/Navigation'
 import Home from './components/Home'
 import Footer from './components/Footer'
 import CreateMenu from './components/CreateMenu'
-
+import HowItworks from './components/HowItWorks'
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
         <div>
           <Router  primary={false}>
             <Home path='/' />
+            <HowItworks path='/how-it-works' />
             <CreateMenu path='/create' />
             <Home path='*' />
           </Router>
