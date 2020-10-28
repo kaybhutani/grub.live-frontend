@@ -27,7 +27,7 @@ function App() {
               <Route exact path='/' children={<Home />} />
               <Route exact path='/create'  children={<CreateMenu />} />
               <Route exact path='/how-it-works' children={<HowItworks />} />
-              <Route path='/qr' children={<QrContainer />}/>
+              <Route path='/qr/:menuId' children={<QrContainer />}/>
             </Switch>
 
           </HashRouter>

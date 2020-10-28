@@ -1,4 +1,5 @@
 import React from 'react'
+import {Redirect} from 'react-router-dom'
 
 const EditMenu = (props) => {
   
@@ -93,8 +94,8 @@ const EditMenu = (props) => {
   }
 
   const submitMenu = e => {
-    
-    console.log("ok")
+    console.log('submitted')
+    window.location = '/#/qr/adda'
   }
 
   return (

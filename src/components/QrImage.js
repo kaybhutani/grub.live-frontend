@@ -5,7 +5,7 @@ import logo from '../assets/images/grub.live-logo.svg'
 const QrImage = (props) => {
 
   const url = props.url
-  const restaurantDetails = props.restaurantDetails.data
+  const restaurantDetails = props.restaurantDetails
   console.log(restaurantDetails)
 
 
