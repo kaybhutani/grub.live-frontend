@@ -144,12 +144,15 @@
   text-align: center;
   margin: $xxl auto;
 
+  // margin: $xxl auto;
+
+
   #qr-download {
-    margin: 0 auto;
     width: 400px;
     background-color: $yellow-base;
     padding: $l;
     border-radius: $s;
+    margin: 0 auto;
   }
   
   hr {
