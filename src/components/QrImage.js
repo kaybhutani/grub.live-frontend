@@ -7,7 +7,7 @@ const QrImage = (props) => {
   const url = props.url
   const restaurantDetails = props.restaurantDetails.data
   console.log(restaurantDetails)
-
+  
   return (
 
     <div className='qr-image'>
