@@ -1,5 +1,9 @@
 import React from 'react'
-import { Router } from '@reach/router'
+import {
+  Switch,
+  Route,
+  HashRouter
+} from "react-router-dom"
 
 import './assets/scss/index.scss'
 import '../node_modules/eos-icons/dist/css/eos-icons.css'
@@ -14,14 +18,18 @@ import HowItworks from './components/HowItWorks'
 function App() {
   return (
     <div className='App'>
-        <Navigation />
         <div>
-          <Router  primary={false}>
-            <Home path='/' />
-            <HowItworks path='/how-it-works' />
-            <CreateMenu path='/create' />
-            <Home path='*' />
-          </Router>
+          <HashRouter>
+            <Navigation />
+            <Switch>
+
+              <Route exact path='/' children={<Home />} />
+              <Route exact path='/create'  children={<CreateMenu />} />
+              <Route exact path='/how-it-works' children={<HowItworks />} />
+              
+            </Switch>
+
+          </HashRouter>
         </div>
         <Footer />
       </div>

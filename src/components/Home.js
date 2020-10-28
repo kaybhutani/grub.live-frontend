@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import mobileQrMenu from '../assets/images//mobile-qr-menu.svg'
 import NavLink from './NavLink'
-import { Link } from '@reach/router'  
+import { Link } from 'react-router-dom'  
 
 const Home = () => {
 
