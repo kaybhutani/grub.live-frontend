@@ -139,6 +139,27 @@
    }
  }
 
+ .qr-image {
+  
+  text-align: center;
+  margin: $xxl auto;
+  max-width: 400px;
+  background-color: $yellow-base;
+  padding: $l;
+  border-radius: $s;
+  
+  hr {
+    border-color: $light-gray;
+    border-radius: $s;
+    margin: $l $xl;
+  }
+
+  .qr-code {
+    padding: $s;
+    background-color: white;
+  }
+
+ }
 
 @media only screen and (max-width: 700px) {
   
