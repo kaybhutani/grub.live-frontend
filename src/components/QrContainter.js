@@ -1,12 +1,21 @@
 import React from 'react'
-// import ImageAsHtml from 'react-render-as-image'
+import * as htmlToImage from 'html-to-image';
 import QrImage from './QrImage'
 
 
 const QrContainer = () => {
 
   const downlaodQrMenu = () => {
-    console.log('downloading')
+    console.log('Downloading QR Code...')
+    // htmlToImage.toSvg(document.getElementById('qr-download'))
+    // .then(function (dataUrl) {
+    //   console.log(dataUrl)
+    //   const tempLink = document.createElement('svg');
+    //   tempLink.href = dataUrl;
+    //   tempLink.setAttribute('download', 'download.svg');
+    //   tempLink.click();
+      
+    // });
   }
 
   return (

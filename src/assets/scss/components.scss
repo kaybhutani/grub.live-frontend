@@ -143,10 +143,14 @@
   
   text-align: center;
   margin: $xxl auto;
-  max-width: 400px;
-  background-color: $yellow-base;
-  padding: $l;
-  border-radius: $s;
+
+  #qr-download {
+    margin: 0 auto;
+    width: 400px;
+    background-color: $yellow-base;
+    padding: $l;
+    border-radius: $s;
+  }
   
   hr {
     border-color: $light-gray;
@@ -156,6 +160,7 @@
 
   .qr-code {
     padding: $s;
+    width: 200px;
     background-color: white;
   }
 
