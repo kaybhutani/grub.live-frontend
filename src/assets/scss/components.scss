@@ -131,6 +131,10 @@
   margin-right: $s;
  }
 
+ .preview-btn {
+   display: none;
+ }
+
  .delete-icon {
    color: $light-gray;
    cursor: pointer;
@@ -188,6 +192,12 @@
     }
     margin: $l 0;
   }
+  .preview-menu {
+    display: none;
+  }
+  .edit-menu {
+    width: 100%;
+  }
 
 }
 
@@ -203,12 +213,6 @@
   .black-yellow {
     margin: $xs;
     padding: $xs $s;
-  }
-  .preview-menu {
-    display: none;
-  }
-  .edit-menu {
-    width: 100%;
   }
 
   .header {
