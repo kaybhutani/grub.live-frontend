@@ -4,6 +4,7 @@ import PreviewMenu from './PreviewMenu'
 const CreateMenu = () => {
 
   const sampleRestaurantDetails = {
+    emailId: "",
     restaurantName: "",
     logo: "",
     menu: {

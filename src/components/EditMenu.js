@@ -1,14 +1,25 @@
-import React from 'react'
-import {Redirect} from 'react-router-dom'
+import React, { useState } from 'react'
+import {apiBaseUrl} from '../config.json'
+import loadingIcon from '../assets/images/three_dots_loading.svg'
 
 const EditMenu = (props) => {
   
   const restaurantDetails = props.restaurantDetails
   const setRestaurantDetails = props.setRestaurantDetails
-  const fun = (e) => {
+
+  const [submitState, setSubmitState]  = useState(false)
+  const changeRestaurantTitle = (e) => {
   
     const temp = { ...restaurantDetails}
     temp.restaurantName =  e.target.value
+    setRestaurantDetails(temp)
+    
+  }
+
+  const changeEmailId = (e) => {
+  
+    const temp = { ...restaurantDetails}
+    temp.emailId =  e.target.value
     setRestaurantDetails(temp)
     
   }
@@ -88,14 +99,40 @@ const EditMenu = (props) => {
   const handleKeyDown = (e, categoryKey) => {
     if(e.keyCode === 13) 
       {
+        e.preventDefault()
         addItem(categoryKey)
         
       }
   }
 
+
   const submitMenu = e => {
-    console.log('submitted')
-    window.location = '/#/qr/adda'
+    if(!submitState) {
+      setSubmitState(true)  
+      if(!restaurantDetails.emailId || !restaurantDetails.restaurantName) {
+        setSubmitState(false)
+        window.alert('Restaurant name and Email Id cannot be blank')
+        return
+      }
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(restaurantDetails)
+      };
+      fetch(`${apiBaseUrl}/submit`, requestOptions)
+        .then(response => response.json())
+        .then(data => {
+          setSubmitState(false)
+          console.log(data)
+          if(!data.success)
+            {
+              window.alert('Some problem occrred while creating menu')
+              return
+            }
+            window.location = `/#/qr/${data.id }`
+          
+        });
+    }
   }
 
   return (
@@ -107,9 +144,11 @@ const EditMenu = (props) => {
       <form>
       <div className='shadow-box'>
         <p>Name of Restaurant</p>
-        <input required={true} className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => fun(e)} defaultValue={restaurantDetails.restaurantName}></input>
+        <input required={true} className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => changeRestaurantTitle(e)} defaultValue={restaurantDetails.restaurantName}></input>
         <p>Logo (if any)</p>
         <input type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
+        <p>Email ID (You can use this to edit Menu later)</p>
+        <input required={true} className='form-input' placeholder='Example: johndoe@gmail.com' onChange={ e => changeEmailId(e)} defaultValue={restaurantDetails.emailId}></input>
       </div>
       
 
@@ -157,7 +196,12 @@ const EditMenu = (props) => {
           <br></br>
           <br></br>
         <div style={{float: "right"}}>
-          <button type='button' onClick={(e) => submitMenu(e)} className='black-yellow'>Generate QR Menu</button>
+          <button type='button' onClick={(e) => submitMenu(e)} className='black-yellow'>
+            {submitState ? (
+                `Generating...`
+            ): (`Generate QR Menu`)}
+            
+          </button>
         </div>
       </div>
 
