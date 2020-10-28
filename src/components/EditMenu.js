@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import {apiBaseUrl} from '../config.json'
+import PreviewModal from './PreviewModal'
+import {dummyRestaurantDetails} from '../dummyData.json'
 
 const EditMenu = (props) => {
   
   const restaurantDetails = props.restaurantDetails
   const setRestaurantDetails = props.setRestaurantDetails
 
+  const [previewModal, setPreviewModal] = useState(false)
   const [submitState, setSubmitState]  = useState(false)
   const changeRestaurantTitle = (e) => {
   
@@ -21,6 +24,10 @@ const EditMenu = (props) => {
     temp.emailId =  e.target.value
     setRestaurantDetails(temp)
     
+  }
+  
+  const togglePreviewModal = () => {
+    setPreviewModal(!previewModal)
   }
 
   const updateLogo = (e) => {
@@ -105,6 +112,8 @@ const EditMenu = (props) => {
   }
 
 
+
+
   const submitMenu = e => {
     if(!submitState) {
       setSubmitState(true)  
@@ -136,8 +145,23 @@ const EditMenu = (props) => {
 
   return (
     <div className='edit-menu'>
+      {
+        previewModal ? <PreviewModal restaurantDetails={restaurantDetails}/>
+        :<></>
+        
+      }
+      
       <h2>Edit Menu <i className='eos-icons'>edit</i></h2>
       <p>Please enter the following details to create your Virtual QR Menu.</p>
+      {restaurantDetails.restaurantName ? 
+      <></>
+      :
+      <button onClick={() => setRestaurantDetails(dummyRestaurantDetails)} className='hyperlink btn-link' style={{float: "right", color: '#007cbf'}}>
+        Fill dummy data  <i className='eos-icons'>keyboard</i>
+      </button>
+      }
+      
+      <br></br>
       <br></br>
       
       <form>
@@ -157,7 +181,7 @@ const EditMenu = (props) => {
          <div className='shadow-box' key={categoryKey}>
            <i onClick={() => deleteCategory(categoryKey)} style={{float: 'right'}} className='eos-icons delete-icon'>close</i>
           <p>Title</p>
-          <input required={true} onKeyDown={(e) => handleKeyDown(e, categoryKey)} className='form-input' onChange={e => updateTitle(e,categoryKey)} placeholder='Example: Chinese food'></input>
+          <input required={true} onKeyDown={(e) => handleKeyDown(e, categoryKey)} defaultValue={restaurantDetails.menu.categories[categoryKey].title} className='form-input' onChange={e => updateTitle(e,categoryKey)} placeholder='Example: Chinese food'></input>
           <br></br><br></br>
           <div>
             {
@@ -166,11 +190,11 @@ const EditMenu = (props) => {
                   <div key = {itemKey}>
                     <div style={{display: "inline-block"}}>
                       <p>Item Name</p>
-                      <input required={true} onChange = {(e) => itemOnChange('name', e, categoryKey, itemKey)} className='form-input' placeholder='Eg: French Fries'></input>
+                      <input required={true} onChange = {(e) => itemOnChange('name', e, categoryKey, itemKey)} defaultValue={restaurantDetails.menu.categories[categoryKey].items[itemKey].itemName} className='form-input' placeholder='Eg: French Fries'></input>
                     </div>
                     <div style={{display: "inline-block"}}>
                       <p>Price</p>
-                      <input required={true} onKeyDown={(e) => handleKeyDown(e, categoryKey)} onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} className='form-input' placeholder='Eg: Half: $4.99 , Full: $9.99'></input>
+                      <input required={true} onKeyDown={(e) => handleKeyDown(e, categoryKey)} onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} defaultValue={restaurantDetails.menu.categories[categoryKey].items[itemKey].itemPrice} className='form-input' placeholder='Eg: Half: $4.99 , Full: $9.99'></input>
                     </div>
                     <i onClick={() => deleteItem(categoryKey, itemKey)} className='eos-icons delete-icon'>delete</i>
                   </div>
@@ -189,6 +213,9 @@ const EditMenu = (props) => {
       })}
             
       <div>
+        <div style={{float: "right"}}>
+          <button type='button' onClick={() => togglePreviewModal()} className='hyperlink btn-link preview-btn' >Preview <i className='eos-icons'>visibility</i> </button>
+        </div>
         <div style={{float: "right"}}>
           <button type='button' className='hyperlink btn-link' onClick={() => addCategory()}>Add Category <i className='eos-icons'>add_circle_outline</i> </button>
         </div>

@@ -125,6 +125,15 @@
   float: right;
 }
 
+.preview-modal {
+  z-index: 1000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: white;
+  text-align: center  ;
+}
+
 .restaurant-logo {
   width: 1.8em;
   vertical-align: middle;
@@ -197,6 +206,9 @@
   }
   .edit-menu {
     width: 100%;
+  }
+  .preview-btn {
+    display: block;
   }
 
 }
