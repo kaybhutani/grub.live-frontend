@@ -80,7 +80,7 @@ const QrContainer = (props) => {
       :
       (
       <div style={{textAlign: "center", marginBottom: '40%'}}>
-        <img className='loading-icon' src={loadingIcon} />
+        <img alt='' className='loading-icon' src={loadingIcon} />
       </div>
       )}
 
