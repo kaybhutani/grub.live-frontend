@@ -14,6 +14,7 @@ import Home from './components/Home'
 import Footer from './components/Footer'
 import CreateMenu from './components/CreateMenu'
 import HowItworks from './components/HowItWorks'
+import QrContainer from './components/QrContainter'
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
               <Route exact path='/' children={<Home />} />
               <Route exact path='/create'  children={<CreateMenu />} />
               <Route exact path='/how-it-works' children={<HowItworks />} />
-              
+              <Route path='/qr/:id' children={<QrContainer />}/>
             </Switch>
 
           </HashRouter>
