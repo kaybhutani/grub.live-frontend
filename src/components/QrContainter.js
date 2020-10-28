@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import * as htmlToImage from 'html-to-image';
 import {useParams} from 'react-router-dom'
+import loadingIcon from '../assets/images/three_dots_loading.svg'
 
 
 import {apiBaseUrl} from '../config.json'
@@ -55,7 +56,7 @@ const QrContainer = (props) => {
 
 
   return (
-    <div className='container' style={{textAlign: "center"}}>
+    <div className='container' style={{textAlign: "left"}}>
       
       {dataFetched ? (
       <div>
@@ -77,7 +78,11 @@ const QrContainer = (props) => {
       </div>
         )
       :
-      (<p style={{textAlign: "center", marginBottom: '40%'}}>Loading...</p>)}
+      (
+      <div style={{textAlign: "center", marginBottom: '40%'}}>
+        <img className='loading-icon' src={loadingIcon} />
+      </div>
+      )}
 
     </div>
   )

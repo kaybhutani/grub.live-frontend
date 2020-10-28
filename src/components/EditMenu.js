@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import {apiBaseUrl} from '../config.json'
-import loadingIcon from '../assets/images/three_dots_loading.svg'
 
 const EditMenu = (props) => {
   
@@ -148,7 +147,7 @@ const EditMenu = (props) => {
         <p>Logo (if any)</p>
         <input type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
         <p>Email ID (You can use this to edit Menu later)</p>
-        <input required={true} className='form-input' placeholder='Example: johndoe@gmail.com' onChange={ e => changeEmailId(e)} defaultValue={restaurantDetails.emailId}></input>
+        <input type="email" required={true} className='form-input' placeholder='Example: johndoe@gmail.com' onChange={ e => changeEmailId(e)} defaultValue={restaurantDetails.emailId}></input>
       </div>
       
 
