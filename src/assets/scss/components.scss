@@ -203,3 +203,76 @@
     }
   }
 }
+
+// How-It-works
+
+.mainDiv {
+  height: 20rem;
+  padding: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.imgLeft{
+  width: 50%;
+  float: left;
+
+}
+
+.imgLeft img{
+  width: 300px;
+  
+
+}
+
+.textRight{
+  width: 50%;
+  float: right;
+  text-align: right;
+
+}
+
+.imgRight{
+  width: 50%;
+  float: right;
+
+}
+
+.imgRight img{
+  width: 300px;
+
+}
+
+.textLeft{
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+
+@media only screen and (max-width: 500px){
+  .imgLeft{
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  .textLeft{
+    width: 100%;
+    float: none;
+    text-align: center;
+  }
+
+  .imgRight{
+    width: 100%;
+    float: none;
+    text-align: center;
+  
+  }
+
+  .textRight{
+    width: 100%;
+    float: none;
+    text-align: center;
+  
+  }
+}
