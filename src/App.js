@@ -13,7 +13,7 @@ import Navigation from './components/Navigation'
 import Home from './components/Home'
 import Footer from './components/Footer'
 import CreateMenu from './components/CreateMenu'
-// import QrImage from './components/QrImage'
+import QrContainer from './components/QrContainter'
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
 
               <Route exact path='/' children={<Home />} />
               <Route exact path='/create'  children={<CreateMenu />} />
-              <Route path='/qr/:id'/>
+              <Route path='/qr/:id' children={<QrContainer />}/>
             </Switch>
 
           </HashRouter>
