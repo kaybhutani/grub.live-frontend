@@ -1,14 +1,14 @@
 import React from 'react'
-import Step1 from '../assets/images/HowItWorks/Step1.png'
+import Step1 from '../assets/images/HowItWorks/step1.svg'
 import Step2 from '../assets/images/HowItWorks/Step2.png'
 import Step3 from '../assets/images/HowItWorks/Step3.png'
-import Step4 from '../assets/images/HowItWorks/Step4.png'
-import Step5 from '../assets/images/HowItWorks/Step5.png'
+// import Step4 from '../assets/images/HowItWorks/Step4.png'
+import Step5 from '../assets/images/HowItWorks/step5.svg'
 
 const StepRight = (props) =>{
 
     return(
-    <div className="mainDiv">
+    <div className="how-it-works-div">
     <div className='textLeft'>
         <h1>Step {props.no}</h1>
         <p>{props.name}</p>
@@ -23,7 +23,7 @@ const StepRight = (props) =>{
 const StepLeft = (props) =>{
 
     return(
-        <div className="mainDiv">
+        <div className="how-it-works-div">
          <div className='textRight'>
             <h1>Step {props.no}</h1>
             <p>{props.name}</p>
@@ -43,7 +43,7 @@ const HowItWorks = () =>{
        <StepRight
         name="Enter Restaurant name and Logo(optional)"
         no="1"
-        imageURL={Step4}
+        imageURL={Step1}
         
          />
 

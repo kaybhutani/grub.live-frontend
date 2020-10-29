@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="995" height="629" viewBox="0 0 995 629">
+  <defs>
+    <filter id="Rectangle_5" x="36" y="286" width="888" height="329" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_5-2" x="36" y="631" width="888" height="396" filterUnits="userSpaceOnUse">
+      <feOffset dx="2" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="8" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-Add_category_2">
+      <rect width="995" height="629"/>
+    </clipPath>
+  </defs>
+  <g id="Add_category_2" data-name="Add category – 2" clip-path="url(#clip-Add_category_2)">
+    <rect width="995" height="629" fill="#fff"/>
+    <g id="Nav">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="1920" height="111" fill="#e0b300"/>
+      <text id="How_it_works_" data-name="How it works?" transform="translate(1484 65)" fill="#292929" font-size="26" font-family="Lato-Regular, Lato"><tspan x="0" y="0">How it works?</tspan></text>
+      <g id="Create_menu_btn" data-name="Create menu btn" transform="translate(1685 31)">
+        <g id="Rectangle_2" data-name="Rectangle 2" fill="#e0b300" stroke="#292929" stroke-width="3">
+          <rect width="189" height="49" rx="5" stroke="none"/>
+          <rect x="1.5" y="1.5" width="186" height="46" rx="3.5" fill="none"/>
+        </g>
+        <text id="Create_Menu" data-name="Create Menu" transform="translate(20 34)" fill="#292929" font-size="26" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Create Menu</tspan></text>
+      </g>
+      <g id="Logo" transform="translate(61.922 -0.734)">
+        <g id="Layer_1" data-name="Layer 1" transform="translate(-13.922 -1.266)">
+          <g id="Group" transform="translate(0 0)">
+            <text id="Grub_" data-name="Grub " transform="matrix(0.97, -0.244, 0.244, 0.97, 19.224, 72.277)" font-size="35" font-family="SummerDaisyPersonalUse, Summer Daisy Personal Use" letter-spacing="0.04em"><tspan x="0" y="0">Grub </tspan></text>
+            <text id="_" data-name="   " transform="matrix(0.97, -0.244, 0.244, 0.97, 57.802, 90.863)" font-size="35" font-family="SummerDaisyPersonalUse, Summer Daisy Personal Use" letter-spacing="0.04em"><tspan x="0" y="0" xml:space="preserve">   </tspan></text>
+            <text id="_." data-name="." transform="matrix(0.97, -0.244, 0.244, 0.97, 91, 83)" font-size="44" font-family="SegoeUI, Segoe UI" letter-spacing="0.04em"><tspan x="0" y="0">.</tspan></text>
+            <text id="live" transform="matrix(0.97, -0.244, 0.244, 0.97, 102.631, 79.587)" font-size="35" font-family="SummerDaisyPersonalUse, Summer Daisy Personal Use" letter-spacing="0.04em"><tspan x="0" y="0">live</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Edit_half" data-name="Edit half" transform="translate(0 15)">
+      <g id="Name_logo" data-name="Name logo" transform="translate(7 151)">
+        <g transform="matrix(1, 0, 0, 1, -7, -166)" filter="url(#Rectangle_5)">
+          <rect id="Rectangle_5-3" data-name="Rectangle 5" width="840" height="281" rx="10" transform="translate(58 307)" fill="#fff"/>
+        </g>
+        <g id="text_input" data-name="text input" transform="translate(318 -35)">
+          <g id="Rectangle_3" data-name="Rectangle 3" transform="translate(-220 255)" fill="#fff" stroke="#707070" stroke-width="1">
+            <rect width="458" height="52" rx="5" stroke="none"/>
+            <rect x="0.5" y="0.5" width="457" height="51" rx="4.5" fill="none"/>
+          </g>
+          <text id="Name_of_Restaurant" data-name="Name of Restaurant" transform="translate(-220 238)" fill="#292929" font-size="22" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Name of Restaurant</tspan></text>
+          <text id="Example:_Moti_Mahal_Delux" data-name="Example: Moti Mahal Delux" transform="translate(-208 290)" fill="#b2b1b1" font-size="22" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Example: Moti Mahal Delux</tspan></text>
+        </g>
+        <g id="Logo-2" data-name="Logo" transform="translate(-552 -47)">
+          <text id="Logo_If_any_" data-name="Logo (If any)" transform="translate(650 372)" fill="#292929" font-size="22" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Logo (If any)</tspan></text>
+        </g>
+      </g>
+      <g id="Edit_head" data-name="Edit head" transform="translate(0 -3)">
+        <text id="Edit_Menu" data-name="Edit Menu" transform="translate(58 185)" fill="#292929" font-size="36" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="0">Edit Menu</tspan></text>
+        <text id="Please_enter_the_following_details_to_create_your_Virtual_menu." data-name="Please enter the following details to create your Virtual menu." transform="translate(58 241)" fill="#292929" font-size="26" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Please enter the following details to create your Virtual menu.</tspan></text>
+        <path id="Icon_material-edit" data-name="Icon material-edit" d="M4.5,25.875V31.5h5.625l16.59-16.59L21.09,9.285ZM31.065,10.56a1.494,1.494,0,0,0,0-2.115l-3.51-3.51a1.494,1.494,0,0,0-2.115,0L22.695,7.68l5.625,5.625,2.745-2.745Z" transform="translate(230 150)"/>
+        <g id="Rectangle_11" data-name="Rectangle 11" transform="translate(106 497)" fill="#e6e6e6" stroke="#707070" stroke-width="1">
+          <rect width="119" height="30" stroke="none"/>
+          <rect x="-0.5" y="-0.5" width="120" height="31" fill="none"/>
+        </g>
+        <text id="Choose_file_" data-name="Choose file
+" transform="translate(124 517)" fill="#292929" font-size="17" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Choose file</tspan><tspan x="0" y="21"></tspan></text>
+        <text id="Kaake_Da_Dhaba.jpg" transform="translate(235 517)" fill="#292929" font-size="17" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Kaake_Da_Dhaba.jpg</tspan></text>
+      </g>
+      <g id="Submit_btns" data-name="Submit btns" transform="translate(0 412)">
+        <g id="Add_Category" data-name="Add Category" transform="translate(0 3)">
+          <text id="Add_Category-2" data-name="Add Category" transform="translate(693 628)" fill="#292929" font-size="26" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Add Category</tspan></text>
+          <text id="add_circle_outline" transform="translate(863 633)" fill="#292929" font-size="28" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">add_circle_outline</tspan></text>
+        </g>
+        <g id="Generate_QR_Code_Btn" data-name="Generate QR Code Btn" transform="translate(65 -10)">
+          <g id="Component_2_7" data-name="Component 2 – 7" transform="translate(569 695)">
+            <g id="Rectangle_6" data-name="Rectangle 6" fill="#fff" stroke="#707070" stroke-width="2">
+              <rect width="264" height="66" rx="10" stroke="none"/>
+              <rect x="1" y="1" width="262" height="64" rx="9" fill="none"/>
+            </g>
+            <text id="Generate_QR_Code" data-name="Generate QR Code" transform="translate(16 44)" fill="#292929" font-size="28" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Generate QR Code</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g id="Add_category-3" data-name="Add category" transform="translate(7 496)">
+        <g transform="matrix(1, 0, 0, 1, -7, -511)" filter="url(#Rectangle_5-2)">
+          <rect id="Rectangle_5-4" data-name="Rectangle 5" width="840" height="348" rx="10" transform="translate(58 652)" fill="#fff"/>
+        </g>
+        <g id="text_input-2" data-name="text input" transform="translate(84 158.63)">
+          <g id="Rectangle_3-2" data-name="Rectangle 3" transform="translate(0 39.37)" fill="#fff" stroke="#707070" stroke-width="1">
+            <rect width="775" height="52" rx="5" stroke="none"/>
+            <rect x="0.5" y="0.5" width="774" height="51" rx="4.5" fill="none"/>
+          </g>
+          <text id="Title" transform="translate(0 22.37)" fill="#292929" font-size="22" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Title</tspan></text>
+          <text id="Example:_North_Indian_Cuisine" data-name="Example: North Indian Cuisine" transform="translate(12 74.37)" fill="#b2b1b1" font-size="22" font-family="Lato-Regular, Lato"><tspan x="0" y="0">Example: North Indian Cuisine</tspan></text>
+        </g>
+        <g id="upload_or_create" data-name="upload or create" transform="translate(0 -24)">
+          <g id="Group_6" data-name="Group 6">
+            <text id="Upload_menu_Image_" data-name="Upload menu Image *" transform="translate(471 358)" fill="#348cff" font-size="22" font-family="Lato-Regular, Lato"><tspan x="-103.752" y="0" text-decoration="underline">Upload menu Image</tspan><tspan y="0" xml:space="preserve"> *</tspan></text>
+          </g>
+          <text id="OR" transform="translate(471 399)" fill="#292929" font-size="22" font-family="Lato-Regular, Lato"><tspan x="-15.697" y="0">OR</tspan></text>
+          <g id="Group_7" data-name="Group 7">
+            <text id="Create_manually" data-name="Create manually" transform="translate(471 436)" fill="#348cff" font-size="22" font-family="Lato-Regular, Lato" text-decoration="underline"><tspan x="-77.951" y="0">Create manually</tspan></text>
+          </g>
+        </g>
+      </g>
+      <text id="_It_is_advisable_to_create_menu_manually_for_better_readability_and_user_experience" data-name="* It is advisable to create menu manually for better readability and user experience" transform="translate(411 963)" fill="#b2b1b1" font-size="18" font-family="Lato-Regular, Lato"><tspan x="-322.439" y="0">* It is advisable to create menu manually for better readability and user experience</tspan></text>
+    </g>
+  </g>
+</svg>

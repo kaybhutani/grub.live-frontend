@@ -78,9 +78,9 @@ const Home = () => {
               Create Menu 
             </button>
           </Link  >
-          <button className='black-yellow'>
+          {/* <button className='black-yellow'>
             Scan Menu 
-          </button>
+          </button> */}
       </div>
       </div>
 
