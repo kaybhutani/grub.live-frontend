@@ -122,6 +122,11 @@ const EditMenu = (props) => {
         window.alert('Restaurant name and Email Id cannot be blank')
         return
       }
+      if(restaurantDetails.logo === dummyRestaurantDetails.logo) {
+        const temp = {...restaurantDetails}
+        temp.logo = ""
+        setRestaurantDetails(temp)
+      }
       const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
