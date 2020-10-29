@@ -43,28 +43,28 @@ const HowItWorks = () =>{
        <StepRight
         name="Enter Restaurant name and Logo(optional)"
         no="1"
-        imageURL={Step1}
+        imageURL={Step4}
         
          />
 
         <StepLeft 
          name="Create Food Category. (example: Chinese,South Indian etc.)"
          no="2"
-         imageURL={Step2}
+         imageURL={Step3}
 
          />
  
         <StepRight
         name="Add Items and Price to categories"
         no="3"
-        imageURL={Step3}
+        imageURL={Step2}
         
          />
 
         <StepLeft 
          name="Preview Your Menu and Generate QR code"
          no="4"
-         imageURL={Step4}
+         imageURL={Step1}
 
          />
 
