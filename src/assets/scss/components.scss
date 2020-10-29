@@ -132,6 +132,7 @@
   top: 0;
   background-color: white;
   text-align: center  ;
+  overflow: scroll  ;
 }
 
 .restaurant-logo {
@@ -202,10 +203,13 @@
     margin: $l 0;
   }
   .preview-menu {
-    display: none;
+    display: inline-block;
+    float: none;
+    width: 100%;
   }
   .edit-menu {
     width: 100%;
+    display: inline-block;
   }
   .preview-btn {
     display: block;

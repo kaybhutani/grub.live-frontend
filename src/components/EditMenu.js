@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {apiBaseUrl} from '../config.json'
-import PreviewModal from './PreviewModal'
+// import PreviewModal from './PreviewModal'
 import {dummyRestaurantDetails} from '../dummyData.json'
 
 const EditMenu = (props) => {
@@ -8,7 +8,7 @@ const EditMenu = (props) => {
   const restaurantDetails = props.restaurantDetails
   const setRestaurantDetails = props.setRestaurantDetails
 
-  const [previewModal, setPreviewModal] = useState(false)
+  // const [previewModal, setPreviewModal] = useState(false)
   const [submitState, setSubmitState]  = useState(false)
   const changeRestaurantTitle = (e) => {
   
@@ -26,9 +26,9 @@ const EditMenu = (props) => {
     
   }
   
-  const togglePreviewModal = () => {
-    setPreviewModal(!previewModal)
-  }
+  // const togglePreviewModal = () => {
+  //   setPreviewModal(!previewModal)
+  // }
 
   const updateLogo = (e) => {
     const uploadedFile = e.target.files[0]
@@ -145,11 +145,11 @@ const EditMenu = (props) => {
 
   return (
     <div className='edit-menu'>
-      {
-        previewModal ? <PreviewModal restaurantDetails={restaurantDetails}/>
+      {/* {
+        previewModal ? <PreviewModal restaurantDetails={restaurantDetails} togglePreviewModal={togglePreviewModal}/>
         :<></>
         
-      }
+      } */}
       
       <h2>Edit Menu <i className='eos-icons'>edit</i></h2>
       <p>Please enter the following details to create your Virtual QR Menu.</p>
@@ -213,9 +213,9 @@ const EditMenu = (props) => {
       })}
             
       <div>
-        <div style={{float: "right"}}>
+        {/* <div style={{float: "right"}}>
           <button type='button' onClick={() => togglePreviewModal()} className='hyperlink btn-link preview-btn' >Preview <i className='eos-icons'>visibility</i> </button>
-        </div>
+        </div> */}
         <div style={{float: "right"}}>
           <button type='button' className='hyperlink btn-link' onClick={() => addCategory()}>Add Category <i className='eos-icons'>add_circle_outline</i> </button>
         </div>
