@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
 import logo from '../assets/images/grub.live-logo.svg'
-import NavLink from './NavLink'
 
 
 const Navigation = () => {
@@ -16,12 +15,12 @@ const Navigation = () => {
         </div>
       </Link>
       <div className='nav-item-right'>
-        <NavLink to='/how-it-works'><div className='hyperlink nav-item'>How it works?</div></NavLink>
-        <NavLink to='/create'>
+        <Link to='/how-it-works'><div className='hyperlink nav-item'>How it works?</div></Link>
+        <Link to='/create'>
           <button className='black-yellow nav-item'>
             Create Menu
           </button>
-        </NavLink>
+        </Link>
       </div>
       </nav>
     </div>

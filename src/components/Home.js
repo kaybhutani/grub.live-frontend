@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import mobileQrMenu from '../assets/images//mobile-qr-menu.svg'
-import NavLink from './NavLink'
 import { Link } from 'react-router-dom'  
 
 const Home = () => {
@@ -74,11 +73,11 @@ const Home = () => {
             <button className='btn-link learn-more'>Learn more <i className='eos-icons'>keyboard_arrow_right</i></button>
           </Link>
           <br></br>
-          <NavLink to='/create'>
+          <Link to='/create'>
             <button className='black-yellow'>
               Create Menu 
             </button>
-          </NavLink>
+          </Link  >
           <button className='black-yellow'>
             Scan Menu 
           </button>
