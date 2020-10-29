@@ -254,7 +254,8 @@
 }
 
 .imgLeft img{
-  width: 300px;
+  width: 400px;
+  box-shadow: $xxs $xs $m -$xs rgba(0,0,0,0.30);
   
 
 }
@@ -269,11 +270,13 @@
 .imgRight{
   width: 50%;
   float: right;
+  
 
 }
 
 .imgRight img{
-  width: 300px;
+  width: 400px;
+  box-shadow: $xxs $xs $m -$xs rgba(0,0,0,0.30);
 
 }
 

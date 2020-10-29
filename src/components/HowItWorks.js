@@ -1,7 +1,7 @@
 import React from 'react'
 import Step1 from '../assets/images/HowItWorks/step1.svg'
 import Step2 from '../assets/images/HowItWorks/Step2.png'
-import Step3 from '../assets/images/HowItWorks/Step3.png'
+import Step3 from '../assets/images/HowItWorks/step3.svg'
 // import Step4 from '../assets/images/HowItWorks/Step4.png'
 import Step5 from '../assets/images/HowItWorks/step5.svg'
 
