@@ -41,35 +41,35 @@ const HowItWorks = () =>{
     return(
        <div>
        <StepRight
-        name="Naman"
+        name="Enter Restaurant name and Logo(optional)"
         no="1"
         imageURL={Step1}
         
          />
 
         <StepLeft 
-         name="Bhatia"
+         name="Create Food Category. (example: Chinese,South Indian etc.)"
          no="2"
          imageURL={Step2}
 
          />
  
         <StepRight
-        name="Naman"
+        name="Add Items and Price to categories"
         no="3"
         imageURL={Step3}
         
          />
 
         <StepLeft 
-         name="Bhatia"
+         name="Preview Your Menu and Generate QR code"
          no="4"
          imageURL={Step4}
 
          />
 
         <StepRight
-        name="Naman"
+        name="Now users simply scan QR code and view your virtual Menu"
         no="5"
         imageURL={Step5}
         
