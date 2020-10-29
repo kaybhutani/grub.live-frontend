@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1f62606ab09e238b48ea5755b70cfa5b",
+    "revision": "d695fe3dce60e74c207697510c760e50",
     "url": "/index.html"
   },
   {
-    "revision": "b77def15ce9004a60b46",
+    "revision": "b7b716ea2a8247a2c6d2",
     "url": "/static/css/2.82eb3584.chunk.css"
   },
   {
-    "revision": "7eb005ab935df3ed0d85",
-    "url": "/static/css/main.e7710e7b.chunk.css"
+    "revision": "a8e3fb0cd72918b0c7cc",
+    "url": "/static/css/main.749d16c5.chunk.css"
   },
   {
-    "revision": "b77def15ce9004a60b46",
-    "url": "/static/js/2.df9a4927.chunk.js"
+    "revision": "b7b716ea2a8247a2c6d2",
+    "url": "/static/js/2.9555df65.chunk.js"
   },
   {
     "revision": "3c73c585782ac05880c0f89bcfdbba5a",
-    "url": "/static/js/2.df9a4927.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.9555df65.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7eb005ab935df3ed0d85",
-    "url": "/static/js/main.369edb17.chunk.js"
+    "revision": "a8e3fb0cd72918b0c7cc",
+    "url": "/static/js/main.f4d0a969.chunk.js"
   },
   {
     "revision": "ec9875811aa0f00c2e31",
@@ -32,24 +32,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Lato-Regular.2d36b1a9.ttf"
   },
   {
-    "revision": "1db91c17aecf47b2fc24bf36c15db35b",
-    "url": "/static/media/Step1.1db91c17.png"
-  },
-  {
     "revision": "721d458891f417d18e68b688961f108a",
     "url": "/static/media/Step2.721d4588.png"
   },
   {
     "revision": "76cd4818ee11281ac2a0acd1df12d906",
     "url": "/static/media/Step3.76cd4818.png"
-  },
-  {
-    "revision": "2eb10e5575890127a7780be76525a2b4",
-    "url": "/static/media/Step4.2eb10e55.png"
-  },
-  {
-    "revision": "4843d07a60601b760a98e05b201c9f6b",
-    "url": "/static/media/Step5.4843d07a.png"
   },
   {
     "revision": "2b33b67fd068651e42654654ceacf444",
@@ -82,6 +70,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a848aa6492e7d8626383654d040923ef",
     "url": "/static/media/mobile-qr-menu.a848aa64.svg"
+  },
+  {
+    "revision": "230d7053b61908ca8063826f90a899f9",
+    "url": "/static/media/step1.230d7053.svg"
+  },
+  {
+    "revision": "c0ff1a216eceb19d57fa1d2ba41c171e",
+    "url": "/static/media/step5.c0ff1a21.svg"
   },
   {
     "revision": "4d1c15f369a3553bdc00506bc0edc94e",
