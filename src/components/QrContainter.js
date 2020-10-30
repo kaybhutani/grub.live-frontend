@@ -51,7 +51,7 @@ const QrContainer = (props) => {
 
 
   return (
-    <div className='container' style={{textAlign: "left"}}>
+    <div className='container' style={{textAlign: "center"}}>
       
       {dataFetched ? (
       <div>
