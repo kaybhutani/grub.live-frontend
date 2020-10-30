@@ -43,7 +43,7 @@ const QrContainer = (props) => {
     html2canvas(document.getElementById('qr-code')).then(function(canvas) {
       const aTag = document.createElement('a')
       aTag.setAttribute("href", canvas.toDataURL("image/png"))
-      aTag.setAttribute("download", "QrCodeSticker.png")
+      aTag.setAttribute("download", "QrCode.png")
       aTag.click()
       
   });
