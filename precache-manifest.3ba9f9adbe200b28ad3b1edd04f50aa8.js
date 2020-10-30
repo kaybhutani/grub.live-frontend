@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d695fe3dce60e74c207697510c760e50",
+    "revision": "521ced0f3cebe62274b7032b2cda3162",
     "url": "/index.html"
   },
   {
-    "revision": "b7b716ea2a8247a2c6d2",
+    "revision": "e1c07ef7f80f83f9a187",
     "url": "/static/css/2.82eb3584.chunk.css"
   },
   {
-    "revision": "a8e3fb0cd72918b0c7cc",
-    "url": "/static/css/main.749d16c5.chunk.css"
+    "revision": "4f5f2679118334c9c409",
+    "url": "/static/css/main.2096cf18.chunk.css"
   },
   {
-    "revision": "b7b716ea2a8247a2c6d2",
-    "url": "/static/js/2.9555df65.chunk.js"
+    "revision": "e1c07ef7f80f83f9a187",
+    "url": "/static/js/2.84f1fb58.chunk.js"
   },
   {
     "revision": "3c73c585782ac05880c0f89bcfdbba5a",
-    "url": "/static/js/2.9555df65.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.84f1fb58.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a8e3fb0cd72918b0c7cc",
-    "url": "/static/js/main.f4d0a969.chunk.js"
+    "revision": "4f5f2679118334c9c409",
+    "url": "/static/js/main.f01c0d2c.chunk.js"
   },
   {
     "revision": "ec9875811aa0f00c2e31",
@@ -30,14 +30,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "2d36b1a925432bae7f3c53a340868c6e",
     "url": "/static/media/Lato-Regular.2d36b1a9.ttf"
-  },
-  {
-    "revision": "721d458891f417d18e68b688961f108a",
-    "url": "/static/media/Step2.721d4588.png"
-  },
-  {
-    "revision": "76cd4818ee11281ac2a0acd1df12d906",
-    "url": "/static/media/Step3.76cd4818.png"
   },
   {
     "revision": "2b33b67fd068651e42654654ceacf444",
@@ -72,8 +64,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/mobile-qr-menu.a848aa64.svg"
   },
   {
-    "revision": "230d7053b61908ca8063826f90a899f9",
-    "url": "/static/media/step1.230d7053.svg"
+    "revision": "b28f044b4b528d7cff4b64e7e71b4b35",
+    "url": "/static/media/step1.b28f044b.svg"
+  },
+  {
+    "revision": "dfebaf5e850838f16f8bf22b30b68c64",
+    "url": "/static/media/step2.dfebaf5e.svg"
+  },
+  {
+    "revision": "a433c4beac3f0b7b106689017dc367c7",
+    "url": "/static/media/step3.a433c4be.svg"
   },
   {
     "revision": "c0ff1a216eceb19d57fa1d2ba41c171e",
