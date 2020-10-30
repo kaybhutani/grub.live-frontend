@@ -38,6 +38,7 @@ const StepLeft = (props) =>{
   
 }
 
+
 const HowItWorks = () =>{
 
     return(
@@ -54,7 +55,7 @@ const HowItWorks = () =>{
         imageURL={Step1}
         
          />
-
+        <br></br>
         <StepLeft 
             head="Categories and Items"
             name="Create Food Category (example: Chinese,South Indian etc.) and start Adding items to it (example: French fries, burgers). You also have to add the corresponding price. Price can be text and in any currency. You can also use something like Half: $2.99, Full $3.99"
@@ -62,7 +63,7 @@ const HowItWorks = () =>{
             imageURL={Step2}
 
          />
- 
+        <br></br>
         <StepRight
         head="Preview your Menu"
         name="You can watch your menu change Live in the preview section. Just when you think it's perfect, go ahead and Generate it."
@@ -70,7 +71,7 @@ const HowItWorks = () =>{
         imageURL={Step3}
         
          />
-
+        <br></br>
         <StepLeft
         head="Generate QR Menu"
         name="Once finalized, click on Generate QR Menu and wait for the QR code to be generated. You can download this QR code sticker and paste it on the tables, doors or wherever you want. User's have to just open the camera and scan this to see the menu."
@@ -78,7 +79,7 @@ const HowItWorks = () =>{
         imageURL={Step5}
         
          />
-
+        <br></br>
 
          </div>
     )

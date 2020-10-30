@@ -244,10 +244,9 @@
 // How-It-works
 
 .how-it-works-div {
-  height: 20rem;
   padding: 1.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin: $xxl;
+  min-height: 200px;
 }
 
 .imgLeft{
@@ -291,29 +290,26 @@
 
 
 @media only screen and (max-width: 1000px){
-  .imgLeft{
-    width: 100%;
-    float: none;
-    text-align: center;
-  }
-
-  .textLeft{
-    width: 100%;
-    float: none;
-    text-align: center;
-  }
-
-  .imgRight{
-    width: 100%;
-    float: none;
-    text-align: center;
   
+  .how-it-works-div {
+    text-align: center;
+    height: auto;
+    margin: $s;
+    margin-bottom: $xxl;
+  }
+  .imgLeft, .imgRight {
+    
+    img {
+      width: 200px;
+      margin-left: $xs;
+    }
+    float: none;
+    width: auto;
   }
 
-  .textRight{
-    width: 100%;
+  .textLeft, .textRight {
     float: none;
-    text-align: center;
-  
+    width: auto;
   }
+
 }
