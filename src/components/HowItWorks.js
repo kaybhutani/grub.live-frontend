@@ -15,7 +15,8 @@ const StepRight = (props) =>{
     </div> 
     <div className="imgRight">
         <img src={props.imageURL}  alt=''></img>
-    </div>     
+    </div>
+    <br></br>     
     </div>
     )
 }
@@ -30,7 +31,8 @@ const StepLeft = (props) =>{
         </div> 
         <div className="imgLeft">
             <img src={props.imageURL} alt=''></img>
-        </div>      
+        </div>  
+        <br></br>    
         </div>
         )
   
