@@ -17,7 +17,7 @@ const EditMenu = (props) => {
     setRestaurantDetails(temp)
     
   }
-
+    
   const changeEmailId = (e) => {
   
     const temp = { ...restaurantDetails}

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import * as htmlToImage from 'html-to-image';
 import {useParams} from 'react-router-dom'
 import loadingIcon from '../assets/images/three_dots_loading.svg'
-
+import html2canvas from 'html2canvas';
 
 import {apiBaseUrl} from '../config.json'
 import QrImage from './QrImage'
@@ -18,7 +18,6 @@ const QrContainer = (props) => {
         .then(response => response.json())
         .then(data => {
           setDataFetched(true)
-          console.log(data)
           if(data.success)
             {
               setRestaurantDetails(data.data)
@@ -30,28 +29,24 @@ const QrContainer = (props) => {
 
   const downloadSticker = () => {
     console.log('Downloading QR Sticker...')
-    htmlToImage.toPng(document.getElementById('qr-download'))
-    .then(function (dataUrl) {
-      var svgImg = document.createElement('a');
-      svgImg.href = dataUrl;
-      svgImg.setAttribute('download', 'QrMenu.png');
-      svgImg.click();
-      // document.body.append(svgImg)
-
+    html2canvas(document.getElementById('qr-download')).then(function(canvas) {
+      const aTag = document.createElement('a')
+      aTag.setAttribute("href", canvas.toDataURL("image/png"))
+      aTag.setAttribute("download", "QrCodeSticker.png")
+      aTag.click()
       
-    });
+  });
   }
 
   const downloadQrCode = () => {
     console.log('Downloading QR Code...')
-    htmlToImage.toPng(document.getElementById('qr-code'))
-    .then(function (dataUrl) {
-      var svgImg = document.createElement('a');
-      svgImg.href = dataUrl;
-      svgImg.setAttribute('download', 'QrCode.png');
-      svgImg.click();
-      // document.body.append(svgImg)
-    });
+    html2canvas(document.getElementById('qr-code')).then(function(canvas) {
+      const aTag = document.createElement('a')
+      aTag.setAttribute("href", canvas.toDataURL("image/png"))
+      aTag.setAttribute("download", "QrCodeSticker.png")
+      aTag.click()
+      
+  });
   }
 
 
