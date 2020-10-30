@@ -167,7 +167,7 @@ const EditMenu = (props) => {
       <form>
       <div className='shadow-box'>
         <p>Name of Restaurant</p>
-        <input required={true} className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => changeRestaurantTitle(e)} defaultValue={restaurantDetails.restaurantName}></input>
+        <input name="restaurantName" required={true} className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => changeRestaurantTitle(e)} defaultValue={restaurantDetails.restaurantName}></input>
         <p>Logo (if any)</p>
         <input type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
         <p>Email ID (You can use this to edit Menu later)</p>
