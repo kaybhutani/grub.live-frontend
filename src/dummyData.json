@@ -1,7 +1,7 @@
 {
   "dummyRestaurantDetails": {
     "emailId": "myemailId@gmail.com",
-    "logo": "http://res.cloudinary.com/kartikay/image/upload/v1603927702/njigllouedwufl7xmcoh.png",
+    "logo": "",
     "menu": {
       "categories": [{
         "items": [{
