@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {
   Switch,
   Route,
@@ -16,9 +16,18 @@ import CreateMenu from './components/CreateMenu'
 import HowItworks from './components/HowItWorks'
 import QrContainer from './components/QrContainter'
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-0BPQRCHTXK');
+ReactGA.initialize('G-82S2XVWT94');
 
 function App() {
+
+  useEffect( () => {
+
+    // This line will trigger on a route change
+    ReactGA.pageview(window.location.pathname + window.location.search); 
+
+});
+
+
   return (
     <div className='App'>
         <div>

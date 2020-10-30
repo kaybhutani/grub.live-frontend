@@ -6,7 +6,6 @@ ReactGA.initialize('G-0BPQRCHTXK');
 
 
 const CreateMenu = () => {
-  ReactGA.pageview('/create')
 
   const sampleRestaurantDetails = {
     emailId: "",

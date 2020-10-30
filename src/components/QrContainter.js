@@ -6,14 +6,9 @@ import loadingIcon from '../assets/images/three_dots_loading.svg'
 
 import {apiBaseUrl} from '../config.json'
 import QrImage from './QrImage'
-import ReactGA from 'react-ga';
-ReactGA.initialize('G-0BPQRCHTXK');
-
 
 
 const QrContainer = (props) => {
-  
-  ReactGA.pageview('/qr-generated')
 
   const [restaurantDetails, setRestaurantDetails] = useState(null)
   const [dataFetched, setDataFetched] = useState(false)

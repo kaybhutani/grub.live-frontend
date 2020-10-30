@@ -4,9 +4,6 @@ import Step2 from '../assets/images/HowItWorks/step2.svg'
 import Step3 from '../assets/images/HowItWorks/step3.svg'
 // import Step4 from '../assets/images/HowItWorks/Step4.png'
 import Step5 from '../assets/images/HowItWorks/step5.svg'
-import ReactGA from 'react-ga';
-ReactGA.initialize('G-0BPQRCHTXK');
-
 
 
 
@@ -45,8 +42,6 @@ const StepLeft = (props) =>{
 
 
 const HowItWorks = () =>{
-
-    ReactGA.pageview('/how-it-works')
 
     return(
        <div className='container'>
