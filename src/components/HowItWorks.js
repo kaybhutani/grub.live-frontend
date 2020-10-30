@@ -42,7 +42,7 @@ const HowItWorks = () =>{
        <div className='container'>
            <div className='align-center'>
                 <h2>How does it works for Restaurant's ?</h2>
-                <p>Let's see how Restaurant's can adapt Contact-less Menu's in just 4 simple steps!</p>
+                <p>Learn how Restaurant's can adapt Contact-less Menu's in just 4 simple steps!</p>
            </div>
            <br></br>
        <StepRight
@@ -56,7 +56,7 @@ const HowItWorks = () =>{
         <StepLeft 
             head="Categories and Items"
             name="Create Food Category (example: Chinese,South Indian etc.) and start Adding items to it (example: French fries, burgers). You also have to add the corresponding price. Price can be text and in any currency. You can also use something like Half: $2.99, Full $3.99"
-            no="2"
+            no="2."
             imageURL={Step2}
 
          />
@@ -64,7 +64,7 @@ const HowItWorks = () =>{
         <StepRight
         head="Preview your Menu"
         name="You can watch your menu change Live in the preview section. Just when you think it's perfect, go ahead and Generate it."
-        no="3"
+        no="3."
         imageURL={Step3}
         
          />
@@ -72,7 +72,7 @@ const HowItWorks = () =>{
         <StepLeft
         head="Generate QR Menu"
         name="Once finalized, click on Generate QR Menu and wait for the QR code to be generated. You can download this QR code sticker and paste it on the tables, doors or wherever you want. User's have to just open the camera and scan this to see the menu."
-        no="4"
+        no="4."
         imageURL={Step5}
         
          />
