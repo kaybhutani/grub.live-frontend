@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import * as htmlToImage from 'html-to-image';
 import {useParams} from 'react-router-dom'
 import loadingIcon from '../assets/images/three_dots_loading.svg'
 import html2canvas from 'html2canvas';
