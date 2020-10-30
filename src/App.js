@@ -15,6 +15,8 @@ import Footer from './components/Footer'
 import CreateMenu from './components/CreateMenu'
 import HowItworks from './components/HowItWorks'
 import QrContainer from './components/QrContainter'
+import ReactGA from 'react-ga';
+ReactGA.initialize('G-0BPQRCHTXK');
 
 function App() {
   return (
