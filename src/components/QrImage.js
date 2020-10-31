@@ -27,7 +27,7 @@ const QrImage = (props) => {
         </h2>
         <p>Scan to see Menu</p>
         <QRCode size={200} className='qr-code' id='qr-code' value={url}/>
-        <p>QR Menu Genreated with www.grub.live</p>
+        <p>QR Menu Generated with www.grub.live</p>
       </div>
     </div>
   )
