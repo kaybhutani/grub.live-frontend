@@ -7,7 +7,9 @@ const EditMenu = (props) => {
   
   const restaurantDetails = props.restaurantDetails
   const setRestaurantDetails = props.setRestaurantDetails
+  
 
+  const [saveDraft, setSaveDraft] = useState(false)
   // const [previewModal, setPreviewModal] = useState(false)
   const [submitState, setSubmitState]  = useState(false)
   const changeRestaurantTitle = (e) => {
@@ -114,8 +116,16 @@ const EditMenu = (props) => {
 
 
 
+  const saveDraftFunction = (e) => {
+    if(!saveDraft) {
+      localStorage.setItem('restaurantDetails', JSON.stringify(restaurantDetails))
+      setSaveDraft(true)
+    }
+  }
+
   const submitMenu = e => {
     if(!submitState) {
+      localStorage.removeItem('restaurantDetails')
       setSubmitState(true)  
       if(!restaurantDetails.emailId || !restaurantDetails.restaurantName) {
         setSubmitState(false)
@@ -153,13 +163,23 @@ const EditMenu = (props) => {
       
       <h2>Edit Menu <i className='eos-icons'>edit</i></h2>
       <p>Please enter the following details to create your Virtual QR Menu.</p>
-      {restaurantDetails.restaurantName ? 
-      <></>
-      :
-      <button onClick={() => setRestaurantDetails(dummyRestaurantDetails)} className='hyperlink btn-link' style={{float: "right", color: '#007cbf'}}>
-        Fill dummy data  <i className='eos-icons'>keyboard</i>
-      </button>
-      }
+      <div style={{float: "right"}}>
+        {
+          localStorage.getItem('restaurantDetails')?
+            <button onClick={() => setRestaurantDetails(JSON.parse(localStorage.getItem('restaurantDetails')))} style={{color: '#007cbf'}} className='hyperlink btn-link'>
+              Load saved <i className='eos-icons'>system_update_alt</i>
+            </button>
+            :
+            <></>
+        }
+        {restaurantDetails.restaurantName ? 
+        <></>
+        :
+        <button onClick={() => setRestaurantDetails(dummyRestaurantDetails)} style={{color: '#007cbf'}} className='hyperlink btn-link'>
+          Fill dummy data  <i className='eos-icons'>keyboard</i>
+        </button>
+        }
+      </div>
       
       <br></br>
       <br></br>
@@ -222,6 +242,13 @@ const EditMenu = (props) => {
           <br></br>
           <br></br>
         <div style={{float: "right"}}>
+          <button type='button' onClick={(e) => saveDraftFunction(e)} className='black-yellow'>
+              {
+                saveDraft?
+                (<div>Saved <i className='eos-icons'>done</i></div>):
+                (`Save Draft`)
+              }
+          </button>
           <button type='button' onClick={(e) => submitMenu(e)} className='black-yellow'>
             {submitState ? (
                 `Generating...`

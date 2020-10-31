@@ -21,7 +21,7 @@ ReactGA.initialize('G-82S2XVWT94');
 function App() {
 
   useEffect( () => {
-
+    
     // This line will trigger on a route change
     ReactGA.pageview(window.location.pathname + window.location.search); 
 
