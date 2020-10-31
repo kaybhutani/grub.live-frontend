@@ -47,6 +47,8 @@ const QrContainer = (props) => {
   });
   }
 
+  const edit = props.edit
+
 
   return (
     <div className='container' style={{textAlign: "left"}}>
@@ -56,11 +58,19 @@ const QrContainer = (props) => {
           {restaurantDetails?
         (
           <div>
-            <h2>QR Menu Generated!</h2>
-            <p>You are ready for contactless dining experience. Download your QR code and paste it on the table.</p>
-            <button onClick={() => downloadSticker()} className='black-yellow'>Download QR Sticker</button>
-            <button onClick={() => downloadQrCode()} className='black-yellow'>Download QR Code</button>
-            <QrImage url={url} restaurantDetails = {restaurantDetails}/>
+            {edit? 
+            (<div style={{marginBottom: '40%'}}>
+              <h2>Menu edited successfully!</h2>
+              <p>Your menu has been successfully updated in the previous <a href={url}>link</a> only.</p>
+            </div>):
+            (<>
+              <h2>QR Menu Generated!</h2>
+              <p>You are ready for contactless dining experience. Download your QR code and paste it on the table.</p>
+              <button onClick={() => downloadSticker()} className='black-yellow'>Download QR Sticker</button>
+              <button onClick={() => downloadQrCode()} className='black-yellow'>Download QR Code</button>
+              <QrImage url={url} restaurantDetails = {restaurantDetails}/>
+            </>) 
+          }
           </div>
         ):
         (

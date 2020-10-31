@@ -5,6 +5,7 @@ import {dummyRestaurantDetails} from '../dummyData.json'
 
 const EditMenu = (props) => {
   
+  const {edit, menuId, hash} = props
   const restaurantDetails = props.restaurantDetails
   const setRestaurantDetails = props.setRestaurantDetails
   
@@ -136,7 +137,11 @@ const EditMenu = (props) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(restaurantDetails)
       };
-      fetch(`${apiBaseUrl}/submit`, requestOptions)
+      
+      const apiEndPoint = edit?`${apiBaseUrl}/edit/submit/${menuId}/${hash}`:`${apiBaseUrl}/submit`
+
+
+      fetch(apiEndPoint, requestOptions)
         .then(response => response.json())
         .then(data => {
           setSubmitState(false)
@@ -147,7 +152,8 @@ const EditMenu = (props) => {
               return
             }
             localStorage.removeItem('restaurantDetails')
-            window.location = `/#/qr/${data.id }`
+            const redirectLocation = edit?`/#/qr/${data.id}?edit=true`:`/#/qr/${data.id }`
+            window.location = redirectLocation
           
         });
     }
@@ -187,11 +193,11 @@ const EditMenu = (props) => {
       <form>
       <div className='shadow-box'>
         <p>Name of Restaurant</p>
-        <input name="restaurantName" required={true} className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => changeRestaurantTitle(e)} defaultValue={restaurantDetails.restaurantName}></input>
+        <input disabled={edit} name="restaurantName" required={true} className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => changeRestaurantTitle(e)} defaultValue={restaurantDetails.restaurantName}></input>
         <p>Logo (if any)</p>
-        <input type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
+        <input disabled={edit} type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
         <p>Email ID (You can use this to edit Menu later)</p>
-        <input type="email" required={true} className='form-input' placeholder='Example: johndoe@gmail.com' onChange={ e => changeEmailId(e)} defaultValue={restaurantDetails.emailId}></input>
+        <input disabled={edit} type="email" required={true} className='form-input' placeholder='Example: johndoe@gmail.com' onChange={ e => changeEmailId(e)} defaultValue={restaurantDetails.emailId}></input>
       </div>
       
 

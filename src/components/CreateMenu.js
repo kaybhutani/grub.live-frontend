@@ -40,30 +40,32 @@ const CreateMenu = (props) => {
   }
   
 const fun = (()=> {
-  if(edit) {
+        if(edit) {
 
-    if(dataFetched) {
-      if(!editDataCorrect) {
-        return (<h2>Invalid Edit link</h2>)
-      }
-    }
-    else {
-      return (
-        <div className='loading-div'>
-          <img alt='' className='loading-icon' src={loadingIcon} />
-        </div>
-      )
-    }
+          if(dataFetched) {
+            if(!editDataCorrect) {
+              return (<h2>Invalid Edit link</h2>)
+            }
+          }
+          else {
+            return (
+              <div className='loading-div'>
+                <img alt='' className='loading-icon' src={loadingIcon} />
+              </div>
+            )
+          }
 
-  }
-  
-  return (
-    <>
-      <EditMenu restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails} edit={edit} menuId={menuId} hash={hash}/>
-      <PreviewMenu restaurantDetails={restaurantDetails} />
-    </>
-  )
-})
+        }
+        
+        return (
+          <>
+            {edit?
+            (<h2>Start editing</h2>):<></>}
+            <EditMenu restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails} edit={edit} menuId={menuId} hash={hash}/>
+            <PreviewMenu restaurantDetails={restaurantDetails} />
+          </>
+        )
+      })
   return (
 
     <div className='container'>
