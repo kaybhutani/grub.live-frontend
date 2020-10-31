@@ -44,7 +44,6 @@ const QrContainer = (props) => {
       aTag.setAttribute("href", canvas.toDataURL("image/png"))
       aTag.setAttribute("download", "QrCode.png")
       aTag.click()
-      
   });
   }
 
@@ -73,7 +72,7 @@ const QrContainer = (props) => {
         )
       :
       (
-      <div style={{textAlign: "center", marginBottom: '40%'}}>
+      <div className='loading-div'>
         <img alt='' className='loading-icon' src={loadingIcon} />
       </div>
       )}
