@@ -152,9 +152,13 @@ const EditMenu = (props) => {
               return
             }
             localStorage.removeItem('restaurantDetails')
-            const redirectLocation = edit?`/#/qr/${data.id}?edit=true`:`/#/qr/${data.id }`
+            const redirectLocation = edit?`/#/qr/edit/${data.id}`:`/#/qr/${data.id }`
             window.location = redirectLocation
           
+        }).catch(err => {
+          console.log(err)
+          alert(`Some error occurred`)
+          setSubmitState(false)
         });
     }
   }
