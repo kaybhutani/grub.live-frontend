@@ -125,7 +125,6 @@ const EditMenu = (props) => {
 
   const submitMenu = e => {
     if(!submitState) {
-      localStorage.removeItem('restaurantDetails')
       setSubmitState(true)  
       if(!restaurantDetails.emailId || !restaurantDetails.restaurantName) {
         setSubmitState(false)
@@ -147,6 +146,7 @@ const EditMenu = (props) => {
               window.alert('Some problem occrred while creating menu')
               return
             }
+            localStorage.removeItem('restaurantDetails')
             window.location = `/#/qr/${data.id }`
           
         });
