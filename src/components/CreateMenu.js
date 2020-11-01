@@ -27,7 +27,7 @@ const CreateMenu = (props) => {
   console.log(menuId, hash)
 
   if(edit && !dataFetched) {
-    fetch(`${apiBaseUrl}/view?q=${menuId}`)
+    fetch(`${apiBaseUrl}/edit/view/${menuId}/${hash}`)
       .then(response => response.json())
       .then(data => {
         setDataFetched(true)
