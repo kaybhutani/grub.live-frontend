@@ -17,16 +17,16 @@ import HowItworks from './components/HowItWorks'
 import QrContainer from './components/QrContainter'
 import ReactGA from 'react-ga';
 import About from './pages/About'
-
+ReactGA.initialize('UA-182081513-1');
 
 function App() {
 
   useEffect( () => {
-    ReactGA.initialize('UA-182081513-1');
+
     // This line will trigger on a route change
     ReactGA.pageview(window.location.pathname + window.location.search); 
 
-});
+}, []);
 
 
   return (
