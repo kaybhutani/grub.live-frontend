@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from "react-router-dom"
+
 import yellowLogo from '../assets/images/grub.live-logo-yellow.svg'
 const Footer = () => {
 
@@ -10,10 +12,10 @@ const Footer = () => {
           <div>Rejuvenating the dining experience.</div>
         </div>
         <div className='footer-links'>
-          <div className='footer-item hyperlink-invert'>Contact Us</div>
-          <div className='footer-item hyperlink-invert'>How it works</div>
-          <div className='footer-item hyperlink-invert'>Feedback</div>
-          <div className='footer-item hyperlink-invert'>About Us</div>
+          <Link to='/contact'><div className='footer-item hyperlink-invert'>Contact Us</div></Link>
+          <Link to='/how-it-works'><div className='footer-item hyperlink-invert'>How it works</div></Link>
+          <Link to='/feedback'><div className='footer-item hyperlink-invert'>Feedback</div></Link>
+          <Link to='/about'><div className='footer-item hyperlink-invert'>About Us</div></Link>
         </div>
         <br></br>
         <br></br>

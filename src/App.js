@@ -16,12 +16,13 @@ import CreateMenu from './components/CreateMenu'
 import HowItworks from './components/HowItWorks'
 import QrContainer from './components/QrContainter'
 import ReactGA from 'react-ga';
-ReactGA.initialize('G-82S2XVWT94');
+import About from './pages/About'
+
 
 function App() {
 
   useEffect( () => {
-    
+    ReactGA.initialize('UA-182081513-1');
     // This line will trigger on a route change
     ReactGA.pageview(window.location.pathname + window.location.search); 
 
@@ -37,15 +38,16 @@ function App() {
 
               <Route exact path='/' children={<Home />} />
               <Route exact path='/create'  children={<CreateMenu />} />
+              <Route exact path='/about'  children={<About />} />
               <Route exact path='/how-it-works' children={<HowItworks />} />
               <Route exact path='/qr/:menuId' children={<QrContainer />}/>
               <Route path='/edit/:menuId/:hash' children={<CreateMenu edit={true}/>}/>
               <Route exact path='/qr/edit/:menuId' children={<QrContainer edit={true}/>}/>
             </Switch>
-
+            <Footer />
           </HashRouter>
         </div>
-        <Footer />
+        
       </div>
   );
 }
