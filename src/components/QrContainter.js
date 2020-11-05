@@ -22,6 +22,7 @@ const QrContainer = (props) => {
 
   const downloadSticker = () => {
     console.log('Downloading QR Sticker...')
+    window.location.href = qrSticker
   }
 
 
@@ -44,8 +45,10 @@ const QrContainer = (props) => {
             </div>):
             (<>
               <h2>QR Menu Generated!</h2>
-              <p>You are ready to adapt contactless dining. Download your QR code sticker and paste it on the table, window, etc..</p>
-              <button onClick={() => downloadSticker()} className='black-yellow'>Download QR Sticker</button>
+              <p>You are ready to adapt contactless dining. Download your QR code sticker and paste it on the table, window, etc.</p>
+              <br></br>
+              <a style={{textDecoration: 'none'}} href={qrSticker} download='qr-sticker.png' className='black-yellow'>Download QR Sticker</a>
+              <br></br>
               <br></br>
               <br></br>
               <img src={qrSticker} alt='qr sticker' className='qr-sticker'></img>
