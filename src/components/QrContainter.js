@@ -1,11 +1,7 @@
 import React, {useState} from 'react'
 import {useParams} from 'react-router-dom'
 import loadingIcon from '../assets/images/three_dots_loading.svg'
-import html2canvas from 'html2canvas';
-
 import {apiBaseUrl} from '../config.json'
-import QrImage from './QrImage'
-
 
 const QrContainer = (props) => {
 
@@ -34,7 +30,7 @@ const QrContainer = (props) => {
 
 
   return (
-    <div className='container' style={{textAlign: "left"}}>
+    <div className='container' style={{textAlign: "center"}}>
       
       {dataFetched ? (
       <div>
@@ -50,7 +46,9 @@ const QrContainer = (props) => {
               <h2>QR Menu Generated!</h2>
               <p>You are ready to adapt contactless dining. Download your QR code sticker and paste it on the table, window, etc..</p>
               <button onClick={() => downloadSticker()} className='black-yellow'>Download QR Sticker</button>
-              <img src={qrSticker} alt='qr sticker'></img>
+              <br></br>
+              <br></br>
+              <img src={qrSticker} alt='qr sticker' className='qr-sticker'></img>
               {/* <QrImage url={url} restaurantDetails = {restaurantDetails}/> */}
             </>) 
           }
@@ -66,8 +64,8 @@ const QrContainer = (props) => {
       :
       (
       <div className='loading-div'>
-        <h4>Generating QR sticker for you ...</h4>
-        <br></br>
+        <h2>Generating QR sticker for you ...</h2>
+      
         <img alt='' className='loading-icon' src={loadingIcon} />
       </div>
       )}

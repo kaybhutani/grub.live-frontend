@@ -167,35 +167,11 @@
   text-align: center;
 }
 
- .qr-image {
-  
-  text-align: center;
-  margin: $xxl auto;
 
-  // margin: $xxl auto;
+.qr-sticker {
+  width: 400px;
+}
 
-
-  #qr-download {
-    width: 400px;
-    background-color: $yellow-base;
-    padding: $l;
-    border-radius: $s;
-    // margin: 0 auto;
-  }
-  
-  hr {
-    border-color: $light-gray;
-    border-radius: $s;
-    margin: $l $xl;
-  }
-
-  .qr-code {
-    padding: $s;
-    width: 200px;
-    background-color: white;
-  }
-
- }
 
 @media only screen and (max-width: 700px) {
   
@@ -230,6 +206,10 @@
     .intro-img {
       width: 12em;
     }
+  }
+
+  .qr-sticker {
+    width: 250px;
   }
 }
 
