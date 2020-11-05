@@ -186,7 +186,7 @@ const EditMenu = (props) => {
         <></>
         :
         <button onClick={() => setRestaurantDetails(dummyRestaurantDetails)} style={{color: '#007cbf'}} className='hyperlink btn-link'>
-          Fill dummy data  <i className='eos-icons'>keyboard</i>
+          Fill sample data  <i className='eos-icons'>keyboard</i>
         </button>
         }
       </div>

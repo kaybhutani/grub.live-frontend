@@ -1,61 +1,41 @@
 import React, {useState} from 'react'
 import {useParams} from 'react-router-dom'
 import loadingIcon from '../assets/images/three_dots_loading.svg'
-import html2canvas from 'html2canvas';
-
 import {apiBaseUrl} from '../config.json'
-import QrImage from './QrImage'
-
 
 const QrContainer = (props) => {
 
-  const [restaurantDetails, setRestaurantDetails] = useState(null)
+  const [qrSticker, setQrSticker] = useState(null)
   const [dataFetched, setDataFetched] = useState(false)
-  let { menuId } = useParams();
+  let { menuId } = useParams()
   if(!dataFetched) {
-    fetch(`${apiBaseUrl}/view?q=${menuId}`)
+    fetch(`${apiBaseUrl}/qr/${menuId}`)
         .then(response => response.json())
         .then(data => {
           setDataFetched(true)
           if(data.success)
             {
-              setRestaurantDetails(data.data)
+              setQrSticker(data.sticker)
             }
         });
   }
 
-  const url = `https://glqr.me/#/${menuId}`
-
   const downloadSticker = () => {
     console.log('Downloading QR Sticker...')
-    html2canvas(document.getElementById('qr-download')).then(function(canvas) {
-      const aTag = document.createElement('a')
-      aTag.setAttribute("href", canvas.toDataURL("image/png"))
-      aTag.setAttribute("download", "QrCodeSticker.png")
-      aTag.click()
-      
-  });
+    window.location.href = qrSticker
   }
 
-  const downloadQrCode = () => {
-    console.log('Downloading QR Code...')
-    html2canvas(document.getElementById('qr-code')).then(function(canvas) {
-      const aTag = document.createElement('a')
-      aTag.setAttribute("href", canvas.toDataURL("image/png"))
-      aTag.setAttribute("download", "QrCode.png")
-      aTag.click()
-  });
-  }
 
   const edit = props.edit
+  const url = `https://glqr.me/#/${menuId}`
 
 
   return (
-    <div className='container' style={{textAlign: "left"}}>
+    <div className='container' style={{textAlign: "center"}}>
       
       {dataFetched ? (
       <div>
-          {restaurantDetails?
+          {qrSticker?
         (
           <div>
             {edit? 
@@ -65,10 +45,14 @@ const QrContainer = (props) => {
             </div>):
             (<>
               <h2>QR Menu Generated!</h2>
-              <p>You are ready for contactless dining experience. Download your QR code and paste it on the table.</p>
-              <button onClick={() => downloadSticker()} className='black-yellow'>Download QR Sticker</button>
-              <button onClick={() => downloadQrCode()} className='black-yellow'>Download QR Code</button>
-              <QrImage url={url} restaurantDetails = {restaurantDetails}/>
+              <p>You are ready to adapt contactless dining. Download your QR code sticker and paste it on the table, window, etc.</p>
+              <br></br>
+              <a style={{textDecoration: 'none'}} href={qrSticker} download='qr-sticker.png' className='black-yellow'>Download QR Sticker</a>
+              <br></br>
+              <br></br>
+              <br></br>
+              <img src={qrSticker} alt='qr sticker' className='qr-sticker'></img>
+              {/* <QrImage url={url} restaurantDetails = {restaurantDetails}/> */}
             </>) 
           }
           </div>
@@ -83,6 +67,8 @@ const QrContainer = (props) => {
       :
       (
       <div className='loading-div'>
+        <h2>Generating QR sticker for you ...</h2>
+      
         <img alt='' className='loading-icon' src={loadingIcon} />
       </div>
       )}
