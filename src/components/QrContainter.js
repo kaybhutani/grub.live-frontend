@@ -9,45 +9,28 @@ import QrImage from './QrImage'
 
 const QrContainer = (props) => {
 
-  const [restaurantDetails, setRestaurantDetails] = useState(null)
+  const [qrSticker, setQrSticker] = useState(null)
   const [dataFetched, setDataFetched] = useState(false)
-  let { menuId } = useParams();
+  let { menuId } = useParams()
   if(!dataFetched) {
-    fetch(`${apiBaseUrl}/view?q=${menuId}`)
+    fetch(`${apiBaseUrl}/qr/${menuId}`)
         .then(response => response.json())
         .then(data => {
           setDataFetched(true)
           if(data.success)
             {
-              setRestaurantDetails(data.data)
+              setQrSticker(data.sticker)
             }
         });
   }
 
-  const url = `https://glqr.me/#/${menuId}`
-
   const downloadSticker = () => {
     console.log('Downloading QR Sticker...')
-    html2canvas(document.getElementById('qr-download')).then(function(canvas) {
-      const aTag = document.createElement('a')
-      aTag.setAttribute("href", canvas.toDataURL("image/png"))
-      aTag.setAttribute("download", "QrCodeSticker.png")
-      aTag.click()
-      
-  });
   }
 
-  const downloadQrCode = () => {
-    console.log('Downloading QR Code...')
-    html2canvas(document.getElementById('qr-code')).then(function(canvas) {
-      const aTag = document.createElement('a')
-      aTag.setAttribute("href", canvas.toDataURL("image/png"))
-      aTag.setAttribute("download", "QrCode.png")
-      aTag.click()
-  });
-  }
 
   const edit = props.edit
+  const url = `https://glqr.me/#/${menuId}`
 
 
   return (
@@ -55,7 +38,7 @@ const QrContainer = (props) => {
       
       {dataFetched ? (
       <div>
-          {restaurantDetails?
+          {qrSticker?
         (
           <div>
             {edit? 
@@ -65,10 +48,10 @@ const QrContainer = (props) => {
             </div>):
             (<>
               <h2>QR Menu Generated!</h2>
-              <p>You are ready for contactless dining experience. Download your QR code and paste it on the table.</p>
+              <p>You are ready to adapt contactless dining. Download your QR code sticker and paste it on the table, window, etc..</p>
               <button onClick={() => downloadSticker()} className='black-yellow'>Download QR Sticker</button>
-              <button onClick={() => downloadQrCode()} className='black-yellow'>Download QR Code</button>
-              <QrImage url={url} restaurantDetails = {restaurantDetails}/>
+              <img src={qrSticker} alt='qr sticker'></img>
+              {/* <QrImage url={url} restaurantDetails = {restaurantDetails}/> */}
             </>) 
           }
           </div>
@@ -83,6 +66,8 @@ const QrContainer = (props) => {
       :
       (
       <div className='loading-div'>
+        <h4>Generating QR sticker for you ...</h4>
+        <br></br>
         <img alt='' className='loading-icon' src={loadingIcon} />
       </div>
       )}
