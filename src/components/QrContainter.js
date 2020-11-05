@@ -20,12 +20,6 @@ const QrContainer = (props) => {
         });
   }
 
-  const downloadSticker = () => {
-    console.log('Downloading QR Sticker...')
-    window.location.href = qrSticker
-  }
-
-
   const edit = props.edit
   const url = `https://glqr.me/#/${menuId}`
 
