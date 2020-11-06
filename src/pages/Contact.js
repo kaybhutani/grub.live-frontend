@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-
+import twitterIcon from '../assets/images/twitter.svg'
+import instagramIcon from '../assets/images/instagram.svg'
 
 const Contact = () => {
   
@@ -10,8 +11,12 @@ const Contact = () => {
   return (
     <div className='container'> 
       <h1>Contact Us!</h1>
-      <p>Email ID: <a href='mailto:grubdotlive@gmail.com'>grubdotlive@gmail.com</a></p>
+      <p>Email ID: <a rel="noopener noreferrer" target='_blank' href='mailto:grubdotlive@gmail.com'>grubdotlive@gmail.com</a></p>
       <p>Phone number: <a href='tel:+918802999631'>+91 8802999631</a> or <a href='tel:+919911733450'>+91 9911733450</a></p>
+      <p>Social media: 
+        <a rel="noopener noreferrer" target='_blank' href='https://www.instagram.com/grub_live/'><img className='social-icon' src={instagramIcon} alt='instagram'></img></a>
+        <a rel="noopener noreferrer" target='_blank' href='https://twitter.com/grub_live'><img className='social-icon' src={twitterIcon} alt='twitter'></img></a>
+      </p>
       <br></br>
       <h1>Send Feedback</h1>
       <p>We would love to hear your thoughts, suggestions, concerns or problems with anything so we can improve!</p>

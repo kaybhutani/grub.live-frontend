@@ -103,6 +103,12 @@
   }
 }
 
+.social-icon {
+  width: $l;
+  vertical-align: middle;
+  margin: $s;
+}
+
 .shadow-box {
   padding: $l $l $xxl $l;
   border-radius: $xs;
