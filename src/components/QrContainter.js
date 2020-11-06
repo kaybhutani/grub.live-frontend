@@ -15,7 +15,7 @@ const QrContainer = (props) => {
           setDataFetched(true)
           if(data.success)
             {
-              setQrSticker('data:image/png;base64,' + data.sticker)
+              setQrSticker('data:image/png;application/octet-stream;base64,' + data.sticker)
             }
         });
   }
@@ -35,11 +35,11 @@ const QrContainer = (props) => {
             {edit? 
             (<div style={{marginBottom: '40%'}}>
               <h2>Menu edited successfully!</h2>
-              <p>Your menu has been successfully updated in the previous <a href={url}>link</a> only.</p>
+              <p>Your menu has been successfully updated in the previous <a rel="noopener noreferrer" target='_blank' href={url}>link</a> only.</p>
             </div>):
             (<>
-              <h2>QR Menu Generated!</h2>
-              <p>You are ready to adapt contactless dining, your menu is live <a href={url}>here</a>. You can Download your QR code sticker and paste it on the table, window, etc.</p>
+              <h2>QR Menu Generated Successfully!</h2>
+              <p>Your virtual menu is live <a rel="noopener noreferrer" target='_blank' href={url}>here</a>.<br></br> You can Download the QR code sticker and paste it on the table, window, etc.</p>
               <br></br>
               <a style={{textDecoration: 'none'}} href={qrSticker} download='qr-sticker.png' className='black-yellow'>Download QR Sticker</a>
               <br></br>
