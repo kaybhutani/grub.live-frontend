@@ -46,7 +46,6 @@ const QrContainer = (props) => {
               <br></br>
               <br></br>
               <img src={qrSticker} alt='qr sticker' className='qr-sticker'></img>
-              {/* <QrImage url={url} restaurantDetails = {restaurantDetails}/> */}
             </>) 
           }
           </div>

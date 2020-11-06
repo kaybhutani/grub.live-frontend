@@ -17,6 +17,7 @@ import HowItworks from './components/HowItWorks'
 import QrContainer from './components/QrContainter'
 import ReactGA from 'react-ga';
 import About from './pages/About'
+import Feedback from './pages/Feedback'
 ReactGA.initialize('UA-182081513-1');
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
               <Route exact path='/' children={<Home />} />
               <Route exact path='/create'  children={<CreateMenu />} />
               <Route exact path='/about'  children={<About />} />
+              <Route exact path='/feedback'  children={<Feedback />} />
               <Route exact path='/how-it-works' children={<HowItworks />} />
               <Route exact path='/qr/:menuId' children={<QrContainer />}/>
               <Route path='/edit/:menuId/:hash' children={<CreateMenu edit={true}/>}/>
