@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-const Feedback = () => {
+const Contact = () => {
   
   const [body, setBody]  = useState(null)
   const [subject, setSubject] = useState(null)
@@ -9,7 +9,11 @@ const Feedback = () => {
   
   return (
     <div className='container'> 
-      <h1>Send us your Feedback!</h1>
+      <h1>Contact Us!</h1>
+      <p>Email ID: <a href='mailto:grubdotlive@gmail.com'>grubdotlive@gmail.com</a></p>
+      <p>Phone number: <a href='tel:+918802999631'>+91 8802999631</a> or <a href='tel:+919911733450'>+91 9911733450</a></p>
+      <br></br>
+      <h1>Send Feedback</h1>
       <p>We would love to hear your thoughts, suggestions, concerns or problems with anything so we can improve!</p>
       <br></br>
       <div className='shadow-box' style={{maxWidth: '1024px',}}>
@@ -30,4 +34,4 @@ const Feedback = () => {
   )
 }
 
-export default Feedback
+export default Contact

@@ -14,7 +14,6 @@ const Footer = () => {
         <div className='footer-links'>
           <Link to='/contact'><div className='footer-item hyperlink-invert'>Contact Us</div></Link>
           <Link to='/how-it-works'><div className='footer-item hyperlink-invert'>How it works</div></Link>
-          <Link to='/feedback'><div className='footer-item hyperlink-invert'>Feedback</div></Link>
           <Link to='/about'><div className='footer-item hyperlink-invert'>About Us</div></Link>
         </div>
         <br></br>
