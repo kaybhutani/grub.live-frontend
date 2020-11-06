@@ -15,7 +15,7 @@ const QrContainer = (props) => {
           setDataFetched(true)
           if(data.success)
             {
-              setQrSticker(data.sticker)
+              setQrSticker('data:image/png;base64,' + data.sticker)
             }
         });
   }
@@ -39,7 +39,7 @@ const QrContainer = (props) => {
             </div>):
             (<>
               <h2>QR Menu Generated!</h2>
-              <p>You are ready to adapt contactless dining. Download your QR code sticker and paste it on the table, window, etc.</p>
+              <p>You are ready to adapt contactless dining, your menu is live <a href={url}>here</a>. You can Download your QR code sticker and paste it on the table, window, etc.</p>
               <br></br>
               <a style={{textDecoration: 'none'}} href={qrSticker} download='qr-sticker.png' className='black-yellow'>Download QR Sticker</a>
               <br></br>
