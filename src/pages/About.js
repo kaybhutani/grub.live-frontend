@@ -9,9 +9,12 @@ const About = () => {
       <div style={{textAlign: 'center'}}>
         <h1>About Us</h1>
         <p></p>
+        <br></br>
+        <a href="https://www.producthunt.com/posts/grub-live?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-grub-live" rel="noopener noreferrer" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=273999&theme=dark" alt="grub.live - Virtual QR Menu's - Rejuvenating the dining experience. | Product Hunt" style={{width: '250px', height: '54px'}}/></a>
       </div>
-      {/* <br></br> */}
-      <div className='container shadow-box'>
+      <br></br>
+      <br></br>
+      <div className='shadow-box'>
         <h2>Who are we ?</h2>
         <p>We are a team of passionate Developers, Designers and innovative thinkers. We aim to change the whole dining experience. Through grub.live, we aim to provide all restaurants with Free virtual QR Menu's.</p>
         <br></br>

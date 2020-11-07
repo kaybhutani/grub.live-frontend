@@ -46,7 +46,6 @@ const Home = () => {
         
         <h1 >Free {'&'} Simple Virtual QR Menu's <br></br> Rejuvenating the dining experience.</h1>
         <div className='header-features'>
-          
           {
             features.map((feature, key) => {
               return (
