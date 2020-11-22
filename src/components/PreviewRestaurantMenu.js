@@ -1,8 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const PreviewRestaurantMenu = (props) => {
 
-  const restaurantDetails = props.restaurantDetails
+  const [restaurantDetails, setRestaruarntDetails] = useState(props.restaurantDetails)
+  const [searchQuery, setSearchQuery] = useState("")
+  useEffect(()=> {
+
+    if(searchQuery==="") 
+      setRestaruarntDetails(props.restaurantDetails)
+    else {
+      // changing state obj to json
+      const tempRestaurantDetails = JSON.parse(JSON.stringify(props.restaurantDetails))
+      console.log(tempRestaurantDetails)
+      tempRestaurantDetails.menu.categories.forEach(category => {
+        
+        const tempItems = []
+
+        for(let i =0; i<category.items.length; i++) {
+          if(category.items[i].itemName.toLowerCase().includes(searchQuery.toLowerCase().trim()))
+            tempItems.push(category.items[i])
+        }
+        category.items = tempItems
+      });
+      
+      
+      setRestaruarntDetails(tempRestaurantDetails)
+    }
+  }, [props.restaurantDetails, searchQuery])
+
+  // const searchDish = (e) => {
+    
+  // }
 
   return (
     <div className='shadow-box'>
@@ -18,7 +46,7 @@ const PreviewRestaurantMenu = (props) => {
     <br></br>
     
     <div style={{textAlign: "center"}}>
-      <input type='text' name='search-restaurant' className='form-input' placeholder='Search Dishes' ></input>
+      <input type='text' name='search-restaurant' className='form-input' placeholder='Search Menu' onKeyUp={e => setSearchQuery(e.target.value)} ></input>
     </div>
 
     <br></br>
