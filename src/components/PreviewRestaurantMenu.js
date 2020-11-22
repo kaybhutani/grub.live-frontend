@@ -52,27 +52,37 @@ const PreviewRestaurantMenu = (props) => {
     <br></br>
     <div>
       {restaurantDetails.menu.categories.map((element, key) => {
-            return (
+            return element.title!== "" ?  (
             
             <div key={key}>
             <h2>{element.title}</h2>
             
 
             {
-              restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
-                return (<div key={itemKey}>
-                  <p style={{display: "inline-block", margin: 0}}>{item.itemName}</p>
-                  <p style={{float: "right", margin: 0}}>{item.itemPrice}</p>
-                  <br></br>
-                  <br></br>  
-                </div>
-                
-                )
-              })
+              element.items.length >0 ?
+               (<div>
+                 {
+                restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
+                  return (<div key={itemKey}>
+                    <p style={{display: "inline-block", margin: 0}}>{item.itemName}</p>
+                    <p style={{float: "right", margin: 0}}>{item.itemPrice}</p>
+                    <br></br>
+                    <br></br>  
+                  </div>
+                  
+                  )
+                })
+               }
+               </div>): 
+                (
+                  <div>
+                  <p>No items</p>
+                  </div>
+                  ) 
             }
             
           
-          </div>)
+          </div>):<div key={key}></div>
           
         })}  
     </div>
