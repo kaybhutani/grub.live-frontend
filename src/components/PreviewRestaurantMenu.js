@@ -16,6 +16,12 @@ const PreviewRestaurantMenu = (props) => {
             {restaurantDetails.restaurantName}</h1>
         </div> 
     <br></br>
+    
+    <div style={{textAlign: "center"}}>
+      <input type='text' name='search-restaurant' className='form-input' placeholder='Search Dishes' ></input>
+    </div>
+
+    <br></br>
     <div>
       {restaurantDetails.menu.categories.map((element, key) => {
             return (
