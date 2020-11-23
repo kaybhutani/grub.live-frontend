@@ -1,0 +1,16 @@
+{
+
+  "light": {
+    "textColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "font": "lato"
+  },
+  
+  "dark": {
+    "textColor": "#ffffff",
+    "backgroundColor": "#000000",
+    "font": "lato"
+  }
+
+
+}
