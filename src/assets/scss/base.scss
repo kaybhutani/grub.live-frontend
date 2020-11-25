@@ -59,7 +59,9 @@ footer {
 .container {
   margin: $xxl $l;
 }
-
+.center-align {
+  text-align: center;
+}
 
 @media only screen and (max-width: 400px) {
   .logo { 
