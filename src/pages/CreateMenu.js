@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {useParams} from 'react-router-dom'
-import EditMenu from './EditMenu'
-import PreviewMenu from './PreviewMenu'
+import EditMenu from '../components/EditMenu'
+import PreviewMenu from '../components/PreviewMenu'
 import loadingIcon from '../assets/images/three_dots_loading.svg'
 import {apiBaseUrl} from '../config.json'
 import ReactGA from 'react-ga';
