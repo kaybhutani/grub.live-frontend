@@ -39,7 +39,7 @@ const QrDownload = (props) => {
             </div>):
             (<>
               <h2>QR Menu Generated Successfully!</h2>
-              <p>Your virtual menu is live <a rel="noopener noreferrer" target='_blank' href={url}>here</a>.<br></br> You can Download the QR code sticker and paste it on the table, window, etc.</p>
+              <p>Your Digital menu is live <a rel="noopener noreferrer" target='_blank' href={url}>here</a>.<br></br> You can Download the QR code sticker and paste it on the table, window, etc.</p>
               <br></br>
               <a style={{textDecoration: 'none'}} href={qrSticker} download='qr-sticker.png' className='black-yellow'>Download QR Sticker</a>
               <br></br>

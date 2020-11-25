@@ -172,7 +172,7 @@ const EditMenu = (props) => {
       } */}
       
       <h2>Edit Menu <i className='eos-icons'>edit</i></h2>
-      <p>Please enter the following details to create your Virtual QR Menu.</p>
+      <p>Please enter the following details to create your Digital QR Menu.</p>
       <div style={{float: "right"}}>
         {
           localStorage.getItem('restaurantDetails')?

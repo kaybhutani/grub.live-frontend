@@ -183,7 +183,8 @@
 
 .checkbox-switch {
   input[type="checkbox"] {
-  
+    vertical-align: middle;
+    margin-left: $s;
     position: relative;
     width: $xxl;
     height: $l;

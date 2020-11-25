@@ -9,7 +9,7 @@ const Home = () => {
   const features = [
     {
       name: 'Enhances Safety',
-      description: `Virtual menu's ensures a safe outlet by avoiding any unneeded interaction with staff, especially in times of COVID-19 safeguarding both staff and customers.`
+      description: `Digital menu's ensures a safe outlet by avoiding any unneeded interaction with staff, especially in times of COVID-19 safeguarding both staff and customers.`
     },
     {
       name: `No delay`,
@@ -25,7 +25,7 @@ const Home = () => {
     },
     {
       name: `Free and Easy to set up`,
-      description: `Our virtual menu's are and will be forever Free and easy to use!`
+      description: `Our Digital menu's are and will be forever Free and easy to use!`
     }
     
 
@@ -44,7 +44,7 @@ const Home = () => {
       
       <div className='header' >
         
-        <h1 >Free {'&'} Simple Virtual QR Menu's <br></br> Rejuvenating the dining experience.</h1>
+        <h1 >Free {'&'} Simple Digital QR Menu's <br></br> Rejuvenating the dining experience.</h1>
         <div className='header-features'>
           {
             features.map((feature, key) => {
