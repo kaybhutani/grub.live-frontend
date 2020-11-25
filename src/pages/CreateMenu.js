@@ -73,7 +73,7 @@ const CreateMenu = (props) => {
               </div>
               <br></br>
             </div>
-            <EditMenu restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails} edit={edit} menuId={menuId} hash={hash}/>
+            <EditMenu restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails} edit={edit} menuId={menuId} hash={hash} premiumMenu={premiumMenu}/>
             <PreviewMenu restaurantDetails={restaurantDetails} premiumMenu={premiumMenu}/>
           </div>
         )

@@ -8,7 +8,7 @@ const EditMenu = (props) => {
   const {edit, menuId, hash} = props
   const restaurantDetails = props.restaurantDetails
   const setRestaurantDetails = props.setRestaurantDetails
-  
+  const premiumMenu = props.premiumMenu
 
   const [saveDraft, setSaveDraft] = useState(false)
   // const [previewModal, setPreviewModal] = useState(false)
@@ -21,6 +21,14 @@ const EditMenu = (props) => {
     
   }
     
+  const changeRestaurantBio = (e) => {
+  
+    const temp = { ...restaurantDetails}
+    temp.bio =  e.target.value
+    setRestaurantDetails(temp)
+    
+  }
+
   const changeEmailId = (e) => {
   
     const temp = { ...restaurantDetails}
@@ -78,10 +86,12 @@ const EditMenu = (props) => {
 
   const itemOnChange = (itemType, e, categoryKey, itemKey) => {
     const temp = {...restaurantDetails}
-    itemType === 'name' ? 
+    if(itemType === 'name') 
     temp.menu.categories[categoryKey].items[itemKey].itemName = e.target.value
-    :
+    else if(itemType === 'price')
     temp.menu.categories[categoryKey].items[itemKey].itemPrice = e.target.value
+    else 
+    temp.menu.categories[categoryKey].items[itemKey].itemDescription = e.target.value
     setRestaurantDetails(temp)
   }
 
@@ -198,6 +208,15 @@ const EditMenu = (props) => {
       <div className='shadow-box'>
         <p>Name of Restaurant</p>
         <input disabled={edit} name="restaurantName" required={true} className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => changeRestaurantTitle(e)} defaultValue={restaurantDetails.restaurantName}></input>
+        {
+          premiumMenu?
+            <>
+            <p>Bio</p>
+            <textarea placeholder="Example: The Best Fast Food restaurant in New Delhi. Contact us at +91 9999999999 or visit A-21, North campus" onChange={ e => changeRestaurantBio(e)}  className='form-input' disabled={edit} defaultValue={restaurantDetails.bio}></textarea>
+            </>
+            :
+            <></>
+        }
         <p>Logo (if any)</p>
         <input disabled={edit} type='file' accept='image/*' onChange={e => updateLogo(e)}></input>
         <p>Email ID (You can use this to edit Menu later)</p>
@@ -218,15 +237,27 @@ const EditMenu = (props) => {
               restaurantDetails.menu.categories[categoryKey].items.map((item, itemKey) => {
                 return (
                   <div key = {itemKey}>
-                    <div style={{display: "inline-block"}}>
-                      <p>Item Name</p>
-                      <input required={true} onChange = {(e) => itemOnChange('name', e, categoryKey, itemKey)} defaultValue={restaurantDetails.menu.categories[categoryKey].items[itemKey].itemName} className='form-input' placeholder='Eg: French Fries'></input>
-                    </div>
-                    <div style={{display: "inline-block"}}>
-                      <p>Price</p>
-                      <input required={true} onKeyDown={(e) => handleKeyDown(e, categoryKey)} onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} defaultValue={restaurantDetails.menu.categories[categoryKey].items[itemKey].itemPrice} className='form-input' placeholder='Eg: Half: $4.99 , Full: $9.99'></input>
-                    </div>
-                    <i onClick={() => deleteItem(categoryKey, itemKey)} className='eos-icons delete-icon'>delete</i>
+                    <div style={{display: 'inline-block'}}>
+                        <p>Item Name</p>
+                        <input required={true} onChange = {(e) => itemOnChange('name', e, categoryKey, itemKey)} defaultValue={restaurantDetails.menu.categories[categoryKey].items[itemKey].itemName} className='form-input' placeholder='Eg: French Fries'></input>
+                      </div>
+                      <div style={{display: "inline-block"}}>
+                        <p>Price</p>
+                        <input required={true} onKeyDown={(e) => handleKeyDown(e, categoryKey)} onChange = {(e) => itemOnChange('price', e, categoryKey, itemKey)} defaultValue={restaurantDetails.menu.categories[categoryKey].items[itemKey].itemPrice} className='form-input' placeholder='Eg: Half: $4.99 , Full: $9.99'></input>
+                      </div>
+                      <i onClick={() => deleteItem(categoryKey, itemKey)} className='eos-icons delete-icon' style={{ }}>delete</i>
+                      {
+                        premiumMenu ? 
+                          <>
+                            <p>Item Description (If any)</p>
+                            <textarea onChange = {(e) => itemOnChange('description', e, categoryKey, itemKey)} onKeyDown={(e) => handleKeyDown(e, categoryKey)}  style={{maxWidth: '330px'}} defaultValue={restaurantDetails.menu.categories[categoryKey].items[itemKey].itemDescription} className='form-input' placeholder='Contains onion, chillies, etc.'></textarea>
+                            <br></br>
+                            <br></br>
+                          </>
+                        :
+                          <></>
+                      }
+            
                   </div>
                 )
               })
