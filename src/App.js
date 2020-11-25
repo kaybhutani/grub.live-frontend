@@ -14,7 +14,7 @@ import Home from './pages/Home'
 import Footer from './components/Footer'
 import CreateMenu from './pages/CreateMenu'
 import HowItworks from './pages/HowItWorks'
-import QrContainer from './pages/QrContainter'
+import QrDownload from './pages/QrDownload'
 import ReactGA from 'react-ga';
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -42,9 +42,9 @@ function App() {
               <Route exact path='/about'  children={<About />} />
               <Route exact path='/contact'  children={<Contact />} />
               <Route exact path='/how-it-works' children={<HowItworks />} />
-              <Route exact path='/qr/:menuId' children={<QrContainer />}/>
+              <Route exact path='/qr/:menuId' children={<QrDownload />}/>
               <Route path='/edit/:menuId/:hash' children={<CreateMenu edit={true}/>}/>
-              <Route exact path='/qr/edit/:menuId' children={<QrContainer edit={true}/>}/>
+              <Route exact path='/qr/edit/:menuId' children={<QrDownload edit={true}/>}/>
             </Switch>
             <Footer />
           </HashRouter>

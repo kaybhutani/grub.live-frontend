@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom'
 import loadingIcon from '../assets/images/three_dots_loading.svg'
 import {apiBaseUrl} from '../config.json'
 
-const QrContainer = (props) => {
+const QrDownload = (props) => {
 
   const [qrSticker, setQrSticker] = useState(null)
   const [dataFetched, setDataFetched] = useState(false)
@@ -70,5 +70,5 @@ const QrContainer = (props) => {
   )
 }
 
-export default QrContainer
+export default QrDownload
 
