@@ -9,7 +9,7 @@ const PreviewMenu = (props) => {
       <h2>Preview Menu <i className='eos-icons'>slideshow</i></h2>
       <p>Once done, click on Generate QR Menu to create your Digital Menu.</p>
       <br></br>
-      <PreviewRestaurantMenu restaurantDetails={restaurantDetails} />
+      <PreviewRestaurantMenu restaurantDetails={restaurantDetails} premiumMenu = {props.premiumMenu}/>
     </div>
   )
 

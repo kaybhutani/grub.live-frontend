@@ -4,6 +4,7 @@ const PreviewRestaurantMenu = (props) => {
 
   const [restaurantDetails, setRestaruarntDetails] = useState(props.restaurantDetails)
   const [searchQuery, setSearchQuery] = useState("")
+  const premiumMenu = props.premiumMenu || false
   useEffect(()=> {
 
     if(searchQuery==="") 
@@ -51,6 +52,11 @@ const PreviewRestaurantMenu = (props) => {
             :
             (<i className='eos-icons' style={{color: 'red', fontSize: '1em', margin: '8px'}}>local_dining</i>)}   
             {restaurantDetails.restaurantName}</h1>
+            {
+              premiumMenu? 
+              <h4>{restaurantDetails.bio}</h4>
+              : <></>
+            }
         </div> 
     <br></br>
     
@@ -72,12 +78,22 @@ const PreviewRestaurantMenu = (props) => {
                (<div>
                  {
                 restaurantDetails.menu.categories[key].items.map((item, itemKey) => {
-                  return (<div key={itemKey}>
-                    <p style={{display: "inline-block", margin: 0}}>{item.itemName}</p>
-                    <p style={{float: "right", margin: 0}}>{item.itemPrice}</p>
-                    <br></br>
-                    <br></br>  
-                  </div>
+                  return (
+                    <div className='menu-item' key={itemKey}>
+                      <p className='item-name'>{item.itemName}</p>
+                      <p className='item-price'>{item.itemPrice}</p>
+                      {
+                        premiumMenu && item.itemDescription?
+                        <>
+                          <br></br>
+                          <i className='item-description'>{item.itemDescription}</i> 
+                        </>
+                        :
+                        <></>
+                      }
+                      <br></br>
+                      <br></br>  
+                    </div>
                   
                   )
                 })

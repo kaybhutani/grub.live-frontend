@@ -2,23 +2,29 @@
   "dummyRestaurantDetails": {
     "emailId": "",
     "logo": "",
+    "bio": "The Best Fast food Restaurant in New Delhi.\nPh: +91 8802999631",
     "menu": {
       "categories": [{
         "items": [{
           "itemName": "Chicken Tikka",
-          "itemPrice": "Rs. 99"
+          "itemPrice": "Rs. 99",
+          "itemDescription": "Sample item description"
         }, {
           "itemName": "Grilled Chicken Burger",
-          "itemPrice": "$ 3.99"
+          "itemPrice": "$ 3.99",
+          "itemDescription": "Sample item description. Sample item description. Sample item description"
         }, {
           "itemName": "Cheese and Bacon",
-          "itemPrice": "\u20ac 4.99"
+          "itemPrice": "\u20ac 4.99",
+          "itemDescription": "Sample item description"
         }, {
           "itemName": "Aalo Tikki ",
-          "itemPrice": "\u20b9 59"
+          "itemPrice": "\u20b9 59",
+          "itemDescription": "Sample item description"
         }, {
           "itemName": "Veggie special",
-          "itemPrice": "\u20b9 79"
+          "itemPrice": "\u20b9 79",
+          "itemDescription": "Sample item description"
         }],
         "title": "Burger's \ud83c\udf54",
         "type": "text"
@@ -28,13 +34,15 @@
           "itemPrice": "Half: \u20b999, Full: \u20b9169"
         }, {
           "itemName": "Veg Momos",
-          "itemPrice": "\u20b9100 /10pc"
+          "itemPrice": "\u20b9100 /10pc",
+          "itemDescription": "Sample item description"
         }, {
           "itemName": "Chicken Momos",
           "itemPrice": "\u20b9130 /10pc"
         }, {
           "itemName": "Manchurian",
-          "itemPrice": "Half: \u20b9199,  Full: \u20b9269"
+          "itemPrice": "Half: \u20b9199,  Full: \u20b9269",
+          "itemDescription": "Sample item description"
         }],
         "title": "Chinese Food \ud83c\udf5c",
         "type": "text"
