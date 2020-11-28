@@ -1,11 +1,24 @@
 import React, { useEffect, useState } from 'react'
-
+import themes from '../themes.json'
 const PreviewRestaurantMenu = (props) => {
 
   const [restaurantDetails, setRestaruarntDetails] = useState(props.restaurantDetails)
   const [searchQuery, setSearchQuery] = useState("")
-  const premiumMenu = props.premiumMenu || false
+  const premiumMenu = props.premiumMenu
+  const [theme, setTheme] = useState(themes.light)
   useEffect(()=> {
+    if(premiumMenu) {
+      if(restaurantDetails.menu.theme) {
+        if(themes[restaurantDetails.menu.theme.themeName])
+          setTheme(themes[restaurantDetails.menu.theme.themeName])
+        else {
+          console.log('No theme name found. Reading theme info')
+          setTheme(restaurantDetails.menu.theme)
+        }
+      }
+      
+        
+    }
 
     if(searchQuery==="") 
       setRestaruarntDetails(props.restaurantDetails)
@@ -36,14 +49,20 @@ const PreviewRestaurantMenu = (props) => {
       tempRestaurantDetails.menu.categories = categories
       setRestaruarntDetails(tempRestaurantDetails)
     }
-  }, [props.restaurantDetails, searchQuery])
+  }, [props.restaurantDetails, restaurantDetails, searchQuery, premiumMenu])
 
   // const searchDish = (e) => {
     
   // }
 
   return (
-    <div className='shadow-box'>
+    <div className='shadow-box' style={
+      premiumMenu?
+      {
+        color: theme.textColor,
+        backgroundColor: theme.backgroundColor
+      }:{}
+    }>
 
       <div  style={{textAlign: "center"}}>
           <h1>

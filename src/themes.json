@@ -1,5 +1,4 @@
 {
-
   "light": {
     "textColor": "#000000",
     "backgroundColor": "#ffffff",
@@ -10,7 +9,11 @@
     "textColor": "#ffffff",
     "backgroundColor": "#000000",
     "font": "lato"
+  },
+  "christmas": {
+    "textColor": "#ff3d43",
+    "backgroundColor": "#003301",
+    "font": "lato"
   }
-
 
 }

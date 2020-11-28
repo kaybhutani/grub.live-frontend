@@ -23,7 +23,6 @@ const CreateMenu = (props) => {
   const [editDataCorrect, setEditDataCorrect] = useState(false)
   const edit = props.edit || false
   let { menuId, hash } = useParams()
-  console.log(menuId, hash)
 
   if(edit && !dataFetched) {
     fetch(`${apiBaseUrl}/view?q=${menuId}`)
