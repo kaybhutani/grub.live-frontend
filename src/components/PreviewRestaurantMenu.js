@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import themes from '../themes.json'
+
 const PreviewRestaurantMenu = (props) => {
 
   const [restaurantDetails, setRestaruarntDetails] = useState(props.restaurantDetails)
@@ -59,8 +60,9 @@ const PreviewRestaurantMenu = (props) => {
     <div className='shadow-box' style={
       premiumMenu?
       {
-        color: theme.textColor,
-        backgroundColor: theme.backgroundColor
+       ...theme
+        
+        // backgroundColor: theme.backgroundColor
       }:{}
     }>
 
