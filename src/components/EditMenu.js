@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import {apiBaseUrl} from '../config.json'
 // import PreviewModal from './PreviewModal'
 import {dummyRestaurantDetails} from '../dummyData.json'
+import themes from '../themes.json'
+import fonts from '../fonts.json'
 
 const EditMenu = (props) => {
   
@@ -66,6 +68,14 @@ const EditMenu = (props) => {
   const updateTitle = (e, key) => {
     const temp = {...restaurantDetails}
     temp.menu.categories[key].title = e.target.value
+    setRestaurantDetails(temp)
+  }
+
+  // const [theme, setTheme] = useState(themes.Light)
+
+  const changeTheme = (e) => {
+    const temp = {...restaurantDetails}
+    temp.menu.theme = themes[e.target.value]
     setRestaurantDetails(temp)
   }
 
@@ -222,6 +232,35 @@ const EditMenu = (props) => {
         <p>Email ID (You can use this to edit Menu later)</p>
         <input disabled={edit} type="email" required={true} className='form-input' placeholder='Example: johndoe@gmail.com' onChange={ e => changeEmailId(e)} defaultValue={restaurantDetails.emailId}></input>
       </div>
+
+      {premiumMenu ? 
+        <div className='shadow-box'>
+          <p>Theme</p>
+          <select onChange={(e) => changeTheme(e)} name='themes'>
+          {
+            Object.keys(themes).map((theme, idx) => {
+              return (
+                <option className='form-input' key={idx}>{theme}</option>
+              )
+            })
+          }
+          </select>
+          <p>Font</p>
+          <select onChange={(e) => changeTheme(e)} name='fonts'>
+          {
+            Object.keys(fonts).map((font, idx) => {
+              return (
+                <option className='form-input' key={idx}>{font}</option>
+              )
+            })
+          }
+          </select>
+          
+        </div>
+      :
+        <></>
+      
+      }
       
 
       {restaurantDetails.menu.categories.map((element, categoryKey) => {

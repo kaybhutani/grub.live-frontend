@@ -6,7 +6,7 @@ const PreviewRestaurantMenu = (props) => {
   const [restaurantDetails, setRestaruarntDetails] = useState(props.restaurantDetails)
   const [searchQuery, setSearchQuery] = useState("")
   const premiumMenu = props.premiumMenu
-  const [theme, setTheme] = useState(themes.light)
+  const [theme, setTheme] = useState(themes.Light)
   useEffect(()=> {
     if(premiumMenu) {
       if(restaurantDetails.menu.theme) {
