@@ -252,32 +252,36 @@ const EditMenu = (props) => {
 
       {premiumMenu ? 
         <div className='shadow-box'>
-          <p>Theme</p>
-          <select onChange={(e) => changeTheme(e)} name='themes'>
-          {
-            Object.keys(themes).map((theme, idx) => {
-              return (
-                <option className='form-input' key={idx}>{theme}</option>
-              )
-            })
-          }
-          </select>
-          <p>Font</p>
-          <select onChange={(e) => changeFont(e)} name='fonts'>
-          {
-            Object.keys(fonts).map((font, idx) => {
-              return (
-                <option className='form-input' key={idx} value={Object.values(fonts)[idx]}>{font}</option>
-              )
-            })
-          }
-          </select>
+            <div style={{display: "inline-block"}}> 
+              <p>Theme</p>
+              <select onChange={(e) => changeTheme(e)} name='themes'>
+              {
+                Object.keys(themes).map((theme, idx) => {
+                  return (
+                    <option className='form-input' key={idx}>{theme}</option>
+                  )
+                })
+              }
+              </select>
+          </div>
+            <div style={{display: "inline-block",  marginLeft: "48px"}}> 
+              <p>Font</p>
+              <select onChange={(e) => changeFont(e)} name='fonts'>
+              {
+                Object.keys(fonts).map((font, idx) => {
+                  return (
+                    <option className='form-input' key={idx} value={Object.values(fonts)[idx]}>{font}</option>
+                  )
+                })
+              }
+              </select>
+          </div>
           <br></br>
           <div style={{display: "inline-block"}}>
             <p>Font Color</p>
             <input onChange={e => changeColor(e)} type='color'></input>
           </div>
-          <div style={{display: "inline-block", marginLeft: "24px"}}>
+          <div style={{display: "inline-block", marginLeft: "48px"}}>
             <p>Background Color</p>
             <input onChange={e => changeBgColor(e)} type='color'></input>
           </div>
