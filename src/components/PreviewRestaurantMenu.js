@@ -17,8 +17,7 @@ const PreviewRestaurantMenu = (props) => {
           setTheme(restaurantDetails.menu.theme)
         }
       }
-      
-        
+   
     }
 
     if(searchQuery==="") 

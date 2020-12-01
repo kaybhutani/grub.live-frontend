@@ -78,6 +78,23 @@ const EditMenu = (props) => {
     temp.menu.theme = themes[e.target.value]
     setRestaurantDetails(temp)
   }
+  const changeFont = (e) => {
+    const temp = {...restaurantDetails}
+    temp.menu.theme.fontFamily = e.target.value
+    setRestaurantDetails(temp)
+  }
+  const changeColor = (e) => {
+    const temp = {...restaurantDetails}
+    temp.menu.theme.color = e.target.value
+    setRestaurantDetails(temp)
+    console.log(e.target.value)
+  }
+  const changeBgColor = (e) => {
+    const temp = {...restaurantDetails}
+    temp.menu.theme.backgroundColor = e.target.value
+    setRestaurantDetails(temp)
+    console.log(e.target.value)
+  }
 
   const addItem = (categoryKey) => {
     const temp = {...restaurantDetails}
@@ -246,16 +263,25 @@ const EditMenu = (props) => {
           }
           </select>
           <p>Font</p>
-          <select onChange={(e) => changeTheme(e)} name='fonts'>
+          <select onChange={(e) => changeFont(e)} name='fonts'>
           {
             Object.keys(fonts).map((font, idx) => {
               return (
-                <option className='form-input' key={idx}>{font}</option>
+                <option className='form-input' key={idx} value={Object.values(fonts)[idx]}>{font}</option>
               )
             })
           }
           </select>
-          
+          <br></br>
+          <div style={{display: "inline-block"}}>
+            <p>Font Color</p>
+            <input onChange={e => changeColor(e)} type='color'></input>
+          </div>
+          <div style={{display: "inline-block", marginLeft: "24px"}}>
+            <p>Background Color</p>
+            <input onChange={e => changeBgColor(e)} type='color'></input>
+          </div>
+
         </div>
       :
         <></>

@@ -5,10 +5,10 @@
     "bio": "The Best Fast food Restaurant in New Delhi.\nPh: +91 8802999631",
     "menu": {
       "theme": {
-        "themeName": "Christmas",
-        "textColor": "#fa0202",
-        "backgroundColor": "#054500",
-        "font": "lato"
+        "color": "#db3d3d",
+        "backgroundColor": "#003301",
+        "backgroundImage": "url(\"https://res.cloudinary.com/kartikay/image/upload/v1606767929/christmasbg_x98khj.svg\")",
+        "fontFamily": "TypewriterBold"
       },
       "categories": [{
         "items": [{

@@ -15,7 +15,8 @@ const CreateMenu = (props) => {
     restaurantName: "",
     logo: "",
     menu: {
-      categories: [ ]
+      categories: [ ],
+      theme: {}
     }
   }
   const [restaurantDetails, setRestaurantDetails] = useState(sampleRestaurantDetails)
