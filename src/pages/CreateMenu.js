@@ -14,6 +14,8 @@ const CreateMenu = (props) => {
     emailId: "",
     restaurantName: "",
     logo: "",
+    bio: "",
+    premiumMenu: false,
     menu: {
       categories: [ ],
       theme: {}
@@ -38,7 +40,7 @@ const CreateMenu = (props) => {
     });
   }
 
-  const [premiumMenu, setPremiumMenu] = useState(false)
+  const [premiumMenu, setPremiumMenu] = useState(sampleRestaurantDetails.premiumMenu)
   
   const getCreateMenuComponent = (()=> {
           if(edit) {
@@ -66,10 +68,10 @@ const CreateMenu = (props) => {
             :
             <>
               <h1>Create Menu</h1>
-              <p style={{fontSize: '1.2em'}}>Creating menu is simple. Just enter your restaurant name, upload Logo and Email ID for future changes.<br></br>That's it. Now you can start adding the Dishes by creating a new category and adding items to it.<br></br><br></br>Not enough? Try our premium version to customize menu, add themes, change font, colors, description to each food and more.</p>
+              <p style={{fontSize: '1.2em'}}>Creating menu is simple. Just enter your restaurant name, upload Logo and Email ID for future changes.<br></br>That's it. Now you can start adding the Dishes by creating a new category and adding items to it.<br></br><br></br>Not enough? Try Customizing menu, add themes, change font, colors, description to each food and more.</p>
             </>}
               <div class="checkbox-switch">
-                <p style={{fontSize: '1.2em', display: 'inline-block'}}>Premium Menu</p><input onClick={() => setPremiumMenu(!premiumMenu)} type="checkbox" />
+                <p style={{fontSize: '1.2em', display: 'inline-block'}}>Customize Menu</p><input onClick={() => setPremiumMenu(!premiumMenu)} type="checkbox" />
               </div>
               <br></br>
             </div>
