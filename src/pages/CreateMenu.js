@@ -15,7 +15,7 @@ const CreateMenu = (props) => {
     restaurantName: "",
     logo: "",
     bio: "",
-    premiumMenu: false,
+    customizedMenu: false,
     menu: {
       categories: [ ],
       theme: {}
@@ -40,7 +40,7 @@ const CreateMenu = (props) => {
     });
   }
 
-  const [premiumMenu, setPremiumMenu] = useState(sampleRestaurantDetails.premiumMenu)
+  const [customizedMenu, setCustomizedMenutomizedMenu] = useState(sampleRestaurantDetails.customizedMenu)
   
   const getCreateMenuComponent = (()=> {
           if(edit) {
@@ -71,12 +71,12 @@ const CreateMenu = (props) => {
               <p style={{fontSize: '1.2em'}}>Creating menu is simple. Just enter your restaurant name, upload Logo and Email ID for future changes.<br></br>That's it. Now you can start adding the Dishes by creating a new category and adding items to it.<br></br><br></br>Not enough? Try Customizing menu, add themes, change font, colors, description to each food and more.</p>
             </>}
               <div class="checkbox-switch">
-                <p style={{fontSize: '1.2em', display: 'inline-block'}}>Customize Menu</p><input onClick={() => setPremiumMenu(!premiumMenu)} type="checkbox" />
+                <p style={{fontSize: '1.2em', display: 'inline-block'}}>Customize Menu</p><input onClick={() => setCustomizedMenutomizedMenu(!customizedMenu)} type="checkbox" />
               </div>
               <br></br>
             </div>
-            <EditMenu restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails} edit={edit} menuId={menuId} hash={hash} premiumMenu={premiumMenu}/>
-            <PreviewMenu restaurantDetails={restaurantDetails} premiumMenu={premiumMenu}/>
+            <EditMenu restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails} edit={edit} menuId={menuId} hash={hash} customizedMenu={customizedMenu}/>
+            <PreviewMenu restaurantDetails={restaurantDetails} customizedMenu={customizedMenu}/>
           </div>
         )
       })

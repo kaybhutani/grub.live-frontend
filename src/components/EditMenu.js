@@ -10,7 +10,7 @@ const EditMenu = (props) => {
   const {edit, menuId, hash} = props
   const restaurantDetails = props.restaurantDetails
   const setRestaurantDetails = props.setRestaurantDetails
-  const premiumMenu = props.premiumMenu
+  const customizedMenu = props.customizedMenu
 
   const [saveDraft, setSaveDraft] = useState(false)
   // const [previewModal, setPreviewModal] = useState(false)
@@ -236,7 +236,7 @@ const EditMenu = (props) => {
         <p>Name of Restaurant</p>
         <input disabled={edit} name="restaurantName" required={true} className='form-input' placeholder='Example: Moti Mahal Deluxe' onChange={ e => changeRestaurantTitle(e)} defaultValue={restaurantDetails.restaurantName}></input>
         {
-          premiumMenu?
+          customizedMenu?
             <>
             <p>Bio</p>
             <textarea placeholder="Example: The Best Fast Food restaurant in New Delhi. Contact us at +91 9999999999 or visit A-21, North campus" onChange={ e => changeRestaurantBio(e)}  className='form-input' disabled={edit} defaultValue={restaurantDetails.bio}></textarea>
@@ -250,7 +250,7 @@ const EditMenu = (props) => {
         <input disabled={edit} type="email" required={true} className='form-input' placeholder='Example: johndoe@gmail.com' onChange={ e => changeEmailId(e)} defaultValue={restaurantDetails.emailId}></input>
       </div>
 
-      {premiumMenu ? 
+      {customizedMenu ? 
         <div className='shadow-box'>
             <div style={{display: "inline-block"}}> 
               <p>Theme</p>
@@ -316,7 +316,7 @@ const EditMenu = (props) => {
                       </div>
                       <i onClick={() => deleteItem(categoryKey, itemKey)} className='eos-icons delete-icon' style={{ }}>delete</i>
                       {
-                        premiumMenu ? 
+                        customizedMenu ? 
                           <>
                             <p>Item Description (If any)</p>
                             <textarea onChange = {(e) => itemOnChange('description', e, categoryKey, itemKey)} onKeyDown={(e) => handleKeyDown(e, categoryKey)}  style={{maxWidth: '330px'}} defaultValue={restaurantDetails.menu.categories[categoryKey].items[itemKey].itemDescription} className='form-input' placeholder='Contains onion, chillies, etc.'></textarea>

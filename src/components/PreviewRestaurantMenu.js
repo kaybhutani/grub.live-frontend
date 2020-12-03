@@ -5,10 +5,10 @@ const PreviewRestaurantMenu = (props) => {
 
   const [restaurantDetails, setRestaruarntDetails] = useState(props.restaurantDetails)
   const [searchQuery, setSearchQuery] = useState("")
-  const premiumMenu = props.premiumMenu
+  const customizedMenu = props.customizedMenu
   const [theme, setTheme] = useState(themes.Light)
   useEffect(()=> {
-    if(premiumMenu) {
+    if(customizedMenu) {
       if(restaurantDetails.menu.theme) {
         if(themes[restaurantDetails.menu.theme.themeName])
           setTheme(themes[restaurantDetails.menu.theme.themeName])
@@ -49,7 +49,7 @@ const PreviewRestaurantMenu = (props) => {
       tempRestaurantDetails.menu.categories = categories
       setRestaruarntDetails(tempRestaurantDetails)
     }
-  }, [props.restaurantDetails, restaurantDetails, searchQuery, premiumMenu])
+  }, [props.restaurantDetails, restaurantDetails, searchQuery, customizedMenu])
 
   // const searchDish = (e) => {
     
@@ -57,7 +57,7 @@ const PreviewRestaurantMenu = (props) => {
 
   return (
     <div className='shadow-box' style={
-      premiumMenu?
+      customizedMenu?
       {
        ...theme
         
@@ -73,7 +73,7 @@ const PreviewRestaurantMenu = (props) => {
             (<i className='eos-icons' style={{color: 'red', fontSize: '1em', margin: '8px'}}>local_dining</i>)}   
             {restaurantDetails.restaurantName}</h1>
             {
-              premiumMenu? 
+              customizedMenu? 
               <h4>{restaurantDetails.bio}</h4>
               : <></>
             }
@@ -103,7 +103,7 @@ const PreviewRestaurantMenu = (props) => {
                       <p className='item-name'>{item.itemName}</p>
                       <p className='item-price'>{item.itemPrice}</p>
                       {
-                        premiumMenu && item.itemDescription?
+                        customizedMenu && item.itemDescription?
                         <>
                           <br></br>
                           <i className='item-description'>{item.itemDescription}</i> 
