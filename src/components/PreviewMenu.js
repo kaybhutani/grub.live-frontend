@@ -7,9 +7,9 @@ const PreviewMenu = (props) => {
   return (
     <div className='preview-menu'>
       <h2>Preview Menu <i className='eos-icons'>slideshow</i></h2>
-      <p>Once done, click on Generate QR Menu to create your Virtual Menu.</p>
+      <p>Once done, click on Generate QR Menu to create your Digital Menu.</p>
       <br></br>
-      <PreviewRestaurantMenu restaurantDetails={restaurantDetails} />
+      <PreviewRestaurantMenu restaurantDetails={restaurantDetails} customizedMenu = {props.customizedMenu}/>
     </div>
   )
 

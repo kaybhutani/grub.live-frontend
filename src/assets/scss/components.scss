@@ -154,6 +154,26 @@
    display: none;
  }
 
+ .menu-item {
+
+  .item-name {
+    display: inline-block;
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+
+  .item-price {
+    float: right;
+    margin: 0;
+  }
+
+  .item-description {
+    font-size: small;
+    word-wrap: break-word;
+  }
+ }
+
  .delete-icon {
    color: $light-gray;
    cursor: pointer;
@@ -176,6 +196,48 @@
 
 .qr-sticker {
   width: 400px;
+}
+
+
+// check box
+
+.checkbox-switch {
+  input[type="checkbox"] {
+    vertical-align: middle;
+    margin-left: $s;
+    position: relative;
+    width: $xxl;
+    height: $l;
+    -webkit-appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    cursor: pointer;
+    border-radius: $m;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background 300ms linear;
+  }
+  
+  input:checked[type="checkbox"] {
+    background: $yellow-base;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: $xl;
+    height: $xl;
+    border-radius: $m;
+    top: -$xs;
+    left: -$xs;
+    background: #fff;
+    transform: scale(0.6);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: left 300ms linear;
+  }
+  
+  input:checked[type="checkbox"]::before {
+    left: $m + $xs;
+  }
 }
 
 
