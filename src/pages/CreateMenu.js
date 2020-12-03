@@ -21,12 +21,21 @@ const CreateMenu = (props) => {
       theme: {}
     }
   }
+  
   const [restaurantDetails, setRestaurantDetails] = useState(sampleRestaurantDetails)
   const [dataFetched, setDataFetched] = useState(false)
   const [editDataCorrect, setEditDataCorrect] = useState(false)
   const edit = props.edit || false
   let { menuId, hash } = useParams()
+  const [customizedMenu, setCustomizedMenu] = useState(restaurantDetails.customizedMenu)
+  
+  const changeCustomizedMenu = () => {
+    let tempCustom = !customizedMenu
 
+    setCustomizedMenu(tempCustom)
+    setRestaurantDetails({...restaurantDetails, customizedMenu: tempCustom})
+  }
+  
   if(edit && !dataFetched) {
     fetch(`${apiBaseUrl}/view?q=${menuId}`)
       .then(response => response.json())
@@ -40,8 +49,6 @@ const CreateMenu = (props) => {
     });
   }
 
-  const [customizedMenu, setCustomizedMenutomizedMenu] = useState(sampleRestaurantDetails.customizedMenu)
-  
   const getCreateMenuComponent = (()=> {
           if(edit) {
 
@@ -71,7 +78,7 @@ const CreateMenu = (props) => {
               <p style={{fontSize: '1.2em'}}>Creating menu is simple. Just enter your restaurant name, upload Logo and Email ID for future changes.<br></br>That's it. Now you can start adding the Dishes by creating a new category and adding items to it.<br></br><br></br>Not enough? Try Customizing menu, add themes, change font, colors, description to each food and more.</p>
             </>}
               <div class="checkbox-switch">
-                <p style={{fontSize: '1.2em', display: 'inline-block'}}>Customize Menu</p><input onClick={() => setCustomizedMenutomizedMenu(!customizedMenu)} type="checkbox" />
+                <p style={{fontSize: '1.2em', display: 'inline-block'}}>Customize Menu</p><input onClick={() => changeCustomizedMenu()} type="checkbox" />
               </div>
               <br></br>
             </div>

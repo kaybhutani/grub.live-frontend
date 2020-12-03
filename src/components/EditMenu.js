@@ -10,7 +10,7 @@ const EditMenu = (props) => {
   const {edit, menuId, hash} = props
   const restaurantDetails = props.restaurantDetails
   const setRestaurantDetails = props.setRestaurantDetails
-  const customizedMenu = props.customizedMenu
+  const customizedMenu = restaurantDetails.customizedMenu
 
   const [saveDraft, setSaveDraft] = useState(false)
   // const [previewModal, setPreviewModal] = useState(false)
@@ -213,7 +213,7 @@ const EditMenu = (props) => {
       <div style={{float: "right"}}>
         {
           localStorage.getItem('restaurantDetails')?
-            <button onClick={() => setRestaurantDetails(JSON.parse(localStorage.getItem('restaurantDetails')))} style={{color: '#007cbf'}} className='hyperlink btn-link'>
+            <button onClick={() => setRestaurantDetails({...JSON.parse(localStorage.getItem('restaurantDetails')), customizedMenu: customizedMenu})} style={{color: '#007cbf'}} className='hyperlink btn-link'>
               Load saved <i className='eos-icons'>system_update_alt</i>
             </button>
             :
@@ -222,7 +222,7 @@ const EditMenu = (props) => {
         {restaurantDetails.restaurantName ? 
         <></>
         :
-        <button onClick={() => setRestaurantDetails(dummyRestaurantDetails)} style={{color: '#007cbf'}} className='hyperlink btn-link'>
+        <button onClick={() => setRestaurantDetails({...dummyRestaurantDetails, customizedMenu: customizedMenu})} style={{color: '#007cbf'}} className='hyperlink btn-link'>
           Fill sample data  <i className='eos-icons'>keyboard</i>
         </button>
         }

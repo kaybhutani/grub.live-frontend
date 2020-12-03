@@ -3,6 +3,7 @@
     "emailId": "",
     "logo": "",
     "bio": "The Best Fast food Restaurant in New Delhi.\nPh: +91 8802999631",
+    "customizedMenu": false,
     "menu": {
       "theme": {
         "color": "#db3d3d",
