@@ -1,35 +1,71 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "631ebedce310c2bf72a8846633dd1019",
+    "revision": "9ddf2402fdc3f09db0866a7a9fecccb6",
     "url": "/index.html"
   },
   {
-    "revision": "9ae41c8bf158c71b688a",
+    "revision": "980c4d48a38afb612c86",
     "url": "/static/css/2.82eb3584.chunk.css"
   },
   {
-    "revision": "8e30ad790fb609c17468",
-    "url": "/static/css/main.9caad985.chunk.css"
+    "revision": "3f8d2b53a6e25336b33a",
+    "url": "/static/css/main.a00fc5bb.chunk.css"
   },
   {
-    "revision": "9ae41c8bf158c71b688a",
-    "url": "/static/js/2.51da859c.chunk.js"
+    "revision": "980c4d48a38afb612c86",
+    "url": "/static/js/2.c9a7b637.chunk.js"
   },
   {
     "revision": "3c73c585782ac05880c0f89bcfdbba5a",
-    "url": "/static/js/2.51da859c.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.c9a7b637.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8e30ad790fb609c17468",
-    "url": "/static/js/main.fac758a7.chunk.js"
+    "revision": "3f8d2b53a6e25336b33a",
+    "url": "/static/js/main.3507870f.chunk.js"
   },
   {
     "revision": "ec9875811aa0f00c2e31",
     "url": "/static/js/runtime-main.92ee656d.js"
   },
   {
+    "revision": "fa2ffbe6e33914dd36f07aa9f0459b70",
+    "url": "/static/media/Almada.fa2ffbe6.ttf"
+  },
+  {
+    "revision": "2fe3f3578f53f85451c77968f643412e",
+    "url": "/static/media/Florence-Regular.2fe3f357.ttf"
+  },
+  {
+    "revision": "e828c944eb521fbcd5db3a90a0db1cc9",
+    "url": "/static/media/GOLDSTICK.e828c944.ttf"
+  },
+  {
+    "revision": "c3315f93e038559caef732ff851f41e9",
+    "url": "/static/media/JMH Typewriter-Bold.c3315f93.ttf"
+  },
+  {
+    "revision": "9bb0915aa5e81ea44790872cd2c95e16",
+    "url": "/static/media/JMH Typewriter-Thin.9bb0915a.ttf"
+  },
+  {
     "revision": "2d36b1a925432bae7f3c53a340868c6e",
     "url": "/static/media/Lato-Regular.2d36b1a9.ttf"
+  },
+  {
+    "revision": "234229e0381e3913d74381519936405c",
+    "url": "/static/media/Mayan.234229e0.ttf"
+  },
+  {
+    "revision": "942b9731c32fbbde4d7652c4cbb48559",
+    "url": "/static/media/TheWanters.942b9731.ttf"
+  },
+  {
+    "revision": "b38c6ef4fe08325c05999ccbd0ffb773",
+    "url": "/static/media/Vintages.b38c6ef4.ttf"
+  },
+  {
+    "revision": "be3c4a43db1bfe054eb4b58ea6dbece8",
+    "url": "/static/media/Vogue.be3c4a43.ttf"
   },
   {
     "revision": "2b33b67fd068651e42654654ceacf444",
@@ -68,16 +104,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/mobile-qr-menu.05161419.svg"
   },
   {
-    "revision": "b28f044b4b528d7cff4b64e7e71b4b35",
-    "url": "/static/media/step1.b28f044b.svg"
+    "revision": "8a88b5ee99b6c3d92ee664234dca7a4a",
+    "url": "/static/media/step1.8a88b5ee.svg"
   },
   {
     "revision": "dfebaf5e850838f16f8bf22b30b68c64",
     "url": "/static/media/step2.dfebaf5e.svg"
   },
   {
-    "revision": "a433c4beac3f0b7b106689017dc367c7",
-    "url": "/static/media/step3.a433c4be.svg"
+    "revision": "9994faa9f70acaaf0b91768a706474db",
+    "url": "/static/media/step3.9994faa9.svg"
   },
   {
     "revision": "c0ff1a216eceb19d57fa1d2ba41c171e",
@@ -90,5 +126,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c9f1200836515fd4bacd29160be78732",
     "url": "/static/media/twitter.c9f12008.svg"
+  },
+  {
+    "revision": "fcc660c06203214a9461862df2ed024a",
+    "url": "/static/media/yellosun.fcc660c0.ttf"
   }
 ]);
