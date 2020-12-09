@@ -24,8 +24,8 @@ const Home = () => {
       description: `No matter if your dishes change daily or monthly, you don't have to print menu's again! Just update it on grub.live.`
     },
     {
-      name: `Free and Easy to set up`,
-      description: `Our Digital menu's are and will be forever Free and easy to use!`
+      name: `Simple and Easy to set up`,
+      description: `Our Digital menu's are easy to make and set up. We always value user experience first.`
     }
     
 
@@ -44,7 +44,7 @@ const Home = () => {
       
       <div className='header' >
         
-        <h1 >Free {'&'} Simple Digital QR Menu's <br></br> Rejuvenating the dining experience.</h1>
+        <h1 >Simple{'&'} Customized Digital QR Menu's <br></br> Rejuvenating the dining experience.</h1>
         <div className='header-features'>
           {
             features.map((feature, key) => {
