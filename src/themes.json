@@ -20,6 +20,18 @@
     "color": "#663c00",
     "backgroundImage": "url(\"https://res.cloudinary.com/kartikay/image/upload/v1607074740/FastFood_oz12zw.svg\")",
     "fontFamily": "Mayan"
+  },
+  "FastFood-light": {
+    "color": "#000b2e",
+    "backgroundColor": "#bcc5d7",
+    "backgroundImage": "url(\"https://res.cloudinary.com/kartikay/image/upload/v1607964364/fastfood-light_lkravx.svg\")",
+    "fontFamily": "Mayan"
+  },
+  "FastFood-dark": {
+    "color": "#bcc5d7",
+    "backgroundColor": "#01214b",
+    "backgroundImage": "url(\"https://res.cloudinary.com/kartikay/image/upload/v1607964364/fastfood-dark_wsi3dd.svg\")",
+    "fontFamily": "Mayan"
   }
 
 }
