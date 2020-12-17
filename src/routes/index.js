@@ -1,34 +1,35 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { Switch, Route, HashRouter } from "react-router-dom";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
-import asyncComponents from "./asyncComponents";
+import Loader from "../components/Loader";
+// import asyncComponents from "./asyncComponents";
+
+const Home = lazy(() => import("../pages/Home"));
+const CreateMenu = lazy(() => import("../pages/CreateMenu"));
+const HowItWorks = lazy(() => import("../pages/HowItWorks"));
+const QrDownload = lazy(() => import("../pages/QrDownload"));
+const About = lazy(() => import("../pages/About"));
+const Contact = lazy(() => import("../pages/Contact"));
+
 const Router = () => {
   return (
     <HashRouter>
       <Navigation />
       {/* TODO: Make a custom component for fallback  */}
-      <Suspense fallback="<div>...Loading</div>">
+      <Suspense fallback={<Loader />}>
         <Switch>
-          <Route exact path="/" component={asyncComponents.Home} />
-          <Route exact path="/create" component={asyncComponents.CreateMenu} />
-          <Route exact path="/about" component={asyncComponents.About} />
-          <Route exact path="/contact" component={asyncComponents.Contact} />
-          <Route
-            exact
-            path="/how-it-works"
-            component={asyncComponents.HowItWorks}
-          />
-          <Route
-            exact
-            path="/qr/:menuId"
-            component={asyncComponents.QrDownload}
-          />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/create" component={CreateMenu} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/how-it-works" component={HowItWorks} />
+          <Route exact path="/qr/:menuId" component={QrDownload} />
           <Route path="/edit/:menuId/:hash">
-            <asyncComponents.CreateMenu edit />
+            <CreateMenu edit />
           </Route>
           <Route exact path="/qr/edit/:menuId">
-            <asyncComponents.QrDownload edit />
+            <QrDownload edit />
           </Route>
         </Switch>
       </Suspense>
