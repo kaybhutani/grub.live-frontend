@@ -32,6 +32,12 @@
     "backgroundColor": "#01214b",
     "backgroundImage": "url(\"https://res.cloudinary.com/kartikay/image/upload/v1607964364/fastfood-dark_wsi3dd.svg\")",
     "fontFamily": "Mayan"
+  },
+  "Tribal-light": {
+    "color": "#000b2e",
+    "backgroundColor": "#bcc5d7",
+    "backgroundImage": "url(\"https://res.cloudinary.com/kartikay/image/upload/v1608762769/pattern_quntzd.svg\")",
+    "fontFamily": "Mayan"
   }
 
 }
