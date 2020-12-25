@@ -9,23 +9,35 @@ const VERIFY_STATE = {
 
 const InviteForm = ({ children }) => {
   let [coupon, setCoupon] = useState("");
-
+  let [errorMessage, setErrorMessage] = useState("")
   const resetCouponState = (e) => {
     e.preventDefault();
     setVerifyState(VERIFY_STATE.NOT_VERIFIED)
   }
   const couponHandler = () => {
-    setVerifyState(VERIFY_STATE.INVALID)
+    fetch(`${apiBaseUrl}/coupons/is-valid?q=${coupon}`)
+    .then((response) => response.json())
+    .then(data => {
+      if(data && data.success) setVerifyState(VERIFY_STATE.VERIFIED)
+      else {
+        setErrorMessage(data?data.message:"Could not verify Invite Code")
+        setVerifyState(VERIFY_STATE.INVALID)
+      }
+    }).catch((err) => {
+      setErrorMessage(`${err}`)
+      setVerifyState(VERIFY_STATE.INVALID)
+
+    })
   }
 
   let [verifyState, setVerifyState] = useState(VERIFY_STATE.NOT_VERIFIED);
 
   let notVerifiedForm = (
     <form
+    // only inline style working, not class, fix @lakshya
       style={{
-        display: "flex",
-        justifyContent: "center",
-        paddingTop: 10,
+        display: 'flex',
+        justifyContent: 'center'
       }}
     >
       <input
@@ -47,7 +59,7 @@ const InviteForm = ({ children }) => {
 
   let inValidMessage = (
     <>
-    <div className={styles.invalidMessage}>Sorry, Invalid Invite Code.</div>
+    <div className={styles.invalidMessage}>{errorMessage}</div>
     <button
       className={`hyperlink btn-link ${styles.tryAgainBtn}`}
       onClick={(e) => {resetCouponState(e)}} 
@@ -57,6 +69,18 @@ const InviteForm = ({ children }) => {
     </>
   );
 
+  let correctCoupon = (
+    <>
+    <div style={{textAlign: "right"}}>{children}</div>
+    <p className={styles.correctCoupon}>Invite Code {coupon} successfully applied. <i className='eos-icons'>done</i></p>
+    <button
+      className={`hyperlink btn-link ${styles.tryAgainBtn}`}
+      onClick={(e) => {resetCouponState(e)}} 
+    >
+    Change invite code?
+    </button>
+    </>
+  )
   let output;
 
   switch (verifyState) {
@@ -64,7 +88,7 @@ const InviteForm = ({ children }) => {
       output = inValidMessage;
       break;  
     case VERIFY_STATE.VERIFIED:
-      output = children;
+      output = correctCoupon;
       break;
     default:
       output = notVerifiedForm;

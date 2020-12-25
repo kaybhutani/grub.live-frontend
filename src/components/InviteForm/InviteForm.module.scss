@@ -1,6 +1,12 @@
+.couponForm {
+  display: "flex";
+  justify-content: "center";
+  padding-top: 10;
+}
+
 .invalidMessage {
   border: 1px solid red;
-  border-radius: 10px;
+  border-radius: 4px;
   padding: 10px;
   background-color: red;
   color: white;
@@ -9,4 +15,9 @@
 .tryAgainBtn {
   float: right;
   margin-top: 8px;
+}
+
+.correctCoupon {
+  color: rgb(0, 126, 0);
+  margin-bottom: 0;
 }
