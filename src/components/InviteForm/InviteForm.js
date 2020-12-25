@@ -25,6 +25,7 @@ const InviteForm = ({ children }) => {
       }}
     >
       <input
+        className="form-input"
         type="text"
         value={coupon}
         onChange={(e) => setCoupon(e.target.value)}
