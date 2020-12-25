@@ -33,7 +33,7 @@ const InviteForm = ({ children }) => {
   let [verifyState, setVerifyState] = useState(VERIFY_STATE.NOT_VERIFIED);
 
   let notVerifiedForm = (
-    <form
+    <div
     // only inline style working, not class, fix @lakshya
       style={{
         display: 'flex',
@@ -49,12 +49,12 @@ const InviteForm = ({ children }) => {
       />
       <input
         style={{ margin: 0, marginLeft: 10 }}
-        type="submit"
+        type="button"
         value="Verify Coupon"
         className="black-yellow"
-        onClick={() => couponHandler()}
+        onClick={(e) => couponHandler()}
       />
-    </form>
+    </div>
   );
 
   let inValidMessage = (
