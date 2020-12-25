@@ -153,6 +153,9 @@ const EditMenu = (props) => {
         JSON.stringify(restaurantDetails)
       );
       setSaveDraft(true);
+      setTimeout(()=> {
+        setSaveDraft(false)
+      }, 3000)
     }
   };
 
