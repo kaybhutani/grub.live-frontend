@@ -64,6 +64,13 @@ const EditMenu = (props) => {
     }
     
   }
+  const getGenerateBtnText = () => {
+  if (submitState) {
+    return edit?'Updating...':'Generating...'
+  }
+  return edit?'Update Menu':'Generate QR Menu'
+
+  }
 
   const updateTitle = (e, key) => {
     const temp = {...restaurantDetails}
@@ -360,10 +367,7 @@ const EditMenu = (props) => {
               }
           </button>
           <button type='button' onClick={(e) => submitMenu(e)} className='black-yellow'>
-            {submitState ? (
-                `Generating...`
-            ): (`Generate QR Menu`)}
-            
+            {getGenerateBtnText()}            
           </button>
         </div>
       </div>
