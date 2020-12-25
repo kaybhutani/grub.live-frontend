@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {apiBaseUrl} from '../../config.json'
 import styles from "./InviteForm.module.scss";
 const VERIFY_STATE = {
   VERIFIED: 1,
@@ -9,10 +10,13 @@ const VERIFY_STATE = {
 const InviteForm = ({ children }) => {
   let [coupon, setCoupon] = useState("");
 
-  /**
-   * TODO: Wire up backend with form!
-   * @kartikay
-   */
+  const resetCouponState = (e) => {
+    e.preventDefault();
+    setVerifyState(VERIFY_STATE.NOT_VERIFIED)
+  }
+  const couponHandler = () => {
+    setVerifyState(VERIFY_STATE.INVALID)
+  }
 
   let [verifyState, setVerifyState] = useState(VERIFY_STATE.NOT_VERIFIED);
 
@@ -36,12 +40,21 @@ const InviteForm = ({ children }) => {
         type="submit"
         value="Verify Coupon"
         className="black-yellow"
+        onClick={() => couponHandler()}
       />
     </form>
   );
 
   let inValidMessage = (
+    <>
     <div className={styles.invalidMessage}>Sorry, Invalid Invite Code.</div>
+    <button
+      className={`hyperlink btn-link ${styles.tryAgainBtn}`}
+      onClick={(e) => {resetCouponState(e)}} 
+    >
+    Try again?
+    </button>
+    </>
   );
 
   let output;
@@ -49,7 +62,7 @@ const InviteForm = ({ children }) => {
   switch (verifyState) {
     case VERIFY_STATE.INVALID:
       output = inValidMessage;
-      break;
+      break;  
     case VERIFY_STATE.VERIFIED:
       output = children;
       break;
