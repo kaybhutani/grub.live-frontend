@@ -55,7 +55,6 @@ const EditMenu = (props) => {
       };
     }
   };
-  }
   const getGenerateBtnText = () => {
   if (submitState) {
     return edit?'Updating...':'Generating...'
@@ -488,7 +487,7 @@ const EditMenu = (props) => {
                 onClick={(e) => submitMenu(e)}
                 className="black-yellow"
               >
-                {submitState ? `Generating...` : `Generate QR Menu`}
+                {getGenerateBtnText()}
               </button>
             </InviteForm>
             {/* <button
@@ -502,7 +501,7 @@ const EditMenu = (props) => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
 export default EditMenu;
