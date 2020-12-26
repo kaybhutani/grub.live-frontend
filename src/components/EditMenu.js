@@ -55,6 +55,9 @@ const EditMenu = (props) => {
   // }
   const updateSocialLink = (key, val) => {
     let temp = { ...restaurantDetails };
+    if (!temp.hasOwnProperty("social")) {
+      temp.social = {};
+    }
     temp.social[key] = val;
     setRestaurantDetails(temp);
   };
