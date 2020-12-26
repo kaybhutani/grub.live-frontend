@@ -12,7 +12,7 @@ const EditMenu = (props) => {
   const restaurantDetails = props.restaurantDetails;
   const setRestaurantDetails = props.setRestaurantDetails;
   const customizedMenu = restaurantDetails.customizedMenu;
-  
+
   const [saveDraft, setSaveDraft] = useState(false);
   // const [previewModal, setPreviewModal] = useState(false)
   const [submitState, setSubmitState] = useState(false);
@@ -184,7 +184,8 @@ const EditMenu = (props) => {
           setSubmitState(false);
           console.log(data);
           if (!data.success) {
-            window.alert("Some problem occrred while creating menu");
+            let errMessage  = data.message || `Some problem occrred while creating menu`
+            window.alert(errMessage);
             return;
           }
           localStorage.removeItem("restaurantDetails");
@@ -486,7 +487,7 @@ const EditMenu = (props) => {
              * TODO: Make Add Coupon component
              */}
             {!edit? 
-              (<InviteForm>
+              (<InviteForm restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails}>
                 <button
                   type="button"
                   onClick={(e) => submitMenu(e)}

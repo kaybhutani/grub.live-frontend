@@ -8,7 +8,7 @@ const VERIFY_STATE = {
   NOT_VERIFIED: 0,
 };
 
-const InviteForm = ({ children }) => {
+const InviteForm = ({ children, restaurantDetails, setRestaurantDetails }) => {
   let [coupon, setCoupon] = useState("");
   let [errorMessage, setErrorMessage] = useState("")
   const resetCouponState = (e) => {
@@ -19,13 +19,18 @@ const InviteForm = ({ children }) => {
     fetch(`${apiBaseUrl}/coupons/is-valid?q=${coupon}`)
     .then((response) => response.json())
     .then(data => {
-      if(data && data.success) setVerifyState(VERIFY_STATE.VERIFIED)
+      if(data && data.success) {
+        setVerifyState(VERIFY_STATE.VERIFIED)
+        setRestaurantDetails({...restaurantDetails, couponId: coupon})
+      }
       else {
         setErrorMessage(data?data.message:"Could not verify Invite Code")
         setVerifyState(VERIFY_STATE.INVALID)
+        setRestaurantDetails({...restaurantDetails, couponId: ""})
       }
     }).catch((err) => {
       setErrorMessage(`${err}`)
+      setRestaurantDetails({...restaurantDetails, couponId: ""})
       setVerifyState(VERIFY_STATE.INVALID)
 
     })
