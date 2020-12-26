@@ -8,6 +8,7 @@ import InviteForm from "./InviteForm/InviteForm";
 import Instagram from "../assets/images/instagram.svg";
 import Facebook from "../assets/images/facebook.svg";
 import Globe from "../assets/images/globe.svg";
+import AddOffers from "./MenuInput/AddOffers/AddOffers";
 const EditMenu = (props) => {
   const { edit, menuId, hash } = props;
   const restaurantDetails = props.restaurantDetails;
@@ -374,6 +375,16 @@ const EditMenu = (props) => {
               value={
                 restaurantDetails.social ? restaurantDetails.social.website : ""
               }
+            />
+          </div>
+          <div>
+            <p>Add Offers</p>
+            {/**
+             * TODO:  Replace offers Handler with something else
+             */}
+            <AddOffers
+              offers={restaurantDetails.offers}
+              offersHandler={(offers) => console.log(offers)}
             />
           </div>
         </div>
