@@ -20,7 +20,7 @@ const QrDownload = (props) => {
               }
           });
     }
-  }, [])
+  }, [dataFetched, menuId])
   
 
   const edit = props.edit
