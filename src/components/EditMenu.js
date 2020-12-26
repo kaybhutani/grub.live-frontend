@@ -5,9 +5,10 @@ import { dummyRestaurantDetails } from "../dummyData.json";
 import themes from "../themes.json";
 import fonts from "../fonts.json";
 import InviteForm from "./InviteForm/InviteForm";
-
+import Instagram from "../assets/images/instagram.svg";
+import Facebook from "../assets/images/facebook.svg";
+import Globe from "../assets/images/globe.svg";
 const EditMenu = (props) => {
-  
   const { edit, menuId, hash } = props;
   const restaurantDetails = props.restaurantDetails;
   const setRestaurantDetails = props.setRestaurantDetails;
@@ -37,6 +38,11 @@ const EditMenu = (props) => {
   // const togglePreviewModal = () => {
   //   setPreviewModal(!previewModal)
   // }
+  const updateSocialLink = (key, val) => {
+    let temp = { ...restaurantDetails };
+    temp.social[key] = val;
+    setRestaurantDetails(temp);
+  };
 
   const updateLogo = (e) => {
     const uploadedFile = e.target.files[0];
@@ -57,12 +63,11 @@ const EditMenu = (props) => {
     }
   };
   const getGenerateBtnText = () => {
-  if (submitState) {
-    return edit?'Updating...':'Generating...'
-  }
-  return edit?'Update Menu':'Generate QR Menu'
-
-  }
+    if (submitState) {
+      return edit ? "Updating..." : "Generating...";
+    }
+    return edit ? "Update Menu" : "Generate QR Menu";
+  };
 
   const updateTitle = (e, key) => {
     const temp = { ...restaurantDetails };
@@ -154,9 +159,9 @@ const EditMenu = (props) => {
         JSON.stringify(restaurantDetails)
       );
       setSaveDraft(true);
-      setTimeout(()=> {
-        setSaveDraft(false)
-      }, 3000)
+      setTimeout(() => {
+        setSaveDraft(false);
+      }, 3000);
     }
   };
 
@@ -184,7 +189,8 @@ const EditMenu = (props) => {
           setSubmitState(false);
           console.log(data);
           if (!data.success) {
-            let errMessage  = data.message || `Some problem occrred while creating menu`
+            let errMessage =
+              data.message || `Some problem occrred while creating menu`;
             window.alert(errMessage);
             return;
           }
@@ -295,6 +301,81 @@ const EditMenu = (props) => {
             onChange={(e) => changeEmailId(e)}
             defaultValue={restaurantDetails.emailId}
           ></input>
+
+          <p>Social Links</p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              marginBottom: 10,
+            }}
+          >
+            <img
+              src={Facebook}
+              alt="Fb"
+              style={{ marginRight: 10, maxHeight: 20 }}
+            />
+            <input
+              type="text"
+              placeholder="Facebook Link"
+              className="form-input"
+              onChange={(e) => updateSocialLink("facebook", e.target.value)}
+              value={
+                restaurantDetails.social
+                  ? restaurantDetails.social.facebook
+                  : ""
+              }
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              marginBottom: 10,
+            }}
+          >
+            <img
+              src={Instagram}
+              alt="Ig"
+              style={{ marginRight: 10, maxHeight: 20 }}
+            />
+            <input
+              type="text"
+              placeholder="Instagram Link"
+              className="form-input"
+              onChange={(e) => updateSocialLink("instagram", e.target.value)}
+              value={
+                restaurantDetails.social
+                  ? restaurantDetails.social.instagram
+                  : ""
+              }
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              marginBottom: 10,
+            }}
+          >
+            <img
+              src={Globe}
+              alt="Web"
+              style={{ marginRight: 10, maxHeight: 20 }}
+            />
+            <input
+              type="text"
+              placeholder="Website Link"
+              className="form-input"
+              onChange={(e) => updateSocialLink("website", e.target.value)}
+              value={
+                restaurantDetails.social ? restaurantDetails.social.website : ""
+              }
+            />
+          </div>
         </div>
 
         {customizedMenu ? (
@@ -486,8 +567,11 @@ const EditMenu = (props) => {
             {/**
              * TODO: Make Add Coupon component
              */}
-            {!edit? 
-              (<InviteForm restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails}>
+            {!edit ? (
+              <InviteForm
+                restaurantDetails={restaurantDetails}
+                setRestaurantDetails={setRestaurantDetails}
+              >
                 <button
                   type="button"
                   onClick={(e) => submitMenu(e)}
@@ -495,22 +579,21 @@ const EditMenu = (props) => {
                 >
                   {getGenerateBtnText()}
                 </button>
-              </InviteForm>)
-              :
-              (
-                <button
-                  type="button"
-                  onClick={(e) => submitMenu(e)}
-                  className="black-yellow"
-                >
-                  {getGenerateBtnText()}
-                </button>
-              )}
+              </InviteForm>
+            ) : (
+              <button
+                type="button"
+                onClick={(e) => submitMenu(e)}
+                className="black-yellow"
+              >
+                {getGenerateBtnText()}
+              </button>
+            )}
           </div>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default EditMenu;
