@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import loadingIcon from '../assets/images/three_dots_loading.svg'
 import {apiBaseUrl} from '../config.json'
@@ -8,17 +8,20 @@ const QrDownload = (props) => {
   const [qrSticker, setQrSticker] = useState(null)
   const [dataFetched, setDataFetched] = useState(false)
   let { menuId } = useParams()
-  if(!dataFetched) {
-    fetch(`${apiBaseUrl}/qr/${menuId}`)
-        .then(response => response.json())
-        .then(data => {
-          setDataFetched(true)
-          if(data.success)
-            {
-              setQrSticker('data:image/png;application/octet-stream;base64,' + data.sticker)
-            }
-        });
-  }
+  useEffect(()=> {
+    if(!dataFetched) {
+      fetch(`${apiBaseUrl}/qr/${menuId}`)
+          .then(response => response.json())
+          .then(data => {
+            setDataFetched(true)
+            if(data.success)
+              {
+                setQrSticker('data:image/png;application/octet-stream;base64,' + data.sticker)
+              }
+          });
+    }
+  }, [])
+  
 
   const edit = props.edit
   const url = `https://glqr.me/#/${menuId}`
