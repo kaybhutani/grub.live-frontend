@@ -9,15 +9,22 @@ import Instagram from "../assets/images/instagram.svg";
 import Facebook from "../assets/images/facebook.svg";
 import Globe from "../assets/images/globe.svg";
 import AddOffers from "./MenuInput/AddOffers/AddOffers";
+import { set } from "react-ga";
 const EditMenu = (props) => {
   const { edit, menuId, hash } = props;
+  // WTF
   const restaurantDetails = props.restaurantDetails;
   const setRestaurantDetails = props.setRestaurantDetails;
+
   const customizedMenu = restaurantDetails.customizedMenu;
 
   const [saveDraft, setSaveDraft] = useState(false);
   // const [previewModal, setPreviewModal] = useState(false)
   const [submitState, setSubmitState] = useState(false);
+  /**
+   * TODO: Need to group all these into single method
+   *
+   */
   const changeRestaurantTitle = (e) => {
     const temp = { ...restaurantDetails };
     temp.restaurantName = e.target.value;
@@ -34,6 +41,13 @@ const EditMenu = (props) => {
     const temp = { ...restaurantDetails };
     temp.emailId = e.target.value;
     setRestaurantDetails(temp);
+  };
+
+  // Like this moron
+  const menuChangeHandler = (key, val) => {
+    let updatedRestaurantDetails = { ...restaurantDetails };
+    updatedRestaurantDetails[key] = val;
+    setRestaurantDetails(updatedRestaurantDetails);
   };
 
   // const togglePreviewModal = () => {
@@ -384,7 +398,7 @@ const EditMenu = (props) => {
              */}
             <AddOffers
               offers={restaurantDetails.offers}
-              offersHandler={(offers) => console.log(offers)}
+              offersHandler={(offers) => menuChangeHandler("offers", offers)}
             />
           </div>
         </div>
