@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {apiBaseUrl} from '../../config.json'
 import styles from "./InviteForm.module.scss";
 const VERIFY_STATE = {
@@ -33,6 +34,7 @@ const InviteForm = ({ children }) => {
   let [verifyState, setVerifyState] = useState(VERIFY_STATE.NOT_VERIFIED);
 
   let notVerifiedForm = (
+    <>
     <div
     // only inline style working, not class, fix @lakshya
       style={{
@@ -55,6 +57,17 @@ const InviteForm = ({ children }) => {
         onClick={(e) => couponHandler()}
       />
     </div>
+    <div class={styles.tooltip}> Get invite code?
+      <span class={styles.tooltiptext}>
+        We currently allow only invited restaurants to create Menu, 
+        <Link to='/contact'>
+          {` Contact `}
+        </Link>
+         our sales team here for the invite and pricing.
+        
+      </span>
+    </div>
+    </>
   );
 
   let inValidMessage = (
@@ -82,7 +95,6 @@ const InviteForm = ({ children }) => {
     </>
   )
   let output;
-
   switch (verifyState) {
     case VERIFY_STATE.INVALID:
       output = inValidMessage;
