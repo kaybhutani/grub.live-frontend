@@ -7,11 +7,12 @@ import fonts from "../fonts.json";
 import InviteForm from "./InviteForm/InviteForm";
 
 const EditMenu = (props) => {
+  
   const { edit, menuId, hash } = props;
   const restaurantDetails = props.restaurantDetails;
   const setRestaurantDetails = props.setRestaurantDetails;
   const customizedMenu = restaurantDetails.customizedMenu;
-
+  
   const [saveDraft, setSaveDraft] = useState(false);
   // const [previewModal, setPreviewModal] = useState(false)
   const [submitState, setSubmitState] = useState(false);
@@ -484,22 +485,26 @@ const EditMenu = (props) => {
             {/**
              * TODO: Make Add Coupon component
              */}
-            <InviteForm>
-              <button
-                type="button"
-                onClick={(e) => submitMenu(e)}
-                className="black-yellow"
-              >
-                {getGenerateBtnText()}
-              </button>
-            </InviteForm>
-            {/* <button
-              type="button"
-              onClick={(e) => submitMenu(e)}
-              className="black-yellow"
-            >
-              {getGenerateBtnText()}
-            </button> */}
+            {!edit? 
+              (<InviteForm>
+                <button
+                  type="button"
+                  onClick={(e) => submitMenu(e)}
+                  className="black-yellow"
+                >
+                  {getGenerateBtnText()}
+                </button>
+              </InviteForm>)
+              :
+              (
+                <button
+                  type="button"
+                  onClick={(e) => submitMenu(e)}
+                  className="black-yellow"
+                >
+                  {getGenerateBtnText()}
+                </button>
+              )}
           </div>
         </div>
       </form>
