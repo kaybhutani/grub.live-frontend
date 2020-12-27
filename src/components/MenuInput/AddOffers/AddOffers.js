@@ -1,5 +1,5 @@
 import React from "react";
-// import styles from "./AddOffers.module.scss";
+import styles from "./AddOffers.module.scss";
 
 const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
   let changeHandler = (newValue) => {
