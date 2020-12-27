@@ -397,7 +397,7 @@ const EditMenu = (props) => {
             />
           </div>
           <div>
-            <p>Add Offers</p>
+            <p>Offers and Highlights</p>
             {/**
              * TODO:  Replace offers Handler with something else
              */}
