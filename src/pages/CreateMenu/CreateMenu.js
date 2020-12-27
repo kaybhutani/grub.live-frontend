@@ -13,6 +13,8 @@ const CreateMenu = (props) => {
     restaurantName: "",
     logo: "",
     bio: "",
+    offers: [],
+    social: {},
     customizedMenu: false,
     menu: {
       categories: [],
