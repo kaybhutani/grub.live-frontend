@@ -19,8 +19,7 @@ const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
   );
 };
 
-const AddOffers = ({offers =[], setOffers}) => {
-
+const AddOffers = ({ offers = [], setOffers }) => {
   let updateOfferHandler = (newValue, key) => {
     let temp = [...offers];
     if (temp.length === 0) {
@@ -30,7 +29,6 @@ const AddOffers = ({offers =[], setOffers}) => {
     temp[key] = newValue;
     setOffers(temp);
   };
-
 
   let addNewOffer = () => {
     let temp = [...offers];
@@ -44,7 +42,6 @@ const AddOffers = ({offers =[], setOffers}) => {
     setOffers(temp);
   };
 
-
   let offersList =
     offers.length > 0 ? (
       offers.map((offer, index) => (
@@ -55,10 +52,10 @@ const AddOffers = ({offers =[], setOffers}) => {
             index={index}
           />
           <i
-          onClick={() => deleteOffer(index)}
-          className={`eos-icons delete-icon ${styles.deleteOffer}`}
+            onClick={() => deleteOffer(index)}
+            className={`eos-icons delete-icon ${styles.deleteOffer}`}
           >
-          delete
+            delete
           </i>
         </div>
       ))
@@ -72,6 +69,7 @@ const AddOffers = ({offers =[], setOffers}) => {
 
   return (
     <div>
+      <p>Add Offers</p>
       {offersList}{" "}
       <div style={{ float: "right" }}>
         <button
@@ -81,7 +79,7 @@ const AddOffers = ({offers =[], setOffers}) => {
         >
           Add offer <i className="eos-icons">add_circle_outline</i>{" "}
         </button>
-        </div>
+      </div>
     </div>
   );
 };

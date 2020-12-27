@@ -5,10 +5,9 @@ import { dummyRestaurantDetails } from "../../dummyData.json";
 import themes from "../../themes.json";
 import fonts from "../../fonts.json";
 import InviteForm from "./InviteForm/InviteForm";
-import Instagram from "../../assets/images/instagram.svg";
-import Facebook from "../../assets/images/facebook.svg";
-import Globe from "../../assets/images/globe.svg";
+
 import AddOffers from "./AddOffers/AddOffers";
+import SocialLinks from "./SocialLinks/SocialLinks";
 // import { set } from "react-ga";
 const EditMenu = ({
   restaurantDetails,
@@ -255,9 +254,7 @@ const EditMenu = ({
                 defaultValue={restaurantDetails.bio}
               ></textarea>
             </>
-          ) : (
-            <></>
-          )}
+          ) : null}
           <p>Logo (if any)</p>
           <input
             disabled={edit}
@@ -276,91 +273,11 @@ const EditMenu = ({
             defaultValue={restaurantDetails.emailId}
           ></input>
 
-          <p>Social Links</p>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              marginBottom: 10,
-            }}
-          >
-            <input
-              type="text"
-              placeholder="Facebook Link"
-              className="form-input"
-              onChange={(e) =>
-                menuChangeHandler("social.facebook", e.target.value)
-              }
-              value={
-                restaurantDetails.social
-                  ? restaurantDetails.social.facebook
-                  : ""
-              }
-            />
-            <img
-              src={Facebook}
-              alt="Fb"
-              style={{ marginLeft: 10, maxHeight: 20 }}
-            />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              marginBottom: 10,
-            }}
-          >
-            <input
-              type="text"
-              placeholder="Instagram Link"
-              className="form-input"
-              onChange={(e) =>
-                menuChangeHandler("social.instagram", e.target.value)
-              }
-              value={
-                restaurantDetails.social
-                  ? restaurantDetails.social.instagram
-                  : ""
-              }
-            />
-            <img
-              src={Instagram}
-              alt="Ig"
-              style={{ marginLeft: 10, maxHeight: 20 }}
-            />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
-              marginBottom: 10,
-            }}
-          >
-            <input
-              type="text"
-              placeholder="Website Link"
-              className="form-input"
-              onChange={(e) =>
-                menuChangeHandler("social.website", e.target.value)
-              }
-              value={
-                restaurantDetails.social ? restaurantDetails.social.website : ""
-              }
-            />
-            <img
-              src={Globe}
-              alt="Web"
-              style={{ marginLeft: 10, maxHeight: 20 }}
-            />
-          </div>
+          <SocialLinks
+            defaultSocialLinks={restaurantDetails.social}
+            menuChangeHandler={menuChangeHandler}
+          />
           <div>
-            <p>Offers and Highlights</p>
-            {/**
-             * TODO:  Replace offers Handler with something else
-             */}
             <AddOffers
               offers={restaurantDetails.offers}
               setOffers={(offers) => menuChangeHandler("offers", offers)}
