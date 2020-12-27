@@ -10,56 +10,35 @@ import Facebook from "../../assets/images/facebook.svg";
 import Globe from "../../assets/images/globe.svg";
 import AddOffers from "./AddOffers/AddOffers";
 // import { set } from "react-ga";
-const EditMenu = (props) => {
-  const { edit, menuId, hash } = props;
-  // WTF
-  const restaurantDetails = props.restaurantDetails;
-  const setRestaurantDetails = props.setRestaurantDetails;
-
+const EditMenu = ({
+  restaurantDetails,
+  setRestaurantDetails,
+  edit,
+  menuId,
+  hash,
+}) => {
   const customizedMenu = restaurantDetails.customizedMenu;
-
   const [saveDraft, setSaveDraft] = useState(false);
-  // const [previewModal, setPreviewModal] = useState(false)
   const [submitState, setSubmitState] = useState(false);
-  /**
-   * TODO: Need to group all these into single method
-   *
-   */
-  const changeRestaurantTitle = (e) => {
-    const temp = { ...restaurantDetails };
-    temp.restaurantName = e.target.value;
-    setRestaurantDetails(temp);
-  };
-
-  const changeRestaurantBio = (e) => {
-    const temp = { ...restaurantDetails };
-    temp.bio = e.target.value;
-    setRestaurantDetails(temp);
-  };
-
-  const changeEmailId = (e) => {
-    const temp = { ...restaurantDetails };
-    temp.emailId = e.target.value;
-    setRestaurantDetails(temp);
-  };
-
-  // Like this moron
-  const menuChangeHandler = (key, val) => {
+  const menuChangeHandler = (keyStr, val) => {
     let updatedRestaurantDetails = { ...restaurantDetails };
-    updatedRestaurantDetails[key] = val;
-    setRestaurantDetails(updatedRestaurantDetails);
-  };
-
-  // const togglePreviewModal = () => {
-  //   setPreviewModal(!previewModal)
-  // }
-  const updateSocialLink = (key, val) => {
-    let temp = { ...restaurantDetails };
-    if (!temp.hasOwnProperty("social")) {
-      temp.social = {};
+    let keyArray = keyStr.split(".");
+    let pointer = updatedRestaurantDetails;
+    let i = 0;
+    while (i < keyArray.length - 1) {
+      if (!pointer.hasOwnProperty(keyArray[i])) {
+        if (i === keyArray.length - 2) {
+          break;
+        } else {
+          pointer[keyArray[i]] = {};
+        }
+      }
+      pointer = pointer[keyArray[i]];
+      i++;
     }
-    temp.social[key] = val;
-    setRestaurantDetails(temp);
+    pointer[keyArray[keyArray.length - 1]] = val;
+    // updatedRestaurantDetails[key] = val;
+    setRestaurantDetails(updatedRestaurantDetails);
   };
 
   const updateLogo = (e) => {
@@ -91,31 +70,6 @@ const EditMenu = (props) => {
     const temp = { ...restaurantDetails };
     temp.menu.categories[key].title = e.target.value;
     setRestaurantDetails(temp);
-  };
-
-  // const [theme, setTheme] = useState(themes.Light)
-
-  const changeTheme = (e) => {
-    const temp = { ...restaurantDetails };
-    temp.menu.theme = themes[e.target.value];
-    setRestaurantDetails(temp);
-  };
-  const changeFont = (e) => {
-    const temp = { ...restaurantDetails };
-    temp.menu.theme.fontFamily = e.target.value;
-    setRestaurantDetails(temp);
-  };
-  const changeColor = (e) => {
-    const temp = { ...restaurantDetails };
-    temp.menu.theme.color = e.target.value;
-    setRestaurantDetails(temp);
-    console.log(e.target.value);
-  };
-  const changeBgColor = (e) => {
-    const temp = { ...restaurantDetails };
-    temp.menu.theme.backgroundColor = e.target.value;
-    setRestaurantDetails(temp);
-    console.log(e.target.value);
   };
 
   const addItem = (categoryKey) => {
@@ -285,7 +239,9 @@ const EditMenu = (props) => {
             required={true}
             className="form-input"
             placeholder="Example: Moti Mahal Deluxe"
-            onChange={(e) => changeRestaurantTitle(e)}
+            onChange={(e) =>
+              menuChangeHandler("restaurantName", e.target.value)
+            }
             defaultValue={restaurantDetails.restaurantName}
           ></input>
           {customizedMenu ? (
@@ -293,7 +249,7 @@ const EditMenu = (props) => {
               <p>Bio</p>
               <textarea
                 placeholder="Example: The Best Fast Food restaurant in New Delhi. Contact us at +91 9999999999 or visit A-21, North campus"
-                onChange={(e) => changeRestaurantBio(e)}
+                onChange={(e) => menuChangeHandler("bio", e.target.value)}
                 className="form-input"
                 disabled={edit}
                 defaultValue={restaurantDetails.bio}
@@ -316,7 +272,7 @@ const EditMenu = (props) => {
             required={true}
             className="form-input"
             placeholder="Example: johndoe@gmail.com"
-            onChange={(e) => changeEmailId(e)}
+            onChange={(e) => menuChangeHandler("emailId", e.target.value)}
             defaultValue={restaurantDetails.emailId}
           ></input>
 
@@ -333,7 +289,9 @@ const EditMenu = (props) => {
               type="text"
               placeholder="Facebook Link"
               className="form-input"
-              onChange={(e) => updateSocialLink("facebook", e.target.value)}
+              onChange={(e) =>
+                menuChangeHandler("social.facebook", e.target.value)
+              }
               value={
                 restaurantDetails.social
                   ? restaurantDetails.social.facebook
@@ -358,7 +316,9 @@ const EditMenu = (props) => {
               type="text"
               placeholder="Instagram Link"
               className="form-input"
-              onChange={(e) => updateSocialLink("instagram", e.target.value)}
+              onChange={(e) =>
+                menuChangeHandler("social.instagram", e.target.value)
+              }
               value={
                 restaurantDetails.social
                   ? restaurantDetails.social.instagram
@@ -383,7 +343,9 @@ const EditMenu = (props) => {
               type="text"
               placeholder="Website Link"
               className="form-input"
-              onChange={(e) => updateSocialLink("website", e.target.value)}
+              onChange={(e) =>
+                menuChangeHandler("social.website", e.target.value)
+              }
               value={
                 restaurantDetails.social ? restaurantDetails.social.website : ""
               }
@@ -410,7 +372,12 @@ const EditMenu = (props) => {
           <div className="shadow-box">
             <div style={{ display: "inline-block" }}>
               <p>Theme</p>
-              <select onChange={(e) => changeTheme(e)} name="themes">
+              <select
+                onChange={(e) =>
+                  menuChangeHandler("menu.theme", themes[e.target.value])
+                }
+                name="themes"
+              >
                 {Object.keys(themes).map((theme, idx) => {
                   return (
                     <option className="form-input" key={idx}>
@@ -422,7 +389,12 @@ const EditMenu = (props) => {
             </div>
             <div style={{ display: "inline-block", marginLeft: "48px" }}>
               <p>Font</p>
-              <select onChange={(e) => changeFont(e)} name="fonts">
+              <select
+                onChange={(e) =>
+                  menuChangeHandler("menu.theme.fontFamily", e.target.value)
+                }
+                name="fonts"
+              >
                 {Object.keys(fonts).map((font, idx) => {
                   return (
                     <option
@@ -439,11 +411,24 @@ const EditMenu = (props) => {
             <br></br>
             <div style={{ display: "inline-block" }}>
               <p>Font Color</p>
-              <input onChange={(e) => changeColor(e)} type="color"></input>
+              <input
+                onChange={(e) =>
+                  menuChangeHandler("menu.theme.color", e.target.value)
+                }
+                type="color"
+              ></input>
             </div>
             <div style={{ display: "inline-block", marginLeft: "48px" }}>
               <p>Background Color</p>
-              <input onChange={(e) => changeBgColor(e)} type="color"></input>
+              <input
+                onChange={(e) =>
+                  menuChangeHandler(
+                    "menu.theme.backgroundColor",
+                    e.target.value
+                  )
+                }
+                type="color"
+              ></input>
             </div>
           </div>
         ) : (
