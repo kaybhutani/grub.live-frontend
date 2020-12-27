@@ -38,18 +38,16 @@ const MenuItem = ({
       <i onClick={deleteMenuItemHandler} className="eos-icons delete-icon">
         delete
       </i>
-      {/* <p>Item Description (If any)</p>
+      <p>Item Description (If any)</p>
       <textarea
         // onChange={(e) => itemOnChange("description", e, categoryKey, itemKey)}
         // onKeyDown={(e) => handleKeyDown(e, categoryKey)}
         style={{ maxWidth: "330px" }}
-        defaultValue={
-          restaurantDetails.menu.categories[categoryKey].items[itemKey]
-            .itemDescription
-        }
+        value={menuItem.itemDescription || ""}
+        onChange={(e) => updateMenuItem("itemDescription", e.target.value)}
         className="form-input"
         placeholder="Contains onion, chillies, etc."
-      ></textarea> */}
+      ></textarea>
     </div>
   );
 };

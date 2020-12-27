@@ -16,8 +16,8 @@ const MenuCategories = ({
     temp.push({
       title: "",
       items: [
-        { itemName: "", itemPrice: "" },
-        { itemName: "", itemPrice: "" },
+        { itemName: "", itemPrice: "", itemDescription: "" },
+        { itemName: "", itemPrice: "", itemDescription: "" },
       ],
     });
     updateMenuCategoriesHandler(temp);

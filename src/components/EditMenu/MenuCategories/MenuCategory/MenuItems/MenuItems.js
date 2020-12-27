@@ -38,7 +38,13 @@ const MenuItems = ({ menuItems = [], updateMenuItemsHandler }) => {
         <button
           type="button"
           className="hyperlink btn-link"
-          onClick={() => addMenuItemHandler({ itemPrice: "", itemName: "" })}
+          onClick={() =>
+            addMenuItemHandler({
+              itemPrice: "",
+              itemName: "",
+              itemDescription: "",
+            })
+          }
         >
           Add Item <i className="eos-icons">add_circle_outline</i>{" "}
         </button>
