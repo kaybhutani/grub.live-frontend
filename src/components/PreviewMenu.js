@@ -1,19 +1,21 @@
-import React from 'react'
-import PreviewRestaurantMenu from './PreviewRestaurantMenu'
+import React from "react";
+import PreviewRestaurantMenu from "./PreviewRestaurantMenu";
 const PreviewMenu = (props) => {
-  
-  const restaurantDetails = props.restaurantDetails
+  const restaurantDetails = props.restaurantDetails;
 
   return (
-    <div className='preview-menu'>
-      <h2>Preview Menu <i className='eos-icons'>slideshow</i></h2>
+    <div className="preview-menu">
+      <h2>
+        Preview Menu <i className="eos-icons">slideshow</i>
+      </h2>
       <p>Once done, click on Generate QR Menu to create your Digital Menu.</p>
       <br></br>
-      <PreviewRestaurantMenu restaurantDetails={restaurantDetails} customizedMenu = {props.customizedMenu}/>
+      <PreviewRestaurantMenu
+        restaurantDetails={restaurantDetails}
+        customizedMenu={true}
+      />
     </div>
-  )
+  );
+};
 
-}
-
-
-export default PreviewMenu
+export default PreviewMenu;
