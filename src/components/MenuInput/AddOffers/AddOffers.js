@@ -11,6 +11,7 @@ const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
 
   return (
     <input
+      autoFocus={index == 0 ? true : false}
       type="text"
       onChange={(e) => changeHandler(e.target.value)}
       value={inputVal}
@@ -44,15 +45,33 @@ const AddOffers = (props) => {
     setOffers(temp);
   };
 
+  let deleteOffer = (key) => {
+    let temp = [...offers];
+    temp.splice(key, 1);
+    setOffers(temp);
+  };
+
   let offersList =
     offers.length > 0 ? (
       offers.map((offer, index) => (
-        <AddOfferInput
-          defaultValue={offer}
-          valueHandler={updateOfferHandler}
-          index={index}
-          key={index}
-        />
+        <div key={index}>
+          <AddOfferInput
+            defaultValue={offer}
+            valueHandler={updateOfferHandler}
+            index={index}
+          />
+          <button
+            type="button"
+            style={{
+              backgroundColor: "transparent",
+              border: 0,
+              cursor: "pointer",
+            }}
+            onClick={() => deleteOffer(index)}
+          >
+            <i className="eos-icons">delete_outline</i>
+          </button>
+        </div>
       ))
     ) : (
       <AddOfferInput
@@ -70,7 +89,7 @@ const AddOffers = (props) => {
         type="button"
         style={{ backgroundColor: "transparent", border: 0, cursor: "pointer" }}
       >
-        <i class="eos-icons">add_circle_outline</i>
+        <i className="eos-icons">add_circle_outline</i>
       </button>
     </div>
   );
