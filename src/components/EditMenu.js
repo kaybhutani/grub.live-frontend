@@ -5,17 +5,26 @@ import { dummyRestaurantDetails } from "../dummyData.json";
 import themes from "../themes.json";
 import fonts from "../fonts.json";
 import InviteForm from "./InviteForm/InviteForm";
-
+import Instagram from "../assets/images/instagram.svg";
+import Facebook from "../assets/images/facebook.svg";
+import Globe from "../assets/images/globe.svg";
+import AddOffers from "./MenuInput/AddOffers/AddOffers";
+// import { set } from "react-ga";
 const EditMenu = (props) => {
-  
   const { edit, menuId, hash } = props;
+  // WTF
   const restaurantDetails = props.restaurantDetails;
   const setRestaurantDetails = props.setRestaurantDetails;
+
   const customizedMenu = restaurantDetails.customizedMenu;
 
   const [saveDraft, setSaveDraft] = useState(false);
   // const [previewModal, setPreviewModal] = useState(false)
   const [submitState, setSubmitState] = useState(false);
+  /**
+   * TODO: Need to group all these into single method
+   *
+   */
   const changeRestaurantTitle = (e) => {
     const temp = { ...restaurantDetails };
     temp.restaurantName = e.target.value;
@@ -34,9 +43,24 @@ const EditMenu = (props) => {
     setRestaurantDetails(temp);
   };
 
+  // Like this moron
+  const menuChangeHandler = (key, val) => {
+    let updatedRestaurantDetails = { ...restaurantDetails };
+    updatedRestaurantDetails[key] = val;
+    setRestaurantDetails(updatedRestaurantDetails);
+  };
+
   // const togglePreviewModal = () => {
   //   setPreviewModal(!previewModal)
   // }
+  const updateSocialLink = (key, val) => {
+    let temp = { ...restaurantDetails };
+    if (!temp.hasOwnProperty("social")) {
+      temp.social = {};
+    }
+    temp.social[key] = val;
+    setRestaurantDetails(temp);
+  };
 
   const updateLogo = (e) => {
     const uploadedFile = e.target.files[0];
@@ -57,12 +81,11 @@ const EditMenu = (props) => {
     }
   };
   const getGenerateBtnText = () => {
-  if (submitState) {
-    return edit?'Updating...':'Generating...'
-  }
-  return edit?'Update Menu':'Generate QR Menu'
-
-  }
+    if (submitState) {
+      return edit ? "Updating..." : "Generating...";
+    }
+    return edit ? "Update Menu" : "Generate QR Menu";
+  };
 
   const updateTitle = (e, key) => {
     const temp = { ...restaurantDetails };
@@ -154,9 +177,9 @@ const EditMenu = (props) => {
         JSON.stringify(restaurantDetails)
       );
       setSaveDraft(true);
-      setTimeout(()=> {
-        setSaveDraft(false)
-      }, 3000)
+      setTimeout(() => {
+        setSaveDraft(false);
+      }, 3000);
     }
   };
 
@@ -184,7 +207,8 @@ const EditMenu = (props) => {
           setSubmitState(false);
           console.log(data);
           if (!data.success) {
-            let errMessage  = data.message || `Some problem occrred while creating menu`
+            let errMessage =
+              data.message || `Some problem occrred while creating menu`;
             window.alert(errMessage);
             return;
           }
@@ -295,6 +319,93 @@ const EditMenu = (props) => {
             onChange={(e) => changeEmailId(e)}
             defaultValue={restaurantDetails.emailId}
           ></input>
+
+          <p>Social Links</p>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              marginBottom: 10,
+            }}
+          >
+            
+            <input
+              type="text"
+              placeholder="Facebook Link"
+              className="form-input"
+              onChange={(e) => updateSocialLink("facebook", e.target.value)}
+              value={
+                restaurantDetails.social
+                  ? restaurantDetails.social.facebook
+                  : ""
+              }
+            />
+            <img
+              src={Facebook}
+              alt="Fb"
+              style={{ marginLeft: 10, maxHeight: 20 }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              marginBottom: 10,
+            }}
+          >
+            
+            <input
+              type="text"
+              placeholder="Instagram Link"
+              className="form-input"
+              onChange={(e) => updateSocialLink("instagram", e.target.value)}
+              value={
+                restaurantDetails.social
+                  ? restaurantDetails.social.instagram
+                  : ""
+              }
+            />
+            <img
+              src={Instagram}
+              alt="Ig"
+              style={{ marginLeft: 10, maxHeight: 20 }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              marginBottom: 10,
+            }}
+          >
+            <input
+              type="text"
+              placeholder="Website Link"
+              className="form-input"
+              onChange={(e) => updateSocialLink("website", e.target.value)}
+              value={
+                restaurantDetails.social ? restaurantDetails.social.website : ""
+              }
+            />
+            <img
+              src={Globe}
+              alt="Web"
+              style={{ marginLeft: 10, maxHeight: 20 }}
+            />
+          </div>
+          <div>
+            <p>Add Offers</p>
+            {/**
+             * TODO:  Replace offers Handler with something else
+             */}
+            <AddOffers
+              offers={restaurantDetails.offers}
+              offersHandler={(offers) => menuChangeHandler("offers", offers)}
+            />
+          </div>
         </div>
 
         {customizedMenu ? (
@@ -486,8 +597,11 @@ const EditMenu = (props) => {
             {/**
              * TODO: Make Add Coupon component
              */}
-            {!edit? 
-              (<InviteForm restaurantDetails={restaurantDetails} setRestaurantDetails={setRestaurantDetails}>
+            {!edit ? (
+              <InviteForm
+                restaurantDetails={restaurantDetails}
+                setRestaurantDetails={setRestaurantDetails}
+              >
                 <button
                   type="button"
                   onClick={(e) => submitMenu(e)}
@@ -495,22 +609,21 @@ const EditMenu = (props) => {
                 >
                   {getGenerateBtnText()}
                 </button>
-              </InviteForm>)
-              :
-              (
-                <button
-                  type="button"
-                  onClick={(e) => submitMenu(e)}
-                  className="black-yellow"
-                >
-                  {getGenerateBtnText()}
-                </button>
-              )}
+              </InviteForm>
+            ) : (
+              <button
+                type="button"
+                onClick={(e) => submitMenu(e)}
+                className="black-yellow"
+              >
+                {getGenerateBtnText()}
+              </button>
+            )}
           </div>
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default EditMenu;
