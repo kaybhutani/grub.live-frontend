@@ -9,7 +9,7 @@ import Instagram from "../assets/images/instagram.svg";
 import Facebook from "../assets/images/facebook.svg";
 import Globe from "../assets/images/globe.svg";
 import AddOffers from "./MenuInput/AddOffers/AddOffers";
-import { set } from "react-ga";
+// import { set } from "react-ga";
 const EditMenu = (props) => {
   const { edit, menuId, hash } = props;
   // WTF
@@ -401,7 +401,7 @@ const EditMenu = (props) => {
              */}
             <AddOffers
               offers={restaurantDetails.offers}
-              offersHandler={(offers) => menuChangeHandler("offers", offers)}
+              setOffers={(offers) => menuChangeHandler("offers", offers)}
             />
           </div>
         </div>
