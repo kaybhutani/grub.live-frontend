@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import EditMenu from "../../components/EditMenu";
+import EditMenu from "../../components/EditMenu/EditMenu";
 import PreviewMenu from "../../components/PreviewMenu";
 import loadingIcon from "../../assets/images/three_dots_loading.svg";
 import { apiBaseUrl } from "../../config.json";

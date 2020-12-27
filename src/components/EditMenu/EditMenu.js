@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { apiBaseUrl } from "../config.json";
+import { apiBaseUrl } from "../../config.json";
 // import PreviewModal from './PreviewModal'
-import { dummyRestaurantDetails } from "../dummyData.json";
-import themes from "../themes.json";
-import fonts from "../fonts.json";
+import { dummyRestaurantDetails } from "../../dummyData.json";
+import themes from "../../themes.json";
+import fonts from "../../fonts.json";
 import InviteForm from "./InviteForm/InviteForm";
-import Instagram from "../assets/images/instagram.svg";
-import Facebook from "../assets/images/facebook.svg";
-import Globe from "../assets/images/globe.svg";
-import AddOffers from "./MenuInput/AddOffers/AddOffers";
+import Instagram from "../../assets/images/instagram.svg";
+import Facebook from "../../assets/images/facebook.svg";
+import Globe from "../../assets/images/globe.svg";
+import AddOffers from "./AddOffers/AddOffers";
 // import { set } from "react-ga";
 const EditMenu = (props) => {
   const { edit, menuId, hash } = props;
@@ -329,7 +329,6 @@ const EditMenu = (props) => {
               marginBottom: 10,
             }}
           >
-            
             <input
               type="text"
               placeholder="Facebook Link"
@@ -355,7 +354,6 @@ const EditMenu = (props) => {
               marginBottom: 10,
             }}
           >
-            
             <input
               type="text"
               placeholder="Instagram Link"
