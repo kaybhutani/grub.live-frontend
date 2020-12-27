@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import styles from "./AddOffers.module.scss";
+import styles from "./AddOffers.module.scss";
 
 const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
   let [inputVal, setInputVal] = useState(defaultValue || "");
@@ -60,17 +60,12 @@ const AddOffers = (props) => {
             valueHandler={updateOfferHandler}
             index={index}
           />
-          <button
-            type="button"
-            style={{
-              backgroundColor: "transparent",
-              border: 0,
-              cursor: "pointer",
-            }}
-            onClick={() => deleteOffer(index)}
+          <i
+          onClick={() => deleteOffer(index)}
+          className={`eos-icons delete-icon ${styles.deleteOffer}`}
           >
-            <i className="eos-icons">delete_outline</i>
-          </button>
+          delete
+          </i>
         </div>
       ))
     ) : (
@@ -84,13 +79,15 @@ const AddOffers = (props) => {
   return (
     <div>
       {offersList}{" "}
-      <button
-        onClick={addNewOffer}
-        type="button"
-        style={{ backgroundColor: "transparent", border: 0, cursor: "pointer" }}
-      >
-        <i className="eos-icons">add_circle_outline</i>
-      </button>
+      <div style={{ float: "right" }}>
+        <button
+          type="button"
+          className="hyperlink btn-link"
+          onClick={addNewOffer}
+        >
+          Add offer <i className="eos-icons">add_circle_outline</i>{" "}
+        </button>
+        </div>
     </div>
   );
 };
