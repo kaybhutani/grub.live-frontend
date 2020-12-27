@@ -397,13 +397,13 @@ const EditMenu = (props) => {
             />
           </div>
           <div>
-            <p>Add Offers</p>
+            <p>Offers and Highlights</p>
             {/**
              * TODO:  Replace offers Handler with something else
              */}
             <AddOffers
               offers={restaurantDetails.offers}
-              offersHandler={(offers) => menuChangeHandler("offers", offers)}
+              setOffers={(offers) => menuChangeHandler("offers", offers)}
             />
           </div>
         </div>

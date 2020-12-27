@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./AddOffers.module.scss";
 
 const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
-  let [inputVal, setInputVal] = useState(defaultValue || "");
-
   let changeHandler = (newValue) => {
-    setInputVal(newValue);
     valueHandler(newValue, index);
   };
 
@@ -14,7 +11,7 @@ const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
       autoFocus={index === 0 ? true : false}
       type="text"
       onChange={(e) => changeHandler(e.target.value)}
-      value={inputVal}
+      value={defaultValue}
       className="form-input"
       style={{ marginBottom: 10 }}
       placeholder="Offer"
@@ -22,8 +19,7 @@ const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
   );
 };
 
-const AddOffers = (props) => {
-  let [offers, setOffers] = useState(props.offers || []);
+const AddOffers = ({offers =[], setOffers}) => {
 
   let updateOfferHandler = (newValue, key) => {
     let temp = [...offers];
@@ -35,9 +31,6 @@ const AddOffers = (props) => {
     setOffers(temp);
   };
 
-  useEffect(() => {
-    props.offersHandler(offers);
-  }, [offers]);
 
   let addNewOffer = () => {
     let temp = [...offers];
@@ -50,6 +43,7 @@ const AddOffers = (props) => {
     temp.splice(key, 1);
     setOffers(temp);
   };
+
 
   let offersList =
     offers.length > 0 ? (
