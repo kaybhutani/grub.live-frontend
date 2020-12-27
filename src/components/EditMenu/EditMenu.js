@@ -5,7 +5,7 @@ import { dummyRestaurantDetails } from "../../dummyData.json";
 import themes from "../../themes.json";
 import fonts from "../../fonts.json";
 import InviteForm from "./InviteForm/InviteForm";
-
+import MenuCategories from "./MenuCategories/MenuCategories";
 import AddOffers from "./AddOffers/AddOffers";
 import SocialLinks from "./SocialLinks/SocialLinks";
 // import { set } from "react-ga";
@@ -65,63 +65,63 @@ const EditMenu = ({
     return edit ? "Update Menu" : "Generate QR Menu";
   };
 
-  const updateTitle = (e, key) => {
-    const temp = { ...restaurantDetails };
-    temp.menu.categories[key].title = e.target.value;
-    setRestaurantDetails(temp);
-  };
+  // const updateTitle = (e, key) => {
+  //   const temp = { ...restaurantDetails };
+  //   temp.menu.categories[key].title = e.target.value;
+  //   setRestaurantDetails(temp);
+  // };
 
-  const addItem = (categoryKey) => {
-    const temp = { ...restaurantDetails };
-    temp.menu.categories[categoryKey].items.push({
-      itemName: "",
-      itemPrice: "",
-    });
-    setRestaurantDetails(temp);
-  };
+  // const addItem = (categoryKey) => {
+  //   const temp = { ...restaurantDetails };
+  //   temp.menu.categories[categoryKey].items.push({
+  //     itemName: "",
+  //     itemPrice: "",
+  //   });
+  //   setRestaurantDetails(temp);
+  // };
 
-  const deleteItem = (categoryKey, itemKey) => {
-    const temp = { ...restaurantDetails };
-    temp.menu.categories[categoryKey].items.splice(itemKey, 1);
-    setRestaurantDetails(temp);
-  };
+  // const deleteItem = (categoryKey, itemKey) => {
+  //   const temp = { ...restaurantDetails };
+  //   temp.menu.categories[categoryKey].items.splice(itemKey, 1);
+  //   setRestaurantDetails(temp);
+  // };
 
-  const itemOnChange = (itemType, e, categoryKey, itemKey) => {
-    const temp = { ...restaurantDetails };
-    if (itemType === "name")
-      temp.menu.categories[categoryKey].items[itemKey].itemName =
-        e.target.value;
-    else if (itemType === "price")
-      temp.menu.categories[categoryKey].items[itemKey].itemPrice =
-        e.target.value;
-    else
-      temp.menu.categories[categoryKey].items[itemKey].itemDescription =
-        e.target.value;
-    setRestaurantDetails(temp);
-  };
+  // const itemOnChange = (itemType, e, categoryKey, itemKey) => {
+  //   const temp = { ...restaurantDetails };
+  //   if (itemType === "name")
+  //     temp.menu.categories[categoryKey].items[itemKey].itemName =
+  //       e.target.value;
+  //   else if (itemType === "price")
+  //     temp.menu.categories[categoryKey].items[itemKey].itemPrice =
+  //       e.target.value;
+  //   else
+  //     temp.menu.categories[categoryKey].items[itemKey].itemDescription =
+  //       e.target.value;
+  //   setRestaurantDetails(temp);
+  // };
 
-  const addCategory = () => {
-    const temp = { ...restaurantDetails };
-    temp.menu.categories.push({
-      title: "",
-      type: "text",
-      items: [],
-    });
-    setRestaurantDetails(temp);
-  };
+  // const addCategory = () => {
+  //   const temp = { ...restaurantDetails };
+  //   temp.menu.categories.push({
+  //     title: "",
+  //     type: "text",
+  //     items: [],
+  //   });
+  //   setRestaurantDetails(temp);
+  // };
 
-  const deleteCategory = (categoryKey) => {
-    const temp = { ...restaurantDetails };
-    temp.menu.categories.splice(categoryKey, 1);
-    setRestaurantDetails(temp);
-  };
+  // const deleteCategory = (categoryKey) => {
+  //   const temp = { ...restaurantDetails };
+  //   temp.menu.categories.splice(categoryKey, 1);
+  //   setRestaurantDetails(temp);
+  // };
 
-  const handleKeyDown = (e, categoryKey) => {
-    if (e.keyCode === 13) {
-      e.preventDefault();
-      addItem(categoryKey);
-    }
-  };
+  // const handleKeyDown = (e, categoryKey) => {
+  //   if (e.keyCode === 13) {
+  //     e.preventDefault();
+  //     addItem(categoryKey);
+  //   }
+  // };
 
   const saveDraftFunction = (e) => {
     if (!saveDraft) {
@@ -191,7 +191,14 @@ const EditMenu = ({
         Edit Menu <i className="eos-icons">edit</i>
       </h2>
       <p>Please enter the following details to create your Digital QR Menu.</p>
-      <div style={{ float: "right" }}>
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          marginBottom: 10,
+        }}
+      >
         {localStorage.getItem("restaurantDetails") ? (
           <button
             onClick={() =>
@@ -205,12 +212,8 @@ const EditMenu = ({
           >
             Load saved <i className="eos-icons">system_update_alt</i>
           </button>
-        ) : (
-          <></>
-        )}
-        {restaurantDetails.restaurantName ? (
-          <></>
-        ) : (
+        ) : null}
+        {!restaurantDetails.restaurantName ? (
           <button
             onClick={() =>
               setRestaurantDetails({
@@ -223,11 +226,8 @@ const EditMenu = ({
           >
             Fill sample data <i className="eos-icons">keyboard</i>
           </button>
-        )}
+        ) : null}
       </div>
-
-      <br></br>
-      <br></br>
 
       <form>
         <div className="shadow-box">
@@ -352,122 +352,18 @@ const EditMenu = ({
           <></>
         )}
 
-        {restaurantDetails.menu.categories.map((element, categoryKey) => {
-          return (
-            <div className="shadow-box" key={categoryKey}>
-              <i
-                onClick={() => deleteCategory(categoryKey)}
-                style={{ float: "right" }}
-                className="eos-icons delete-icon"
-              >
-                close
-              </i>
-              <p>Title</p>
-              <input
-                required={true}
-                onKeyDown={(e) => handleKeyDown(e, categoryKey)}
-                defaultValue={
-                  restaurantDetails.menu.categories[categoryKey].title
-                }
-                className="form-input"
-                onChange={(e) => updateTitle(e, categoryKey)}
-                placeholder="Example: Chinese food"
-              ></input>
-              <br></br>
-              <br></br>
-              <div>
-                {restaurantDetails.menu.categories[categoryKey].items.map(
-                  (item, itemKey) => {
-                    return (
-                      <div key={itemKey}>
-                        <div style={{ display: "inline-block" }}>
-                          <p>Item Name</p>
-                          <input
-                            required={true}
-                            onChange={(e) =>
-                              itemOnChange("name", e, categoryKey, itemKey)
-                            }
-                            defaultValue={
-                              restaurantDetails.menu.categories[categoryKey]
-                                .items[itemKey].itemName
-                            }
-                            className="form-input"
-                            placeholder="Eg: French Fries"
-                          ></input>
-                        </div>
-                        <div style={{ display: "inline-block" }}>
-                          <p>Price</p>
-                          <input
-                            required={true}
-                            onKeyDown={(e) => handleKeyDown(e, categoryKey)}
-                            onChange={(e) =>
-                              itemOnChange("price", e, categoryKey, itemKey)
-                            }
-                            defaultValue={
-                              restaurantDetails.menu.categories[categoryKey]
-                                .items[itemKey].itemPrice
-                            }
-                            className="form-input"
-                            placeholder="Eg: Half: $4.99 , Full: $9.99"
-                          ></input>
-                        </div>
-                        <i
-                          onClick={() => deleteItem(categoryKey, itemKey)}
-                          className="eos-icons delete-icon"
-                          style={{}}
-                        >
-                          delete
-                        </i>
-                        {customizedMenu ? (
-                          <>
-                            <p>Item Description (If any)</p>
-                            <textarea
-                              onChange={(e) =>
-                                itemOnChange(
-                                  "description",
-                                  e,
-                                  categoryKey,
-                                  itemKey
-                                )
-                              }
-                              onKeyDown={(e) => handleKeyDown(e, categoryKey)}
-                              style={{ maxWidth: "330px" }}
-                              defaultValue={
-                                restaurantDetails.menu.categories[categoryKey]
-                                  .items[itemKey].itemDescription
-                              }
-                              className="form-input"
-                              placeholder="Contains onion, chillies, etc."
-                            ></textarea>
-                            <br></br>
-                            <br></br>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                      </div>
-                    );
-                  }
-                )}
-              </div>
-              <div style={{ float: "right" }}>
-                <button
-                  type="button"
-                  className="hyperlink btn-link"
-                  onClick={() => addItem(categoryKey)}
-                >
-                  Add Item <i className="eos-icons">add_circle_outline</i>{" "}
-                </button>
-              </div>
-            </div>
-          );
-        })}
+        <MenuCategories
+          menuCategories={restaurantDetails.menu.categories}
+          updateMenuCategoriesHandler={(newMenuCategories) =>
+            menuChangeHandler("menu.categories", newMenuCategories)
+          }
+        />
 
         <div>
           {/* <div style={{float: "right"}}>
           <button type='button' onClick={() => togglePreviewModal()} className='hyperlink btn-link preview-btn' >Preview <i className='eos-icons'>visibility</i> </button>
         </div> */}
-          <div style={{ float: "right" }}>
+          {/* <div style={{ float: "right" }}>
             <button
               type="button"
               className="hyperlink btn-link"
@@ -477,7 +373,7 @@ const EditMenu = ({
             </button>
           </div>
           <br></br>
-          <br></br>
+          <br></br> */}
           <div
             style={{ float: "right", display: "flex", flexDirection: "column" }}
           >

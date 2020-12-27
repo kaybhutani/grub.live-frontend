@@ -61,10 +61,10 @@ const InviteForm = ({ children, restaurantDetails, setRestaurantDetails }) => {
           onClick={(e) => couponHandler()}
         />
       </div>
-      <div class={styles.tooltip}>
+      <div className={styles.tooltip}>
         {" "}
         Get invite code?
-        <span class={styles.tooltiptext}>
+        <span className={styles.tooltiptext}>
           We currently allow only invited restaurants to create Menu,
           <Link to="/contact">{` Contact `}</Link>
           our sales team here for the invite and pricing.
