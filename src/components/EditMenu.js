@@ -329,11 +329,7 @@ const EditMenu = (props) => {
               marginBottom: 10,
             }}
           >
-            <img
-              src={Facebook}
-              alt="Fb"
-              style={{ marginRight: 10, maxHeight: 20 }}
-            />
+            
             <input
               type="text"
               placeholder="Facebook Link"
@@ -345,6 +341,11 @@ const EditMenu = (props) => {
                   : ""
               }
             />
+            <img
+              src={Facebook}
+              alt="Fb"
+              style={{ marginLeft: 10, maxHeight: 20 }}
+            />
           </div>
           <div
             style={{
@@ -354,11 +355,7 @@ const EditMenu = (props) => {
               marginBottom: 10,
             }}
           >
-            <img
-              src={Instagram}
-              alt="Ig"
-              style={{ marginRight: 10, maxHeight: 20 }}
-            />
+            
             <input
               type="text"
               placeholder="Instagram Link"
@@ -370,6 +367,11 @@ const EditMenu = (props) => {
                   : ""
               }
             />
+            <img
+              src={Instagram}
+              alt="Ig"
+              style={{ marginLeft: 10, maxHeight: 20 }}
+            />
           </div>
           <div
             style={{
@@ -379,11 +381,6 @@ const EditMenu = (props) => {
               marginBottom: 10,
             }}
           >
-            <img
-              src={Globe}
-              alt="Web"
-              style={{ marginRight: 10, maxHeight: 20 }}
-            />
             <input
               type="text"
               placeholder="Website Link"
@@ -392,6 +389,11 @@ const EditMenu = (props) => {
               value={
                 restaurantDetails.social ? restaurantDetails.social.website : ""
               }
+            />
+            <img
+              src={Globe}
+              alt="Web"
+              style={{ marginLeft: 10, maxHeight: 20 }}
             />
           </div>
           <div>

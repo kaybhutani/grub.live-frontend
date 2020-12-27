@@ -54,17 +54,12 @@ const AddOffers = ({offers =[], setOffers}) => {
             valueHandler={updateOfferHandler}
             index={index}
           />
-          <button
-            type="button"
-            style={{
-              backgroundColor: "transparent",
-              border: 0,
-              cursor: "pointer",
-            }}
-            onClick={() => deleteOffer(index)}
+          <i
+          onClick={() => deleteOffer(index)}
+          className={`eos-icons delete-icon ${styles.deleteOffer}`}
           >
-            <i className="eos-icons">delete_outline</i>
-          </button>
+          delete
+          </i>
         </div>
       ))
     ) : (
@@ -78,13 +73,15 @@ const AddOffers = ({offers =[], setOffers}) => {
   return (
     <div>
       {offersList}{" "}
-      <button
-        onClick={addNewOffer}
-        type="button"
-        style={{ backgroundColor: "transparent", border: 0, cursor: "pointer" }}
-      >
-        <i className="eos-icons">add_circle_outline</i>
-      </button>
+      <div style={{ float: "right" }}>
+        <button
+          type="button"
+          className="hyperlink btn-link"
+          onClick={addNewOffer}
+        >
+          Add offer <i className="eos-icons">add_circle_outline</i>{" "}
+        </button>
+        </div>
     </div>
   );
 };
