@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./AddOffers.module.scss";
+// import styles from "./AddOffers.module.scss";
 
 const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
   let [inputVal, setInputVal] = useState(defaultValue || "");
@@ -11,7 +11,7 @@ const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
 
   return (
     <input
-      autoFocus={index == 0 ? true : false}
+      autoFocus={index === 0 ? true : false}
       type="text"
       onChange={(e) => changeHandler(e.target.value)}
       value={inputVal}
@@ -27,7 +27,7 @@ const AddOffers = (props) => {
 
   let updateOfferHandler = (newValue, key) => {
     let temp = [...offers];
-    if (temp.length == 0) {
+    if (temp.length === 0) {
       setOffers([newValue]);
       return;
     }
