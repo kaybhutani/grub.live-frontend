@@ -15,7 +15,6 @@ const CreateMenu = (props) => {
     bio: "",
     offers: [],
     social: {},
-    customizedMenu: false,
     menu: {
       categories: [],
       theme: {},
