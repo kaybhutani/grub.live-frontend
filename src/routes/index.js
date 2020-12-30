@@ -5,12 +5,12 @@ import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 // import asyncComponents from "./asyncComponents";
 
-const Home = lazy(() => import("../pages/Home"));
-const CreateMenu = lazy(() => import("../pages/CreateMenu"));
-const HowItWorks = lazy(() => import("../pages/HowItWorks"));
-const QrDownload = lazy(() => import("../pages/QrDownload"));
-const About = lazy(() => import("../pages/About"));
-const Contact = lazy(() => import("../pages/Contact"));
+const Home = lazy(() => import("../pages/Home/Home"));
+const CreateMenu = lazy(() => import("../pages/CreateMenu/CreateMenu"));
+const HowItWorks = lazy(() => import("../pages/HowItWorks/HowItWorks"));
+const QrDownload = lazy(() => import("../pages/QrDownload/QrDownload"));
+const About = lazy(() => import("../pages/About/About"));
+const Contact = lazy(() => import("../pages/Contact/Contact"));
 
 const Router = () => {
   return (
