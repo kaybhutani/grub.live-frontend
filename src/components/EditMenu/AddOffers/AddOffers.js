@@ -43,7 +43,7 @@ const AddOffers = ({ offers = [], setOffers }) => {
   };
 
   let offersList =
-    offers.length > 0 ? (
+    offers && offers.length > 0 ? (
       offers.map((offer, index) => (
         <div key={index}>
           <AddOfferInput
