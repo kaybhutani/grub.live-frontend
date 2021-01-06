@@ -1,5 +1,6 @@
 import React from "react";
 import PreviewRestaurantMenu from "./PreviewRestaurantMenu";
+import PreviewMenuWrapper from "./preview-menu/PreviewMenuWrapper"
 const PreviewMenu = (props) => {
   const restaurantDetails = props.restaurantDetails;
 
@@ -10,10 +11,17 @@ const PreviewMenu = (props) => {
       </h2>
       <p>Once done, click on Generate QR Menu to create your Digital Menu.</p>
       <br></br>
-      <PreviewRestaurantMenu
+      {/* <PreviewRestaurantMenu
         restaurantDetails={restaurantDetails}
         customizedMenu={true}
-      />
+      /> */}
+      <div style={{
+        position: "relative",
+        maxHeight: 800,
+        overflowY: "scroll"
+      }}> 
+        <PreviewMenuWrapper style={{position: "absolute"}} restaurantDetails={restaurantDetails} />
+      </div>
     </div>
   );
 };
