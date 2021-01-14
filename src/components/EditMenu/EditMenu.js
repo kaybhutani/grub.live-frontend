@@ -17,7 +17,6 @@ const EditMenu = ({
   menuId,
   hash,
 }) => {
-  const customizedMenu = restaurantDetails.customizedMenu;
   const [saveDraft, setSaveDraft] = useState(false);
   const [submitState, setSubmitState] = useState(false);
   const menuChangeHandler = (keyStr, val) => {
@@ -124,12 +123,6 @@ const EditMenu = ({
 
   return (
     <div className="edit-menu">
-      {/* {
-        previewModal ? <PreviewModal restaurantDetails={restaurantDetails} togglePreviewModal={togglePreviewModal}/>
-        :<></>
-        
-      } */}
-
       <h2>
         Edit Menu <i className="eos-icons">edit</i>
       </h2>
@@ -147,7 +140,6 @@ const EditMenu = ({
             onClick={() =>
               setRestaurantDetails({
                 ...JSON.parse(localStorage.getItem("restaurantDetails")),
-                customizedMenu: customizedMenu,
               })
             }
             style={{ color: "#007cbf" }}
@@ -161,7 +153,6 @@ const EditMenu = ({
             onClick={() =>
               setRestaurantDetails({
                 ...dummyRestaurantDetails,
-                customizedMenu: customizedMenu,
               })
             }
             style={{ color: "#007cbf" }}
