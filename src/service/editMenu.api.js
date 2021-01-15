@@ -8,7 +8,7 @@ export class MenuAPI {
     this.api  = api
   }
 
-  fetchMenuFromServer() {
+  fetchMenuFromServer(menuId) {
     return new Promise((resolve,reject) => {
       this.api
       .get(`/view`, {
