@@ -1,7 +1,6 @@
 import axios from "axios";
-
 const apiInstance = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_URI,
+  baseURL:"https://grub-live-backend.herokuapp.com"
 });
 
 apiInstance.defaults.headers.common["Content-Type"] = "application/json";
