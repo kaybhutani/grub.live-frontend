@@ -13,7 +13,7 @@ const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
       onChange={(e) => changeHandler(e.target.value)}
       value={defaultValue}
       className="form-input"
-      style={{ marginBottom: 10 }}
+      style={{ marginBottom: 10 , width:'85%'}}
       placeholder="Offer"
     />
   );
