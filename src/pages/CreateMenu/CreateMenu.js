@@ -35,7 +35,7 @@ const CreateMenu = ({ edit }) => {
             q: menuId,
           },
         })
-        .then((req) => req.json())
+        .then((req) => req.data)
         .then((data) => {
           setDataFetched(true);
           if (!data.success) throw new Error("Failed to fetch menu");
