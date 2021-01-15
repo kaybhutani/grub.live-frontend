@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { apiBaseUrl } from "../../../config.json";
 import styles from "./InviteForm.module.scss";
+import axiosInstance from '../../../service/axios'
 const VERIFY_STATE = {
   VERIFIED: 1,
   INVALID: -1,
@@ -16,24 +16,29 @@ const InviteForm = ({ children, restaurantDetails, setRestaurantDetails }) => {
     setVerifyState(VERIFY_STATE.NOT_VERIFIED);
   };
   const couponHandler = () => {
-    fetch(`${apiBaseUrl}/coupons/is-valid?q=${coupon}`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data && data.success) {
-          setVerifyState(VERIFY_STATE.VERIFIED);
-          setRestaurantDetails({ ...restaurantDetails, couponId: coupon });
-        } else {
-          setErrorMessage(data ? data.message : "Could not verify Invite Code");
-          setVerifyState(VERIFY_STATE.INVALID);
-          setRestaurantDetails({ ...restaurantDetails, couponId: "" });
-        }
-      })
-      .catch((err) => {
-        setErrorMessage(`${err}`);
+    axiosInstance.get(`/coupons/is-valid` ,{
+      params: {
+        q: coupon
+      }
+    })
+    .then(req => {
+      if(req.status !== 200) throw new Error("Failed to verify Invite Coupon")
+      return req.data
+    })
+    .then((data) => {
+      if(!data.hasOwnProperty('success') || !data.success) throw new Error("Failed to verify Invite Coupon")
+      setVerifyState(VERIFY_STATE.VERIFIED);
+      setRestaurantDetails({ ...restaurantDetails, couponId: coupon });
+    })
+    .catch((err) => {
+      setErrorMessage(`${err.message}`);
         setRestaurantDetails({ ...restaurantDetails, couponId: "" });
         setVerifyState(VERIFY_STATE.INVALID);
-      });
+    })
   };
+
+
+
 
   let [verifyState, setVerifyState] = useState(VERIFY_STATE.NOT_VERIFIED);
 
