@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import EditMenu from "../../components/EditMenu/EditMenu";
 import PreviewMenu from "../../components/PreviewMenu";
 import loadingIcon from "../../assets/images/three_dots_loading.svg";
-import { apiBaseUrl } from "../../config.json";
+import axiosInstance from "../../service/axios";
 import ReactGA from "react-ga";
 ReactGA.initialize("G-0BPQRCHTXK");
-
-const CreateMenu = (props) => {
+const CreateMenu = ({ edit }) => {
   const sampleRestaurantDetails = {
     emailId: "",
     restaurantName: "",
@@ -26,20 +25,28 @@ const CreateMenu = (props) => {
   );
   const [dataFetched, setDataFetched] = useState(false);
   const [editDataCorrect, setEditDataCorrect] = useState(false);
-  const edit = props.edit || false;
   let { menuId, hash } = useParams();
 
-  if (edit && !dataFetched) {
-    fetch(`${apiBaseUrl}/view?q=${menuId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setDataFetched(true);
-        if (data.success) {
+  useEffect(() => {
+    if (edit)
+      axiosInstance
+        .get(`/view`, {
+          params: {
+            q: menuId,
+          },
+        })
+        .then((req) => req.json())
+        .then((data) => {
+          setDataFetched(true);
+          if (!data.success) throw new Error("Failed to fetch menu");
           setRestaurantDetails(data.data);
           setEditDataCorrect(true);
-        }
-      });
-  }
+        })
+        .catch((err) => {
+          console.error(err);
+          alert(err.message);
+        });
+  }, [edit, menuId]);
 
   const getCreateMenuComponent = () => {
     if (edit) {
@@ -90,12 +97,8 @@ const CreateMenu = (props) => {
           edit={edit}
           menuId={menuId}
           hash={hash}
-          customizedMenu={true}
         />
-        <PreviewMenu
-          restaurantDetails={restaurantDetails}
-          customizedMenu={true}
-        />
+        <PreviewMenu restaurantDetails={restaurantDetails} />
       </div>
     );
   };

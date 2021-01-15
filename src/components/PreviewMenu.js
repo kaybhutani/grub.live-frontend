@@ -10,10 +10,7 @@ const PreviewMenu = (props) => {
       </h2>
       <p>Once done, click on Generate QR Menu to create your Digital Menu.</p>
       <br></br>
-      <PreviewRestaurantMenu
-        restaurantDetails={restaurantDetails}
-        customizedMenu={true}
-      />
+      <PreviewRestaurantMenu restaurantDetails={restaurantDetails} />
     </div>
   );
 };
