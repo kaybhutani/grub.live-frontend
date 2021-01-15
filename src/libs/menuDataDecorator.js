@@ -62,7 +62,7 @@ const pushDataToMenu = (payload, url) => {
       "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(payload),
     mode: "cors",
   });
 };

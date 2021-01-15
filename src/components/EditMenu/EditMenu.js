@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { apiBaseUrl } from "../../config.json";
 // import PreviewModal from './PreviewModal'
 import { dummyRestaurantDetails } from "../../dummyData.json";
-
+import {useHistory} from 'react-router-dom'
+import axiosInstance from '../../service/axios'
 import InviteForm from "./InviteForm/InviteForm";
 import MenuCategories from "./MenuCategories/MenuCategories";
 import AddOffers from "./AddOffers/AddOffers";
@@ -17,7 +17,7 @@ const EditMenu = ({
   menuId,
   hash,
 }) => {
-  const customizedMenu = restaurantDetails.customizedMenu;
+  let history =useHistory()
   const [saveDraft, setSaveDraft] = useState(false);
   const [submitState, setSubmitState] = useState(false);
   const menuChangeHandler = (keyStr, val) => {
@@ -81,55 +81,37 @@ const EditMenu = ({
 
   const submitMenu = (e) => {
     if (!submitState) {
-      setSubmitState(true);
-      if (!restaurantDetails.emailId || !restaurantDetails.restaurantName) {
-        setSubmitState(false);
-        window.alert("Restaurant name and Email Id cannot be blank");
-        return;
+      setSubmitState(true)
+      try {
+        if(!restaurantDetails.emailId || !restaurantDetails.restaurantName) {
+          throw new Error("Restaurant Details cannot be empty!")
+        }
+        const apiEndPoint = edit ? `/edit/submit/${menuId}/${hash}` : `/submit`;
+
+        axiosInstance.post(apiEndPoint,JSON.stringify(restaurantDetails))
+          .then(req => {
+            if(req.status!==200) throw new Error("Failed to save menu")
+            return req.data
+          })
+          .then((data) => {
+            setSubmitState(false)
+            if(!data.success) throw new Error("Failed to save menu")
+            localStorage.removeItem("restaurantDetails");
+            const redirectLocation = edit? `/#/qr/edit/${data.id}`: `/#/qr/${data.id}`;
+            history.push(redirectLocation)
+          })
+      }catch(err) {
+        console.error(err.message)
+        alert(err.message)
       }
-      const requestOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(restaurantDetails),
-      };
-
-      const apiEndPoint = edit
-        ? `${apiBaseUrl}/edit/submit/${menuId}/${hash}`
-        : `${apiBaseUrl}/submit`;
-
-      fetch(apiEndPoint, requestOptions)
-        .then((response) => response.json())
-        .then((data) => {
-          setSubmitState(false);
-          console.log(data);
-          if (!data.success) {
-            let errMessage =
-              data.message || `Some problem occrred while creating menu`;
-            window.alert(errMessage);
-            return;
-          }
-          localStorage.removeItem("restaurantDetails");
-          const redirectLocation = edit
-            ? `/#/qr/edit/${data.id}`
-            : `/#/qr/${data.id}`;
-          window.location = redirectLocation;
-        })
-        .catch((err) => {
-          console.log(err);
-          alert(`Some error occurred`);
-          setSubmitState(false);
-        });
     }
+
+
   };
+
 
   return (
     <div className="edit-menu">
-      {/* {
-        previewModal ? <PreviewModal restaurantDetails={restaurantDetails} togglePreviewModal={togglePreviewModal}/>
-        :<></>
-        
-      } */}
-
       <h2>
         Edit Menu <i className="eos-icons">edit</i>
       </h2>
@@ -147,7 +129,6 @@ const EditMenu = ({
             onClick={() =>
               setRestaurantDetails({
                 ...JSON.parse(localStorage.getItem("restaurantDetails")),
-                customizedMenu: customizedMenu,
               })
             }
             style={{ color: "#007cbf" }}
@@ -161,7 +142,6 @@ const EditMenu = ({
             onClick={() =>
               setRestaurantDetails({
                 ...dummyRestaurantDetails,
-                customizedMenu: customizedMenu,
               })
             }
             style={{ color: "#007cbf" }}
@@ -222,9 +202,6 @@ const EditMenu = ({
                 `Save Draft`
               )}
             </button>
-            {/**
-             * TODO: Make Add Coupon component
-             */}
             {!edit ? (
               <InviteForm
                 restaurantDetails={restaurantDetails}
