@@ -7,30 +7,34 @@ const mapStateToProps = (state) => {
   };
 };
 
+const styles = {
+  maxWidth: 700,
+};
+
 const MenuHeader = ({ isEdit }) => {
   if (isEdit) {
     return (
-      <>
+      <div style={styles}>
         <h1>Update Menu</h1>
         <p>
           Any changes made here will be updated in your old menu only. You can add, delete or update
           the categories, items and price. The Restaurant name, logo and email ID cannot be changed
-          for now. You don't have to worry for new QR code , the link and QR remains same.
+          for now. You don&apos;t have to worry for new QR code , the link and QR remains same.
         </p>
-        <br/>
-      </>
+        <br />
+      </div>
     );
   }
 
   return (
-    <>
+    <div style={styles}>
       <h1>Create Menu</h1>
       <p style={{ fontSize: "1.2em" }}>
         Creating menu is simple. Just enter your restaurant name, upload Logo and Email ID for
-        future changes.<br></br>That's it. Now you can start adding the Dishes by creating a new
-        category and adding items to it.
+        future changes.<br></br>That&apos;s it. Now you can start adding the Dishes by creating a
+        new category and adding items to it.
       </p>
-    </>
+    </div>
   );
 };
 

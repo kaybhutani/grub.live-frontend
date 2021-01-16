@@ -101,6 +101,8 @@ footer {
   margin: $xxl $l;
 }
 .center-align {
+  display: flex;
+  justify-content:center;
   text-align: center;
 }
 

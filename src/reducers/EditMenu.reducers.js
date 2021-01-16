@@ -38,17 +38,17 @@ export const fetchMenu = createAsyncThunk('menu/menuRequest' , async ({menuId, h
   
 })
 
-export const setMenu = createAsyncThunk('menu/menuUpdate', async ({newMenu, hash, menuId, isEdit}, {rejectWithValue}) => {
+export const setMenu = createAsyncThunk('menu/menuUpdate', async (arg, {rejectWithValue,getState}) => {
   try {
-    let resp = await menuAPI.setMenu({menu: newMenu,hash,menuId, isEdit })
-    return newMenu;
+    let {restaurantDetails, hash,menuId,edit}= getState()
+    await menuAPI.setMenu({menu: restaurantDetails, hash,menuId,isEdit: edit})
   }catch(err) {
     rejectWithValue(err.message)
   }
 })
 
-export const drafttMenu = createAsyncThunk('menu/draftMenu' , async(payload) => {
-  await menuAPI.saveDraft(payload)
+export const draftMenu = createAsyncThunk('menu/draftMenu' , async(arg, {getState}) => {
+  await menuAPI.saveDraft(getState())
   return payload
 })
 
@@ -107,16 +107,16 @@ let editMenuSlice = createSlice({
       state.loading = false;
 
     },
-    [drafttMenu.pending] :(state, action) => {
+    [draftMenu.pending] :(state, action) => {
       state.loading = true;
       state.error = null
     },
-    [drafttMenu.fulfilled]: (state,action) => {
+    [draftMenu.fulfilled]: (state,action) => {
       state.restaurantDetails = action.payload
       state.error=  null
       state.loading = false;
     },
-    [drafttMenu.rejected]: (state,action) => {
+    [draftMenu.rejected]: (state,action) => {
       state.error=  action.error.message
       state.loading = false;
     },
@@ -125,9 +125,12 @@ let editMenuSlice = createSlice({
       state.error = null
     },
     [fetchMenuFromLocalStorage.fulfilled]  :(state, action) => {
-      state.restaurantDetails = action.payload
-      state.error=  null
-      state.loading = false;
+      return {
+        ...state,
+        ...action.payload,
+        error:null,
+        loading:false
+      }
     },
     [fetchMenuFromLocalStorage.rejected]: (state,action) => {
       state.error=  action.error.message

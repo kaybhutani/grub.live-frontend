@@ -9,38 +9,13 @@ import AddOffers from "./AddOffers/AddOffers";
 import SocialLinks from "./SocialLinks/SocialLinks";
 import MenuTheme from "./MenuTheme/MenuTheme";
 import RestaurantDetails from "./RestaurantDetails/RestaurantDetails";
+import EditMenuCTA from "./EditMenuCTA/EditMenuCTA";
 // import { set } from "react-ga";
-const EditMenu = ({
-  restaurantDetails,
-  setRestaurantDetails,
-  edit,
-  menuId,
-  hash,
-}) => {
-  let history =useHistory()
-  const [saveDraft, setSaveDraft] = useState(false);
-  const [submitState, setSubmitState] = useState(false);
-  const menuChangeHandler = (keyStr, val) => {
-    let updatedRestaurantDetails = { ...restaurantDetails };
-    let keyArray = keyStr.split(".");
-    let pointer = updatedRestaurantDetails;
-    let i = 0;
-    while (i < keyArray.length - 1) {
-      if (!pointer.hasOwnProperty(keyArray[i])) {
-        if (i === keyArray.length - 2) {
-          break;
-        } else {
-          pointer[keyArray[i]] = {};
-        }
-      }
-      pointer = pointer[keyArray[i]];
-      i++;
-    }
-    pointer[keyArray[keyArray.length - 1]] = val;
-    // updatedRestaurantDetails[key] = val;
-    setRestaurantDetails(updatedRestaurantDetails);
-  };
 
+
+
+const EditMenu = () => {
+  
   const updateLogo = (e) => {
     const uploadedFile = e.target.files[0];
     if (uploadedFile) {
@@ -59,55 +34,40 @@ const EditMenu = ({
       };
     }
   };
-  const getGenerateBtnText = () => {
-    if (submitState) {
-      return edit ? "Updating..." : "Generating...";
-    }
-    return edit ? "Update Menu" : "Generate QR Menu";
-  };
 
-  const saveDraftFunction = (e) => {
-    if (!saveDraft) {
-      localStorage.setItem(
-        "restaurantDetails",
-        JSON.stringify(restaurantDetails)
-      );
-      setSaveDraft(true);
-      setTimeout(() => {
-        setSaveDraft(false);
-      }, 3000);
-    }
-  };
+  
 
-  const submitMenu = (e) => {
-    if (!submitState) {
-      setSubmitState(true)
-      try {
-        if(!restaurantDetails.emailId || !restaurantDetails.restaurantName) {
-          throw new Error("Restaurant Details cannot be empty!")
-        }
-        const apiEndPoint = edit ? `/edit/submit/${menuId}/${hash}` : `/submit`;
+  
 
-        axiosInstance.post(apiEndPoint,JSON.stringify(restaurantDetails))
-          .then(req => {
-            if(req.status!==200) throw new Error("Failed to save menu")
-            return req.data
-          })
-          .then((data) => {
-            setSubmitState(false)
-            if(!data.success) throw new Error("Failed to save menu")
-            localStorage.removeItem("restaurantDetails");
-            const redirectLocation = edit? `/#/qr/edit/${data.id}`: `/#/qr/${data.id}`;
-            history.push(redirectLocation)
-          })
-      }catch(err) {
-        console.error(err.message)
-        alert(err.message)
-      }
-    }
+  // const submitMenu = (e) => {
+  //   if (!submitState) {
+  //     setSubmitState(true)
+  //     try {
+  //       if(!restaurantDetails.emailId || !restaurantDetails.restaurantName) {
+  //         throw new Error("Restaurant Details cannot be empty!")
+  //       }
+  //       const apiEndPoint = edit ? `/edit/submit/${menuId}/${hash}` : `/submit`;
+
+  //       axiosInstance.post(apiEndPoint,JSON.stringify(restaurantDetails))
+  //         .then(req => {
+  //           if(req.status!==200) throw new Error("Failed to save menu")
+  //           return req.data
+  //         })
+  //         .then((data) => {
+  //           setSubmitState(false)
+  //           if(!data.success) throw new Error("Failed to save menu")
+  //           localStorage.removeItem("restaurantDetails");
+  //           const redirectLocation = edit? `/#/qr/edit/${data.id}`: `/#/qr/${data.id}`;
+  //           history.push(redirectLocation)
+  //         })
+  //     }catch(err) {
+  //       console.error(err.message)
+  //       alert(err.message)
+  //     }
+  //   }
 
 
-  };
+  // };
 
 
   return (
@@ -154,78 +114,14 @@ const EditMenu = ({
 
       <form>
         <div className="shadow-box">
-          <RestaurantDetails
-            updateLogo={updateLogo}
-            edit={edit}
-            restaurantDetails={restaurantDetails}
-            menuChangeHandler={menuChangeHandler}
-          />
-          <SocialLinks
-            defaultSocialLinks={restaurantDetails.social}
-            menuChangeHandler={menuChangeHandler}
-          />
-          <div>
-            <AddOffers
-              offers={restaurantDetails.offers}
-              setOffers={(offers) => menuChangeHandler("offers", offers)}
-            />
-          </div>
+          <RestaurantDetails/>
+          <SocialLinks/>
+          <AddOffers/>
         </div>
 
-        <MenuTheme
-          updateMenuThemeHandler={(key, val) =>
-            menuChangeHandler(`menu.${key}`, val)
-          }
-        />
-
-        <MenuCategories
-          menuCategories={restaurantDetails.menu.categories}
-          updateMenuCategoriesHandler={(newMenuCategories) =>
-            menuChangeHandler("menu.categories", newMenuCategories)
-          }
-        />
-
-        <div>
-          <div
-            style={{ float: "right", display: "flex", flexDirection: "column" }}
-          >
-            <button
-              type="button"
-              onClick={(e) => saveDraftFunction(e)}
-              className="black-yellow"
-            >
-              {saveDraft ? (
-                <div>
-                  Saved <i className="eos-icons">done</i>
-                </div>
-              ) : (
-                `Save Draft`
-              )}
-            </button>
-            {!edit ? (
-              <InviteForm
-                restaurantDetails={restaurantDetails}
-                setRestaurantDetails={setRestaurantDetails}
-              >
-                <button
-                  type="button"
-                  onClick={(e) => submitMenu(e)}
-                  className="black-yellow"
-                >
-                  {getGenerateBtnText()}
-                </button>
-              </InviteForm>
-            ) : (
-              <button
-                type="button"
-                onClick={(e) => submitMenu(e)}
-                className="black-yellow"
-              >
-                {getGenerateBtnText()}
-              </button>
-            )}
-          </div>
-        </div>
+        <MenuTheme/>
+        <MenuCategories/>
+        <EditMenuCTA/>
       </form>
     </div>
   );

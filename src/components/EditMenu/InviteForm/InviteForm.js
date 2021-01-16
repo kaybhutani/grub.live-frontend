@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./InviteForm.module.scss";
-import axiosInstance from '../../../service/axios'
+import axiosInstance from "../../../service/axios";
 const VERIFY_STATE = {
   VERIFIED: 1,
   INVALID: -1,
   NOT_VERIFIED: 0,
 };
 
-const InviteForm = ({ children, restaurantDetails, setRestaurantDetails }) => {
+const InviteForm = ({ children }) => {
   let [coupon, setCoupon] = useState("");
   let [errorMessage, setErrorMessage] = useState("");
   const resetCouponState = (e) => {
@@ -16,29 +16,26 @@ const InviteForm = ({ children, restaurantDetails, setRestaurantDetails }) => {
     setVerifyState(VERIFY_STATE.NOT_VERIFIED);
   };
   const couponHandler = () => {
-    axiosInstance.get(`/coupons/is-valid` ,{
-      params: {
-        q: coupon
-      }
-    })
-    .then(req => {
-      if(req.status !== 200) throw new Error("Failed to verify Invite Coupon")
-      return req.data
-    })
-    .then((data) => {
-      if(!data.hasOwnProperty('success') || !data.success) throw new Error("Failed to verify Invite Coupon")
-      setVerifyState(VERIFY_STATE.VERIFIED);
-      setRestaurantDetails({ ...restaurantDetails, couponId: coupon });
-    })
-    .catch((err) => {
-      setErrorMessage(`${err.message}`);
-        setRestaurantDetails({ ...restaurantDetails, couponId: "" });
+    axiosInstance
+      .get(`/coupons/is-valid`, {
+        params: {
+          q: coupon,
+        },
+      })
+      .then((req) => {
+        if (req.status !== 200) throw new Error("Failed to verify Invite Coupon");
+        return req.data;
+      })
+      .then((data) => {
+        if (!data.hasOwnProperty("success") || !data.success)
+          throw new Error("Failed to verify Invite Coupon");
+        setVerifyState(VERIFY_STATE.VERIFIED);
+      })
+      .catch((err) => {
+        setErrorMessage(`${err.message}`);
         setVerifyState(VERIFY_STATE.INVALID);
-    })
+      });
   };
-
-
-
 
   let [verifyState, setVerifyState] = useState(VERIFY_STATE.NOT_VERIFIED);
 
@@ -96,8 +93,7 @@ const InviteForm = ({ children, restaurantDetails, setRestaurantDetails }) => {
     <>
       <div style={{ textAlign: "right" }}>{children}</div>
       <p className={styles.correctCoupon}>
-        Invite Code {coupon} successfully applied.{" "}
-        <i className="eos-icons">done</i>
+        Invite Code {coupon} successfully applied. <i className="eos-icons">done</i>
       </p>
       <button
         className={`hyperlink btn-link ${styles.tryAgainBtn}`}
