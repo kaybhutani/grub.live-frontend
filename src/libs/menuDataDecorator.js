@@ -16,38 +16,31 @@ let decorateData = (payload) => {
     let newPayload = JSON.parse(JSON.stringify(payload));
 
     if (newPayload.hasOwnProperty("menu")) {
-      newPayload.menu.categories = newPayload.menu.categories.map(
-        (category) => {
-          if (category.items) {
-            category.items = category.items.map((item) => {
-              if (!item.hasOwnProperty("itemName")) return item;
-              let newDescription;
-              let newName = item.itemName.toLowerCase();
+      newPayload.menu.categories = newPayload.menu.categories.map((category) => {
+        if (category.items) {
+          category.items = category.items.map((item) => {
+            if (!item.hasOwnProperty("itemName")) return item;
+            let newDescription;
+            let newName = item.itemName.toLowerCase();
 
-              if (
-                item.hasOwnProperty("itemDescription") &&
-                item.itemDescription.length >= 2
-              ) {
-                newDescription = item.itemDescription.toLowerCase();
-                newDescription =
-                  newDescription[0].toUpperCase() + newDescription.substring(1);
-              } else {
-                newDescription = "";
-              }
+            if (item.hasOwnProperty("itemDescription") && item.itemDescription.length >= 2) {
+              newDescription = item.itemDescription.toLowerCase();
+              newDescription = newDescription[0].toUpperCase() + newDescription.substring(1);
+            } else {
+              newDescription = "";
+            }
 
-              if (newName.length >= 2)
-                newName = newName[0].toUpperCase() + newName.substring(1);
+            if (newName.length >= 2) newName = newName[0].toUpperCase() + newName.substring(1);
 
-              return {
-                itemPrice: item.itemPrice,
-                itemName: newName,
-                itemDescription: newDescription,
-              };
-            });
-          }
-          return category;
+            return {
+              itemPrice: item.itemPrice,
+              itemName: newName,
+              itemDescription: newDescription,
+            };
+          });
         }
-      );
+        return category;
+      });
       resolve(newPayload);
     } else {
       reject("Error");

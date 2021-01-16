@@ -1,11 +1,6 @@
 import React from "react";
 import styles from "./RestaurantDetails.module.scss";
-const RestaurantDetails = ({
-  restaurantDetails,
-  menuChangeHandler,
-  edit,
-  updateLogo,
-}) => {
+const RestaurantDetails = ({ restaurantDetails, menuChangeHandler, edit, updateLogo }) => {
   return (
     <div>
       <div>
@@ -33,12 +28,7 @@ const RestaurantDetails = ({
 
       <div>
         <p>Logo (if any)</p>
-        <input
-          disabled={edit}
-          type="file"
-          accept="image/*"
-          onChange={(e) => updateLogo(e)}
-        ></input>
+        <input disabled={edit} type="file" accept="image/*" onChange={(e) => updateLogo(e)}></input>
       </div>
       <div>
         <p>Email ID (You can use this to edit Menu later)</p>

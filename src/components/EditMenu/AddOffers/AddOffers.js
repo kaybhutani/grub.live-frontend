@@ -13,7 +13,7 @@ const AddOfferInput = ({ defaultValue, valueHandler, index }) => {
       onChange={(e) => changeHandler(e.target.value)}
       value={defaultValue}
       className="form-input"
-      style={{ marginBottom: 10 , width:'85%'}}
+      style={{ marginBottom: 10, width: "85%" }}
       placeholder="Offer"
     />
   );
@@ -46,11 +46,7 @@ const AddOffers = ({ offers = [], setOffers }) => {
     offers && offers.length > 0 ? (
       offers.map((offer, index) => (
         <div key={index}>
-          <AddOfferInput
-            defaultValue={offer}
-            valueHandler={updateOfferHandler}
-            index={index}
-          />
+          <AddOfferInput defaultValue={offer} valueHandler={updateOfferHandler} index={index} />
           <i
             onClick={() => deleteOffer(index)}
             className={`eos-icons delete-icon ${styles.deleteOffer}`}
@@ -60,11 +56,7 @@ const AddOffers = ({ offers = [], setOffers }) => {
         </div>
       ))
     ) : (
-      <AddOfferInput
-        defaultValue={""}
-        valueHandler={updateOfferHandler}
-        index={0}
-      />
+      <AddOfferInput defaultValue={""} valueHandler={updateOfferHandler} index={0} />
     );
 
   return (
@@ -72,11 +64,7 @@ const AddOffers = ({ offers = [], setOffers }) => {
       <p>Add Offers</p>
       {offersList}{" "}
       <div style={{ float: "right" }}>
-        <button
-          type="button"
-          className="hyperlink btn-link"
-          onClick={addNewOffer}
-        >
+        <button type="button" className="hyperlink btn-link" onClick={addNewOffer}>
           Add offer <i className="eos-icons">add_circle_outline</i>{" "}
         </button>
       </div>

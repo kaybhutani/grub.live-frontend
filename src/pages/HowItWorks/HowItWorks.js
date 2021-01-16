@@ -44,10 +44,7 @@ const HowItWorks = () => {
     <div className="container">
       <div className="align-center">
         <h2>How does it works for Restaurant's ?</h2>
-        <p>
-          Learn how Restaurant's can adapt Contact-less Menu's in just 4 simple
-          steps!
-        </p>
+        <p>Learn how Restaurant's can adapt Contact-less Menu's in just 4 simple steps!</p>
       </div>
       <br></br>
       <StepRight

@@ -26,9 +26,7 @@ const SocialLinks = ({
           type="text"
           placeholder="Instagram Link"
           className="form-input"
-          onChange={(e) =>
-            menuChangeHandler("social.instagram", e.target.value)
-          }
+          onChange={(e) => menuChangeHandler("social.instagram", e.target.value)}
           value={defaultSocialLinks.instagram || ""}
         />
       </div>

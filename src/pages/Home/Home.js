@@ -40,8 +40,7 @@ const Home = () => {
     <div className="container">
       <div className="header">
         <h1>
-          Simple{"&"} Customized Digital QR Menu's <br></br> Rejuvenating the
-          dining experience.
+          Simple{"&"} Customized Digital QR Menu's <br></br> Rejuvenating the dining experience.
         </h1>
         <div className="header-features">
           {features.map((feature, key) => {
@@ -60,11 +59,7 @@ const Home = () => {
                 {/* {(featureOpen[0] && featureOpen[1]===key)? (
                     <p className='fadein'>{feature.description}</p>
                   ): (<p className='fadeout'>{feature.description}</p>)} */}
-                <p
-                  className={`fade${
-                    featureOpen[0] && featureOpen[1] === key ? "in" : "out"
-                  }`}
-                >
+                <p className={`fade${featureOpen[0] && featureOpen[1] === key ? "in" : "out"}`}>
                   {feature.description}
                 </p>
               </div>

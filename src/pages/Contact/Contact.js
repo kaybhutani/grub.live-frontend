@@ -12,11 +12,7 @@ const Contact = () => {
         <h1>Contact Us!</h1>
         <p>
           Email ID:{" "}
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="mailto:grubdotlive@gmail.com"
-          >
+          <a rel="noopener noreferrer" target="_blank" href="mailto:grubdotlive@gmail.com">
             grubdotlive@gmail.com
           </a>
         </p>
@@ -25,30 +21,18 @@ const Contact = () => {
         </p>
         <p>
           Social media:
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://www.instagram.com/grub_live/"
-          >
-            <img
-              className="social-icon"
-              src={instagramIcon}
-              alt="instagram"
-            ></img>
+          <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/grub_live/">
+            <img className="social-icon" src={instagramIcon} alt="instagram"></img>
           </a>
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href="https://twitter.com/grub_live"
-          >
+          <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/grub_live">
             <img className="social-icon" src={twitterIcon} alt="twitter"></img>
           </a>
         </p>
         <br></br>
         <h1>Send Feedback</h1>
         <p>
-          We would love to hear your thoughts, suggestions, concerns or problems
-          with anything so we can improve!
+          We would love to hear your thoughts, suggestions, concerns or problems with anything so we
+          can improve!
         </p>
         <br></br>
         <div className="shadow-box" style={{ maxWidth: "1024px" }}>

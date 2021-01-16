@@ -1,9 +1,9 @@
-import {configureStore} from '@reduxjs/toolkit'
+import { configureStore } from "@reduxjs/toolkit";
 
-import menuReducer from './reducers/EditMenu.reducers'
+import menuReducer from "./reducers/EditMenu.reducers";
 
 export default configureStore({
   reducer: {
-    menu: menuReducer
-  }
-})
+    menu: menuReducer,
+  },
+});

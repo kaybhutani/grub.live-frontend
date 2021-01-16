@@ -14,9 +14,7 @@ const QrDownload = (props) => {
         .then((data) => {
           setDataFetched(true);
           if (data.success) {
-            setQrSticker(
-              "data:image/png;application/octet-stream;base64," + data.sticker
-            );
+            setQrSticker("data:image/png;application/octet-stream;base64," + data.sticker);
           }
         });
     }
@@ -50,8 +48,8 @@ const QrDownload = (props) => {
                     <a rel="noopener noreferrer" target="_blank" href={url}>
                       here
                     </a>
-                    .<br></br> You can Download the QR code sticker and paste it
-                    on the table, window, etc.
+                    .<br></br> You can Download the QR code sticker and paste it on the table,
+                    window, etc.
                   </p>
                   <br></br>
                   <a
@@ -65,11 +63,7 @@ const QrDownload = (props) => {
                   <br></br>
                   <br></br>
                   <br></br>
-                  <img
-                    src={qrSticker}
-                    alt="qr sticker"
-                    className="qr-sticker"
-                  ></img>
+                  <img src={qrSticker} alt="qr sticker" className="qr-sticker"></img>
                 </>
               )}
             </div>

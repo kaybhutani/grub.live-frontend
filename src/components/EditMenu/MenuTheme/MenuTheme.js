@@ -8,9 +8,7 @@ const MenuTheme = ({ defaultTheme, updateMenuThemeHandler }) => {
       <div style={{ display: "inline-block" }}>
         <p>Theme</p>
         <select
-          onChange={(e) =>
-            updateMenuThemeHandler("theme", themes[e.target.value])
-          }
+          onChange={(e) => updateMenuThemeHandler("theme", themes[e.target.value])}
           name="themes"
         >
           {Object.keys(themes).map((theme, idx) => {
@@ -25,18 +23,12 @@ const MenuTheme = ({ defaultTheme, updateMenuThemeHandler }) => {
       <div style={{ display: "inline-block", marginLeft: "48px" }}>
         <p>Font</p>
         <select
-          onChange={(e) =>
-            updateMenuThemeHandler("theme.fontFamily", e.target.value)
-          }
+          onChange={(e) => updateMenuThemeHandler("theme.fontFamily", e.target.value)}
           name="fonts"
         >
           {Object.keys(fonts).map((font, idx) => {
             return (
-              <option
-                className="form-input"
-                key={idx}
-                value={Object.values(fonts)[idx]}
-              >
+              <option className="form-input" key={idx} value={Object.values(fonts)[idx]}>
                 {font}
               </option>
             );
@@ -47,18 +39,14 @@ const MenuTheme = ({ defaultTheme, updateMenuThemeHandler }) => {
       <div style={{ display: "inline-block" }}>
         <p>Font Color</p>
         <input
-          onChange={(e) =>
-            updateMenuThemeHandler("theme.color", e.target.value)
-          }
+          onChange={(e) => updateMenuThemeHandler("theme.color", e.target.value)}
           type="color"
         ></input>
       </div>
       <div style={{ display: "inline-block", marginLeft: "48px" }}>
         <p>Background Color</p>
         <input
-          onChange={(e) =>
-            updateMenuThemeHandler("theme.backgroundColor", e.target.value)
-          }
+          onChange={(e) => updateMenuThemeHandler("theme.backgroundColor", e.target.value)}
           type="color"
         ></input>
       </div>
