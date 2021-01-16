@@ -66,7 +66,7 @@ export class MenuAPI {
   }
 
   saveDraft(payload) {
-    new Promise((resolve,reject) => {
+    return new Promise((resolve,reject) => {
       localStorage.setItem("restaurantDetails",payload);
       resolve()
     })

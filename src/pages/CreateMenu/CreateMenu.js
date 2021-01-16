@@ -1,108 +1,85 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import EditMenu from "../../components/EditMenu/EditMenu";
 import PreviewMenu from "../../components/PreviewMenu";
 import loadingIcon from "../../assets/images/three_dots_loading.svg";
-import axiosInstance from "../../service/axios";
 import ReactGA from "react-ga";
+import {connect} from 'react-redux'
+import {fetchMenu } from '../../reducers/EditMenu.reducers'
+import MenuHeader from "../../components/MenuHeader";
+
+const mapStateFromProps = (state) => {
+  return {
+    restaurantDetails: state.menu.restaurantDetails,
+    loading: state.menu.loading,
+    isEdit: state.menu.edit,
+    error: state.menu.error
+  }
+}
+
+const mapDispatchFromProps = (dispatch) => {
+  return {
+    fetchMenu: (menuId, hash) => dispatch(fetchMenu({menuId:menuId,hash:hash})) 
+  }
+}
+
+
+
 ReactGA.initialize("G-0BPQRCHTXK");
-const CreateMenu = ({ edit }) => {
-  const sampleRestaurantDetails = {
-    emailId: "",
-    restaurantName: "",
-    logo: "",
-    bio: "",
-    offers: [],
-    social: {},
-    menu: {
-      categories: [],
-      theme: {},
-    },
-  };
 
-  const [restaurantDetails, setRestaurantDetails] = useState(
-    sampleRestaurantDetails
-  );
-  const [dataFetched, setDataFetched] = useState(false);
-  const [editDataCorrect, setEditDataCorrect] = useState(false);
+  const CreateMenu = ({ restaurantDetails,edit,loading,isEdit,error,setMetaData,fetchMenu }) => {
   let { menuId, hash } = useParams();
-
   useEffect(() => {
-    if (edit)
-      axiosInstance
-        .get(`/view`, {
-          params: {
-            q: menuId,
-          },
-        })
-        .then((req) => req.data)
-        .then((data) => {
-          setDataFetched(true);
-          if (!data.success) throw new Error("Failed to fetch menu");
-          setRestaurantDetails(data.data);
-          setEditDataCorrect(true);
-        })
-        .catch((err) => {
-          console.error(err);
-          alert(err.message);
-        });
-  }, [edit, menuId]);
-
-  const getCreateMenuComponent = () => {
-    if (edit) {
-      if (dataFetched) {
-        if (!editDataCorrect) {
-          return <h2>Invalid Edit link</h2>;
-        }
-      } else {
-        return (
-          <div className="loading-div">
-            <img alt="" className="loading-icon" src={loadingIcon} />
-          </div>
-        );
+    let setUpMenu = async () => {
+      if(edit) {
+        await fetchMenu(menuId,hash);
       }
     }
+    setUpMenu()
+
+  }, [edit,hash,menuId,setMetaData,fetchMenu]);
+
+  if(loading) {
     return (
+    <div className="loading-div">
+      <img alt="" className="loading-icon" src={loadingIcon} />
+    </div>
+    )
+  }
+  
+  if(error) {
+    if(edit) {
+      return <h2>Invalid Edit link</h2>;
+    }else {
+      return <h2>Failed to open new menu</h2>
+    }
+  }
+
+  return (
       <div>
         <div className="center-align">
-          {edit ? (
-            <>
-              <h1>Update Menu</h1>
-              <p>
-                Any changes made here will be updated in your old menu only. You
-                can add, delete or update the categories, items and price. The
-                Restaurant name, logo and email ID cannot be changed for now.
-                You don't have to worry for new QR code , the link and QR
-                remains same.
-              </p>
-              <br></br>
-            </>
-          ) : (
-            <>
-              <h1>Create Menu</h1>
-              <p style={{ fontSize: "1.2em" }}>
-                Creating menu is simple. Just enter your restaurant name, upload
-                Logo and Email ID for future changes.<br></br>That's it. Now you
-                can start adding the Dishes by creating a new category and
-                adding items to it.
-              </p>
-            </>
-          )}
+          <MenuHeader/>
 
-          <br></br>
         </div>
         <EditMenu
           restaurantDetails={restaurantDetails}
-          setRestaurantDetails={setRestaurantDetails}
+          setRestaurantDetails={console.log}
           edit={edit}
           menuId={menuId}
           hash={hash}
         />
         <PreviewMenu restaurantDetails={restaurantDetails} />
       </div>
-    );
-  };
-  return <div className="container">{getCreateMenuComponent()}</div>;
+  )
+
+
+  // return <div className="container">{getCreateMenuComponent()}</div>;
+
+
+
+
+
+
 };
 
-export default CreateMenu;
+export default connect(mapStateFromProps, mapDispatchFromProps)(CreateMenu)
