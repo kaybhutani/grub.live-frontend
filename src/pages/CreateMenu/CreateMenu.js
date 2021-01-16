@@ -55,8 +55,8 @@ const CreateMenu = ({ edit, loading, error, setMetaData, fetchMenu }) => {
       <div className="center-align">
         <MenuHeader />
       </div>
-      {/* <EditMenu />
-        <PreviewMenu /> */}
+      <EditMenu />
+      {/* <PreviewMenu /> */}
     </div>
   );
 };

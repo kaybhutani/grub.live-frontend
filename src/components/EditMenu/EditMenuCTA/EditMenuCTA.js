@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import styles from "./EditMenuCTA.module.scss";
 import { connect } from "react-redux";
 import { setMenu, draftMenu } from "../../../reducers/EditMenu.reducers";
@@ -22,28 +22,28 @@ let mapDispatchFromProps = (dispatch) => {
 
 const EditMenuCTA = ({ saveMenuToLocal, saveMenuToServer, isEdit, loading, error }) => {
   let router = useHistory();
-  let [isDraft, setIsDraft] = useState(false);
+  let [submitForm, setSubmitForm] = useState(0);
 
   useEffect(() => {
-    if (success && error != null) {
+    if (!loading && error != null && submitForm != 0) {
       alert("FONFF");
-      if (isDraft) {
+      if (submitForm == -1) {
         alert("Menu saved in local");
-        setTimeout(() => setIsDraft(false), 3000);
+        setTimeout(() => setSubmitForm(0), 3000);
       } else {
         // router.push();
       }
     }
-  }, [loading, error, isDraft]);
+  }, [loading, error, submitForm]);
 
   let saveMenuHandler = () => {
     saveMenuToServer();
-    setIsDraft(false);
+    setSubmitForm(1);
   };
 
   let draftMenuHandler = () => {
-    draftMenu();
-    setIsDraft(true);
+    saveMenuToLocal();
+    setSubmitForm(-1);
   };
 
   return (
@@ -64,7 +64,7 @@ const EditMenuCTA = ({ saveMenuToLocal, saveMenuToServer, isEdit, loading, error
             onClick={() => saveMenuHandler()}
             className="black-yellow"
           >
-            {edit ? "Update Menu" : "Save Menu"}
+            {isEdit ? "Update Menu" : "Save Menu"}
           </button>
         </div>
       </div>

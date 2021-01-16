@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 // import PreviewModal from './PreviewModal'
 import { dummyRestaurantDetails } from "../../dummyData.json";
-import {useHistory} from 'react-router-dom'
-import axiosInstance from '../../service/axios'
+import { useHistory } from "react-router-dom";
+import axiosInstance from "../../service/axios";
 import InviteForm from "./InviteForm/InviteForm";
 import MenuCategories from "./MenuCategories/MenuCategories";
 import AddOffers from "./AddOffers/AddOffers";
@@ -12,32 +12,25 @@ import RestaurantDetails from "./RestaurantDetails/RestaurantDetails";
 import EditMenuCTA from "./EditMenuCTA/EditMenuCTA";
 // import { set } from "react-ga";
 
-
-
 const EditMenu = () => {
-  
-  const updateLogo = (e) => {
-    const uploadedFile = e.target.files[0];
-    if (uploadedFile) {
-      if (uploadedFile.size > 2000000) {
-        alert("Please upload an image with size less than 2 mb.");
-        return;
-      }
+  // const updateLogo = (e) => {
+  //   const uploadedFile = e.target.files[0];
+  //   if (uploadedFile) {
+  //     if (uploadedFile.size > 2000000) {
+  //       alert("Please upload an image with size less than 2 mb.");
+  //       return;
+  //     }
 
-      const reader = new FileReader();
-      reader.readAsDataURL(uploadedFile);
-      reader.onloadend = () => {
-        const temp = { ...restaurantDetails };
-        temp.logo = reader.result;
-        console.log(reader.result);
-        setRestaurantDetails(temp);
-      };
-    }
-  };
-
-  
-
-  
+  //     const reader = new FileReader();
+  //     reader.readAsDataURL(uploadedFile);
+  //     reader.onloadend = () => {
+  //       const temp = { ...restaurantDetails };
+  //       temp.logo = reader.result;
+  //       console.log(reader.result);
+  //       setRestaurantDetails(temp);
+  //     };
+  //   }
+  // };
 
   // const submitMenu = (e) => {
   //   if (!submitState) {
@@ -66,9 +59,7 @@ const EditMenu = () => {
   //     }
   //   }
 
-
   // };
-
 
   return (
     <div className="edit-menu">
@@ -77,14 +68,14 @@ const EditMenu = () => {
       </h2>
       <p>Please enter the following details to create your Digital QR Menu.</p>
 
-      <div
+      {/* <div
         style={{
           display: "flex",
           justifyContent: "flex-end",
           marginBottom: 10,
         }}
-      >
-        {localStorage.getItem("restaurantDetails") ? (
+      > */}
+      {/* {localStorage.getItem("restaurantDetails") ? (
           <button
             onClick={() =>
               setRestaurantDetails({
@@ -110,18 +101,18 @@ const EditMenu = () => {
             Fill sample data <i className="eos-icons">keyboard</i>
           </button>
         ) : null}
-      </div>
+      </div> */}
 
       <form>
         <div className="shadow-box">
-          <RestaurantDetails/>
-          <SocialLinks/>
-          <AddOffers/>
+          <RestaurantDetails />
+          <SocialLinks />
+          <AddOffers />
         </div>
 
-        <MenuTheme/>
-        <MenuCategories/>
-        <EditMenuCTA/>
+        <MenuTheme />
+        <MenuCategories />
+        <EditMenuCTA />
       </form>
     </div>
   );

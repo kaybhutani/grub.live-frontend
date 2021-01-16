@@ -48,8 +48,8 @@ export const setMenu = createAsyncThunk('menu/menuUpdate', async (arg, {rejectWi
 })
 
 export const draftMenu = createAsyncThunk('menu/draftMenu' , async(arg, {getState}) => {
+  console.log("HI")
   await menuAPI.saveDraft(getState())
-  return payload
 })
 
 export const fetchMenuFromLocalStorage = createAsyncThunk('menu/menuRequestLocal', async(payload) => {
