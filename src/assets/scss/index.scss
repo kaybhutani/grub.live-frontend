@@ -2,3 +2,9 @@
 @import './components.scss';
 @import './pages.scss';
 @import './base.scss';
+
+
+
+#root {
+  overflow-x: hidden;
+}

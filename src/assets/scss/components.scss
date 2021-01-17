@@ -380,7 +380,7 @@
 }
 
 
-@media(max-width:450px) {
+@media(max-width:800px) {
   .popup-preview-menu  {
     min-width: auto;
     float: none;
@@ -426,4 +426,11 @@
 .create-menu-container {
   display: flex;
   justify-content: space-between;
+}
+
+@media(max-width:800px) {
+  .create-menu-container {
+    justify-content: center;
+  }
+  
 }
