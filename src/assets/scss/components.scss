@@ -278,6 +278,9 @@
   .qr-sticker {
     width: 250px;
   }
+  .shadow-box {
+    padding: $l $s $xxl $s;
+  }
 }
 
 @media only screen and (max-width: 400px) {
