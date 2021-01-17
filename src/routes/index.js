@@ -11,6 +11,8 @@ const HowItWorks = lazy(() => import("../pages/HowItWorks/HowItWorks"));
 const QrDownload = lazy(() => import("../pages/QrDownload/QrDownload"));
 const About = lazy(() => import("../pages/About/About"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
+const RegisterPartner = lazy(() =>import("../pages/Register/RegisterPartner"));
+const RegisterRestaurant = lazy(() => import("../pages/Register/RegisterRestaurant"))
 
 const Router = () => {
   return (
@@ -31,6 +33,8 @@ const Router = () => {
           <Route exact path="/qr/edit/:menuId">
             <QrDownload edit />
           </Route>
+          <Route exact  path="/register/restaurant" component={RegisterRestaurant} />
+          <Route exact  path="/register/partner" component={RegisterPartner} />
         </Switch>
       </Suspense>
 
