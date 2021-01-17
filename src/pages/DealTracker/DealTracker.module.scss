@@ -57,3 +57,14 @@
   }
   
 }
+
+
+@media(max-width:500px) {
+  .DealTracker {
+    grid-template-columns: auto;
+
+    .imagerWrapper {
+      display: none;
+    }
+  }
+}

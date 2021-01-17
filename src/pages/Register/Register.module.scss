@@ -58,3 +58,13 @@
    background-repeat: no-repeat;
   }
 }
+
+@media(max-width:500px) {
+  .RegisterPage {
+    grid-template-columns: auto;
+
+    .imagerWrapper {
+      display: none;
+    }
+  }
+}
