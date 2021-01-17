@@ -5,6 +5,7 @@ import PreviewMenu from "../../components/PreviewMenu";
 import loadingIcon from "../../assets/images/three_dots_loading.svg";
 import axiosInstance from "../../service/axios";
 import ReactGA from "react-ga";
+import { PreviewModal } from "../../components/PreviewModal/PreviewModal";
 ReactGA.initialize("G-0BPQRCHTXK");
 const CreateMenu = ({ edit }) => {
   const sampleRestaurantDetails = {
@@ -26,6 +27,7 @@ const CreateMenu = ({ edit }) => {
   const [dataFetched, setDataFetched] = useState(false);
   const [editDataCorrect, setEditDataCorrect] = useState(false);
   let { menuId, hash } = useParams();
+
 
   useEffect(() => {
     if (edit)
@@ -91,6 +93,7 @@ const CreateMenu = ({ edit }) => {
 
           <br></br>
         </div>
+        <div className="create-menu-container">
         <EditMenu
           restaurantDetails={restaurantDetails}
           setRestaurantDetails={setRestaurantDetails}
@@ -98,7 +101,12 @@ const CreateMenu = ({ edit }) => {
           menuId={menuId}
           hash={hash}
         />
+       <PreviewModal>
         <PreviewMenu restaurantDetails={restaurantDetails} />
+       </PreviewModal>
+       {/* <PreviewMenu restaurantDetails={restaurantDetails} /> */}
+        </div>
+        
       </div>
     );
   };
