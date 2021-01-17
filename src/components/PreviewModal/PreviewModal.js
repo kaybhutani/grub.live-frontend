@@ -14,10 +14,9 @@ export const PreviewModal = ({children}) => {
         <i className='eos-icons' style={{marginRight:10}}>slideshow</i> {(!showPreview) ? 'Preview' :'Edit'}
         </button>
         <div className={`popup-preview-content ${(showPreview) ? 'active' : ''}`}>
-          <div className="popup-preview-scroll">
-          
-            {children}
-          </div>
+            <div className="popup-preview-scroll">  
+              {children}
+            </div>
           </div>
         </div>
     </>

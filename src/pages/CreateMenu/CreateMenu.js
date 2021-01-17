@@ -93,6 +93,7 @@ const CreateMenu = ({ edit }) => {
 
           <br></br>
         </div>
+        <div className="create-menu-container">
         <EditMenu
           restaurantDetails={restaurantDetails}
           setRestaurantDetails={setRestaurantDetails}
@@ -103,6 +104,8 @@ const CreateMenu = ({ edit }) => {
        <PreviewModal>
         <PreviewMenu restaurantDetails={restaurantDetails} />
        </PreviewModal>
+       {/* <PreviewMenu restaurantDetails={restaurantDetails} /> */}
+        </div>
         
       </div>
     );

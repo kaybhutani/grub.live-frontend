@@ -369,56 +369,58 @@
 
 
 .popup-preview-menu {
+  min-width: 45%;
   button {
-    background-color: transparent;
-    border: 0;
-    color:white;
-    outline: none;
-    display: hidden;
-    z-index: 300;
+    display: none;
   }
-  position: static;
-  float: right;
-}
 
+}
 
 
 @media(max-width:450px) {
-  .popup-preview-menu {
+  .popup-preview-menu  {
+    min-width: auto;
     float: none;
-    
     button {
       display: block;
       position: fixed;
-      right: 0;
       top:40px;
-      padding:10px;
+      right:0;
       background-color: blueviolet;
-      box-shadow: 0px 4px 10px grey;
+      padding:10px;
+      color:white;
+      border:0;
+      outline: none;
+      z-index: 300;
+      min-width:100px;
     }
-  }
 
-  .popup-preview-content {
-    background-color: white;
-    padding-left:16px;
-    z-index: 200;
+    .popup-preview-content {
+      position: fixed;
+      top:0;
+      background-color: white;
+      left:-1000px;
+      transition: left 0.5s;
+      max-width: 100%;
+      overflow-x: hidden;
+      .popup-preview-scroll {
+        max-height: 100vh;
+        overflow-y: scroll;
+        max-width:450px;
+      }
 
-    padding-right: 16px;
-    position: fixed;;
-    top:0;
-    left:-1000px;
-    max-width: 100%;
-    transition: left 0.5s;
-    &.active {
+    }
+
+    .active {
       left:0;
-      overflow-y: scroll;
     }
-    .popup-preview-scroll{
-      height: 800px;
-      overflow-y: scroll;
-    }
-  }
-  
 
+  }
 }
 
+
+
+.create-menu-container {
+  display: flex;
+  justify-content: space-between;
+}
