@@ -26,7 +26,7 @@ const PartnerSlider = () => {
         </h3>
       </div>
       <div className={styles.parnterList}>
-          <marquee>{partnerLists.map((parnter,index) =><img src={parnter} className={styles.partnerImg} key={index} /> )}</marquee>
+          <marquee>{partnerLists.map((parnter,index) =><img alt="partnerImage" src={parnter} className={styles.partnerImg} key={index} /> )}</marquee>
       </div>
     </div>
   )

@@ -35,10 +35,10 @@ const DealTracker = () => {
     <div className={styles.DealTracker}>
       <div className={`container ` + styles.dealTrackerContent}>
         <h1>
-        Status
+        Track Deals
         </h1>
         <h3>
-        Keep track of your ongoing deals.
+        Keep track of your ongoing deals. See which restaurants have onboarded grub.live, which are in progress and keep track of your payments.
         </h3>
         <form className={styles.trackForm} onSubmit={e => formSubmitHandler(e)} ref={formRef}>
           <div>
