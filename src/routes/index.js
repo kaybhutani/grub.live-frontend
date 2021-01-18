@@ -35,7 +35,7 @@ const Router = () => {
           </Route>
           <Route exact  path="/register/restaurant" component={RegisterRestaurant} />
           <Route exact  path="/register/partner" component={RegisterPartner} />
-          <Route exact  path="/trackdeal" component={DealTracker} />
+          <Route exact  path="/track" component={DealTracker} />
         </Switch>
       </Suspense>
 
