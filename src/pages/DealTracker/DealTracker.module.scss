@@ -4,7 +4,7 @@
   .dealTrackerContent {
     padding-top: 30px;
     padding-left: 20px;
-    padding-right: 100px;
+    padding-right: 50px;
     h1 {
       font-size: 36px;
       margin-bottom: 10px;
@@ -94,9 +94,10 @@ table {
     padding: 16px;
   }
   tr {
-    background-color: rgb(201, 201, 201);
+    background-color: rgb(231, 231, 231);
   }
   td {
+    text-align: center;
     padding: 16px;
     font-weight: bold;
   }

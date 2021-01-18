@@ -36,7 +36,7 @@ const DealStatus = (props) => {
         window.alert('Could not fetch data')
       })
     }
-  }, []);
+  }, [dataFetched, partnerCode]);
 
   return (
     <div className="container" style={{minHeight: 500}}>

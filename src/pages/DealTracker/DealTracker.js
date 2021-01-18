@@ -1,7 +1,7 @@
 import React , {createRef} from 'react'
 import styles from './DealTracker.module.scss'
 import BgImg from '../../assets/images/track-deal-bg.jpg'
-import axiosInstance from "../../service/axios";
+// import axiosInstance from "../../service/axios";
 
 const DealTracker = () => {
 
@@ -16,20 +16,21 @@ const DealTracker = () => {
       if(childs[i].name !== "" ) payload[childs[i].name] = childs[i].value;
     }
     let partnerCode = payload.partnerCode
-    axiosInstance.get(`/partners/get-status/${partnerCode}`).then(res => {
-      return res.data
-    }).then(
-      data => {
-        // replace alerts with thankyou page redirect.
-        if(data.success===true) {
-          window.location = `/#/track/${partnerCode}`
-        }
-        else window.alert('Invalid Partner Code.')
-      } 
-    ).catch( err => {
-      console.log(err)
-      window.alert('Invalid Partner Code.')
-    })
+    window.location = `/#/track/${partnerCode}`
+      // axiosInstance.get(`/partners/get-status/${partnerCode}`).then(res => {
+      //   return res.data
+      // }).then(
+      //   data => {
+      //     // replace alerts with thankyou page redirect.
+      //     if(data.success===true) {
+      //       window.location = `/#/track/${partnerCode}`
+      //     }
+      //     else window.alert('Invalid Partner Code.')
+      //   } 
+      // ).catch( err => {
+      //   console.log(err)
+      //   window.alert('Invalid Partner Code.')
+      // })
   }
   return (
     <div className={styles.DealTracker}>
