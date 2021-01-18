@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import mobileQrMenu from "../../assets/images/mobile-qr-menu.svg";
 import { Link } from "react-router-dom";
-// import PartnerSlider from "../../components/PartnerSlider/PartnerSlider";
+import PartnerSlider from "../../components/PartnerSlider/PartnerSlider";
 
 const Home = () => {
   const [featureOpen, setFeatureOpen] = useState([true, 0]);
@@ -89,9 +89,9 @@ const Home = () => {
             Scan Menu 
           </button> */}
         </div>
-        {/* <div className="container" style={{display:'flex',justifyContent:'center'}}>
+        <div className="container" style={{display:'flex',justifyContent:'center'}}>
           <PartnerSlider/>
-        </div> */}
+        </div>
       </div>
     </div>
   );

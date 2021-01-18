@@ -11,7 +11,10 @@ const HowItWorks = lazy(() => import("../pages/HowItWorks/HowItWorks"));
 const QrDownload = lazy(() => import("../pages/QrDownload/QrDownload"));
 const About = lazy(() => import("../pages/About/About"));
 const Contact = lazy(() => import("../pages/Contact/Contact"));
-
+const RegisterPartner = lazy(() =>import("../pages/Register/RegisterPartner"));
+const RegisterRestaurant = lazy(() => import("../pages/Register/RegisterRestaurant"))
+const DealTracker = lazy(() => import('../pages/DealTracker/DealTracker'))
+const DealStatus = lazy(() => import('../pages/DealTracker/DealStatus'))
 const Router = () => {
   return (
     <HashRouter>
@@ -31,6 +34,10 @@ const Router = () => {
           <Route exact path="/qr/edit/:menuId">
             <QrDownload edit />
           </Route>
+          <Route exact  path="/register/restaurant" component={RegisterRestaurant} />
+          <Route exact  path="/register/partner" component={RegisterPartner} />
+          <Route exact  path="/track" component={DealTracker} />
+          <Route exact path="/track/:partnerCode" component={DealStatus} />
         </Switch>
       </Suspense>
 

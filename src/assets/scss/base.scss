@@ -57,16 +57,17 @@ body {
 
 
 nav {
-
+  padding:10px 4vw;
   background-color: $yellow-base;
-  padding: $s $m;
+  display: flex;
+  justify-content: space-between;
   .nav-item {
-    display: inline-block;
-    vertical-align: middle;
+    div {
+      margin-right: 25px;      
+    }
   }
-  .nav-item-right {
-    float: right;
-  }
+  
+  
 }
 
 .form-input {
@@ -80,7 +81,7 @@ nav {
 
 
 footer {
-  margin-top: $l;
+  // margin-top: $l;
   padding: $m $m;
   background-color: $dark-gray;
   color: $yellow-base;

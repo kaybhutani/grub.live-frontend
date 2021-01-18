@@ -1,0 +1,74 @@
+.RegisterPage {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  .registerContent {
+    padding-left: 20px;
+    padding-right: 100px;
+    h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      margin-top: 0;
+      font-weight: 400;
+      margin-bottom: 40px;
+    }
+
+
+
+    .registerForm {
+      
+      div {
+        position: relative;
+        label {
+          position: absolute;
+          top:-10px;
+          margin-left: 8px;
+          display: block;
+          background-color: white;
+        }
+        input {
+          display: block;
+          width: 100%;
+          padding:12px;
+          border-radius: 4px;
+          border: 1px solid #303030;
+        }
+        margin-bottom: 40px;
+
+        &.formSubmitWrapper {
+          display: flex;
+          justify-content: center;
+          
+          button {
+            background: #303030;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-size: 14px;
+            color: #E8AA00;
+          }
+        }
+      }
+
+    }
+  }
+
+  .imagerWrapper {
+   background-size: cover;
+   background-repeat: no-repeat;
+  }
+}
+
+@media(max-width:600px) {
+  .RegisterPage {
+    grid-template-columns: auto;
+    .registerContent {
+      padding-right: 50px;
+    }
+
+    .imagerWrapper {
+      display: none;
+    }
+  }
+  
+}

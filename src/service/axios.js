@@ -1,6 +1,7 @@
 import axios from "axios";
+import {apiBaseUrl} from "../config.json";
 const apiInstance = axios.create({
-  baseURL:"https://grub-live-backend.herokuapp.com"
+  baseURL: apiBaseUrl
 });
 
 apiInstance.defaults.headers.common["Content-Type"] = "application/json";
