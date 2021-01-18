@@ -59,12 +59,16 @@
   }
 }
 
-@media(max-width:500px) {
+@media(max-width:600px) {
   .RegisterPage {
     grid-template-columns: auto;
+    .registerContent {
+      padding-right: 50px;
+    }
 
     .imagerWrapper {
       display: none;
     }
   }
+  
 }

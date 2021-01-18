@@ -1,17 +1,38 @@
 import React  , {createRef} from 'react'
 import styles from './Register.module.scss'
 import BgImg from '../../assets/images/register-restaurant-bg.jpg'
+import axiosInstance from "../../service/axios";
+
 const RegisterRestaurant = () => {
   let formRef = createRef()
+
   let formSubmitHandler = (e) => {
     e.preventDefault();
+    // console.log(e)/
     let payload = {};
     let childs = formRef.current.elements
+    // consol e.log(childs)
     for(let i =0;i<childs.length;i++) {
       if(childs[i].name !== "" ) payload[childs[i].name] = childs[i].value;
     }
     console.log(payload)
+    axiosInstance.post(`/partners/register-restaurant`, payload).then(res => {
+      return res.data
+    }).then(
+      data => {
+        // replace alerts with thankyou page redirect.
+        if(data.success===true) {
+          window.alert("Successfully registered")
+          window.location = ""
+        }
+        else window.alert('Unable to register due to some error.')
+      } 
+    ).catch( err => {
+      console.log(err)
+      window.alert('Unable to register due to some error.')
+    })
   }
+
   return (
     <div className={styles.RegisterPage}>
       <div className={"container " + styles.registerContent}>
@@ -21,23 +42,23 @@ const RegisterRestaurant = () => {
         <form className={styles.registerForm} onSubmit={e => formSubmitHandler(e)} ref={formRef}>
           <div >
             <label>Restaurant name*</label>
-            <input type="text" name="restaurant_name" required/>
+            <input type="text" name="restaurantName" required/>
           </div>
           <div>
-            <label>Phone no.*</label>
-            <input type="tel" name="phone" required/>
+            <label>Owners name*</label>
+            <input type="text" name="ownerName" required />
           </div>
           <div>
-            <label>Owner name*</label>
-            <input type="text" name="owner_name" required />
+            <label>Owners Phone no.*</label>
+            <input type="tel" name="number" required/>
           </div>
           <div>
-            <label>Email ID*</label>
+            <label>Owners Email ID*</label>
             <input type="email" name="email" required/>
           </div>
           <div>
-            <label>Partner Code (in any)</label>
-            <input type="text" name="partner_code"/>
+            <label>Partner Code (if any)</label>
+            <input type="text" name="partnerCode"/>
           </div>
           <div className={styles.formSubmitWrapper}>
             <button type="submit">
