@@ -26,6 +26,7 @@ const PartnerSlider = () => {
         </h3>
       </div>
       <div className={styles.parnterList}>
+        {/* eslint-disable-next-line */}
           <marquee>{partnerLists.map((parnter,index) =><img alt="partnerImage" src={parnter} className={styles.partnerImg} key={index} /> )}</marquee>
       </div>
     </div>
