@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import styles from './PartnerSlider.module.scss'
 import  dinersclub from '../../assets/images/Partners/dinersclub.jpeg'
