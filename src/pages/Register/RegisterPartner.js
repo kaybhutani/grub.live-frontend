@@ -37,7 +37,7 @@ const RegisterPartner = () => {
     <div className={styles.RegisterPage} >
       <div className={"container " + styles.registerContent}>
         <h1>Register as Partner</h1>
-        <h3>Contribute to our growth and be a part of it.</h3>
+        <h3>Contribute to our growth and be a part of it. Enter your details here and our team will get back to you.</h3>
 
         <form className={styles.registerForm} onSubmit={(e) => formSubmitHandler(e)} ref={formRef}>
           <div >

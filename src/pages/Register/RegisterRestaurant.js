@@ -36,8 +36,8 @@ const RegisterRestaurant = () => {
   return (
     <div className={styles.RegisterPage}>
       <div className={"container " + styles.registerContent}>
-        <h1>Register your Restaurant</h1>
-        <h3>Digitalize your menu in few easy steps.</h3>
+        <h1>Register your Restaurant for Demo</h1>
+        <h3>Digitalize your menu in few easy steps. Enter your details below and our team will get back to you.</h3>
 
         <form className={styles.registerForm} onSubmit={e => formSubmitHandler(e)} ref={formRef}>
           <div >
