@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "49c35d32976662981c4a6e366ffe775a",
+    "revision": "5c5485ac8988efc596ac6f1e37c02ec1",
     "url": "/index.html"
   },
   {
-    "revision": "887ededa04e45e08fba2",
+    "revision": "8b654ac7aa0100e4ec31",
     "url": "/static/css/10.4d9cbac5.chunk.css"
   },
   {
-    "revision": "2c67a1ecf557f02792e3",
+    "revision": "1ff46994f04a0b048f96",
     "url": "/static/css/12.7c6c090c.chunk.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/6.7c6c090c.chunk.css"
   },
   {
-    "revision": "d185d141ff8ab0a21c86",
+    "revision": "dfcea68118fc286062f3",
     "url": "/static/css/9.4d9cbac5.chunk.css"
   },
   {
@@ -40,16 +40,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/0.48dbaa56.chunk.js"
   },
   {
-    "revision": "887ededa04e45e08fba2",
-    "url": "/static/js/10.1d993e9f.chunk.js"
+    "revision": "8b654ac7aa0100e4ec31",
+    "url": "/static/js/10.fa4f901c.chunk.js"
   },
   {
     "revision": "7a62a33b5c96ead585c9",
     "url": "/static/js/11.8a473d90.chunk.js"
   },
   {
-    "revision": "2c67a1ecf557f02792e3",
-    "url": "/static/js/12.6717a043.chunk.js"
+    "revision": "1ff46994f04a0b048f96",
+    "url": "/static/js/12.78c448fc.chunk.js"
   },
   {
     "revision": "5754c60d7539f7d22ba7",
@@ -84,16 +84,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/8.33cc2791.chunk.js"
   },
   {
-    "revision": "d185d141ff8ab0a21c86",
-    "url": "/static/js/9.48d183cb.chunk.js"
+    "revision": "dfcea68118fc286062f3",
+    "url": "/static/js/9.c2f9bacb.chunk.js"
   },
   {
     "revision": "cfcdec8c5ebffc0f6663",
     "url": "/static/js/main.e8412e62.chunk.js"
   },
   {
-    "revision": "258d491f4b41a5bc965f",
-    "url": "/static/js/runtime-main.272167ff.js"
+    "revision": "bc6ff94019b37c46e15b",
+    "url": "/static/js/runtime-main.588a66d4.js"
   },
   {
     "revision": "fa2ffbe6e33914dd36f07aa9f0459b70",
@@ -196,12 +196,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/raftaarlogo.fead0f21.png"
   },
   {
-    "revision": "c9920e13255aa31ad67254b8afca4b13",
-    "url": "/static/media/register-partner-bg.c9920e13.jpg"
+    "revision": "18c7b78d0fff6458452b786c91892281",
+    "url": "/static/media/register-partner-bg.18c7b78d.jpg"
   },
   {
-    "revision": "50006bab26080e7c6b9e5477bf401d08",
-    "url": "/static/media/register-restaurant-bg.50006bab.jpg"
+    "revision": "fb2c85e282bc743c94c331e50cb07a8c",
+    "url": "/static/media/register-restaurant-bg.fb2c85e2.jpg"
   },
   {
     "revision": "8a88b5ee99b6c3d92ee664234dca7a4a",
@@ -232,8 +232,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/three_dots_loading.4d1c15f3.svg"
   },
   {
-    "revision": "0f1768c2ed7a2f72c24624abe0652a74",
-    "url": "/static/media/track-deal-bg.0f1768c2.jpg"
+    "revision": "a4d22404040e1fbf25074275b2c14153",
+    "url": "/static/media/track-deal-bg.a4d22404.jpg"
   },
   {
     "revision": "c9f1200836515fd4bacd29160be78732",
