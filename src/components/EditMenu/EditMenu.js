@@ -84,11 +84,12 @@ const EditMenu = ({
       setSubmitState(true)
       try {
         if(!restaurantDetails.emailId || !restaurantDetails.restaurantName) {
-          throw new Error("Restaurant Details cannot be empty!")
+          setSubmitState(false)
+          throw new Error("Restaurant Email or name cannot be empty.")
         }
         const apiEndPoint = edit ? `/edit/submit/${menuId}/${hash}` : `/submit`;
 
-        axiosInstance.post(apiEndPoint,JSON.stringify(restaurantDetails))
+        axiosInstance.post(apiEndPoint,JSON.stringify(restaurantDetails), {headers: {'Content-Type': 'application/json'}})
           .then(req => {
             if(req.status!==200) throw new Error("Failed to save menu")
             return req.data
