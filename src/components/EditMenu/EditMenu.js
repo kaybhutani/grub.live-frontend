@@ -98,7 +98,7 @@ const EditMenu = ({
             setSubmitState(false)
             if(!data.success) throw new Error("Failed to save menu")
             localStorage.removeItem("restaurantDetails");
-            const redirectLocation = edit? `/#/qr/edit/${data.id}`: `/#/qr/${data.id}`;
+            const redirectLocation = edit? `/qr/edit/${data.id}`: `/qr/${data.id}`;
             history.push(redirectLocation)
           })
       }catch(err) {
