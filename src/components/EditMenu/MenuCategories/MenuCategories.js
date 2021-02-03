@@ -1,6 +1,8 @@
 import React from "react";
 // import styles from "./MenuCategories.module.scss";
 import MenuCategory from "./MenuCategory/MenuCategory";
+import Collapse from 'antd/lib/collapse'
+const {Panel} = Collapse
 const MenuCategories = ({
   menuCategories = [],
   updateMenuCategoriesHandler,
@@ -31,7 +33,8 @@ const MenuCategories = ({
 
   let output = menuCategories.map((menuCategory, index) => {
     return (
-      <MenuCategory
+      <Panel header={menuCategory.title || "New Menu Category"}>
+        <MenuCategory
         menuCategory={menuCategory}
         index={index}
         key={index}
@@ -40,16 +43,20 @@ const MenuCategories = ({
           updateMenuCategoryHandler(index, newMenuCategory)
         }
       />
+      </Panel>
     );
   });
   return (
-    <>
+    <>   
+      <h3>Menu Categories</h3>
+      <Collapse  defaultActiveKey={['1']} >
       {output}
+      </Collapse>
       {/* Add button laga dena */}
       <button
         type="button"
         onClick={() => addMenuCategoryHandler()}
-        style={{ backgroundColor: "transparent", border: 0, cursor: "pointer" }}
+        style={{ backgroundColor: "transparent", border: 0, cursor: "pointer" , marginTop:20}}
       >
         Add Category <i className="eos-icons">add_circle_outline</i>{" "}
       </button>

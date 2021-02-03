@@ -2,8 +2,8 @@
 @import './components.scss';
 @import './pages.scss';
 @import './base.scss';
-
-
+@import '../../../node_modules/antd/dist//antd.css';
+// @import 'antd/dist/antd.css';
 
 #root {
   overflow-x: hidden;
