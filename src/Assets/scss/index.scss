@@ -1,0 +1,10 @@
+@import './variables.scss';
+@import './components.scss';
+@import './pages.scss';
+@import './base.scss';
+@import 'antd/dist/antd.css';
+@import './overrides.scss';
+
+#root {
+  overflow-x: hidden;
+}

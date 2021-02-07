@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
+    "react-app",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
@@ -15,13 +16,14 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 11,
+    ecmaVersion: 2018,
     sourceType: "module",
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint","react-hooks"],
   rules: {
     "no-console": "warn",
     "no-eval": "error",
     "@typescript-eslint/no-unused-vars":"warn"
   },
 };
+
