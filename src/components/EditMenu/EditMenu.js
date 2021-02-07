@@ -163,7 +163,7 @@ const EditMenu = ({
             menuChangeHandler={menuChangeHandler}
           />
           <SocialLinks
-            defaultSocialLinks={restaurantDetails.social}
+            defaultSocialLinks={restaurantDetails.social || { website: "", facebook: "", instagram: "" }}
             menuChangeHandler={menuChangeHandler}
           />
           <div>
