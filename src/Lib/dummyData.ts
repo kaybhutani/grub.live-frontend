@@ -1,0 +1,104 @@
+import { MenuType } from "../Interfaces/Menu/menu";
+
+export const DummyData: MenuType = {
+  emailId: "",
+  logo: "",
+  bio: "The Best Fast food Restaurant in New Delhi.\nPh: +91 8802999631",
+  customizedMenu: false,
+  offers: ["Get 20% off on all orders above 500.", "Offer 2: Lorem ipsum"],
+  social: {
+    facebook: "https://facebook.com",
+    instagram: "https://instagram.com",
+    website: "www.mywebsite.com",
+  },
+  menu: {
+    theme: {
+      color: "#db3d3d",
+      backgroundColor: "#003301",
+      backgroundImage:
+        'url("https://res.cloudinary.com/kartikay/image/upload/v1606767929/christmasbg_x98khj.svg")',
+      fontFamily: "TypewriterBold",
+    },
+    categories: [
+      {
+        items: [
+          {
+            itemName: "Chicken Tikka",
+            itemPrice: "Rs. 99",
+            itemDescription: "Sample item description",
+          },
+          {
+            itemName: "Grilled Chicken Burger",
+            itemPrice: "$ 3.99",
+            itemDescription:
+              "Sample item description. Sample item description. Sample item description",
+          },
+          {
+            itemName: "Cheese and Bacon",
+            itemPrice: "\u20ac 4.99",
+            itemDescription: "Sample item description",
+          },
+          {
+            itemName: "Aalo Tikki ",
+            itemPrice: "\u20b9 59",
+            itemDescription: "Sample item description",
+          },
+          {
+            itemName: "Veggie special",
+            itemPrice: "\u20b9 79",
+            itemDescription: "Sample item description",
+          },
+        ],
+        title: "Burger's \ud83c\udf54",
+        type: "text",
+      },
+      {
+        items: [
+          {
+            itemName: "Chowmein",
+            itemPrice: "Half: \u20b999, Full: \u20b9169",
+          },
+          {
+            itemName: "Veg Momos",
+            itemPrice: "\u20b9100 /10pc",
+            itemDescription: "Sample item description",
+          },
+          {
+            itemName: "Chicken Momos",
+            itemPrice: "\u20b9130 /10pc",
+          },
+          {
+            itemName: "Manchurian",
+            itemPrice: "Half: \u20b9199,  Full: \u20b9269",
+            itemDescription: "Sample item description",
+          },
+        ],
+        title: "Chinese Food \ud83c\udf5c",
+        type: "text",
+      },
+      {
+        items: [
+          {
+            itemName: "Lemon Ice tea",
+            itemPrice: "$ 2.99",
+          },
+          {
+            itemName: "Cold Coffee",
+            itemPrice: "Rs. 99",
+          },
+          {
+            itemName: "Hot Coffee",
+            itemPrice: "Rs. 79",
+          },
+          {
+            itemName: "Classic Mojito",
+            itemPrice: "Rs. 129",
+          },
+        ],
+        title: "Beverages \ud83c\udf79",
+        type: "text",
+      },
+    ],
+  },
+  restaurantName: "Henry's Cafe",
+};
