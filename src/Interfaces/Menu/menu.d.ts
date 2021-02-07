@@ -30,11 +30,10 @@ export interface Social {
 
 export interface MenuType {
   bio: string;
-  customizedMenu: boolean;
   emailId: string;
   logo: string;
   menu: Menu;
-  offers?: any;
+  offers: string[];
   restaurantName: string;
   social: Social;
 }

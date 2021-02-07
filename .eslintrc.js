@@ -22,6 +22,6 @@ module.exports = {
   rules: {
     "no-console": "warn",
     "no-eval": "error",
-    "no-unused-vars":"warn"
+    "@typescript-eslint/no-unused-vars":"warn"
   },
 };

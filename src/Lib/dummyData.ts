@@ -4,7 +4,6 @@ export const DummyData: MenuType = {
   emailId: "",
   logo: "",
   bio: "The Best Fast food Restaurant in New Delhi.\nPh: +91 8802999631",
-  customizedMenu: false,
   offers: ["Get 20% off on all orders above 500.", "Offer 2: Lorem ipsum"],
   social: {
     facebook: "https://facebook.com",
