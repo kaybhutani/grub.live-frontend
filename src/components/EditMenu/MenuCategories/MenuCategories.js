@@ -48,7 +48,7 @@ const MenuCategories = ({
   });
   return (
     <>   
-      <h3>Menu Categories</h3>
+      <h3><b>Menu Categories</b></h3>
       <Collapse  defaultActiveKey={['1']} >
       {output}
       </Collapse>

@@ -4,6 +4,8 @@ import themes from "../../../themes.json";
 import fonts from "../../../fonts.json";
 const MenuTheme = ({ defaultTheme, updateMenuThemeHandler }) => {
   return (
+    <>
+    <h3><b>Theme and colors</b></h3>
     <div className="shadow-box">
       <div style={{ display: "inline-block" }}>
         <p>Theme</p>
@@ -63,6 +65,7 @@ const MenuTheme = ({ defaultTheme, updateMenuThemeHandler }) => {
         ></input>
       </div>
     </div>
+    </>
   );
 };
 

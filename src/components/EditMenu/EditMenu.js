@@ -154,6 +154,7 @@ const EditMenu = ({
       </div>
 
       <form>
+        <h3><b>Restaurant Details</b></h3>
         <div className="shadow-box">
           <RestaurantDetails
             updateLogo={updateLogo}
@@ -172,13 +173,13 @@ const EditMenu = ({
             />
           </div>
         </div>
-
+        <br></br>
         <MenuTheme
           updateMenuThemeHandler={(key, val) =>
             menuChangeHandler(`menu.${key}`, val)
           }
         />
-
+        <br></br>
         <MenuCategories
           menuCategories={restaurantDetails.menu.categories}
           updateMenuCategoriesHandler={(newMenuCategories) =>
