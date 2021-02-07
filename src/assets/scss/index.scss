@@ -2,9 +2,11 @@
 @import './components.scss';
 @import './pages.scss';
 @import './base.scss';
+@import '../../../node_modules/antd/dist/antd.css';
 
-
-
+html  * {
+  color: inherit;
+}
 #root {
   overflow-x: hidden;
 }

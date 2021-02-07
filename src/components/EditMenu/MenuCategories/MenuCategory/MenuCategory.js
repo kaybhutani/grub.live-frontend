@@ -14,7 +14,7 @@ const MenuCategory = ({
   };
 
   return (
-    <div className="shadow-box">
+    <div className="">
       <i
         onClick={() => deleteMenuCategoryHandler(index)}
         style={{ float: "right" }}
@@ -38,6 +38,7 @@ const MenuCategory = ({
           updateMenuCategory("items", newMenuItems)
         }
       />
+      <br></br>
     </div>
   );
 };
